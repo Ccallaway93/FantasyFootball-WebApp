@@ -1,0 +1,23 @@
+{
+  "name": "fantasyfootball-webapp",
+  "version": "1.0.0",
+  "description": "A web app dedicated to my Fantasy Football League. This will track stats and historical data.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js"
+  },
+  "author": "Conner Callaway",
+  "license": "ISC",
+  "dependencies": {
+    "espn-fantasy-football-api": "^0.15.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "moment": "^2.25.0",
+    "mongoose": "^5.9.11"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.3"
+  }
+}
