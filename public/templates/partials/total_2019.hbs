@@ -1,0 +1,22 @@
+<table id="2019" class="display card-table table d-none">
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Points For</th>
+        <th scope="col">Points Against</th>
+        <th scope="col">Difference</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#each this}}
+        {{#equal year 2019}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{pointsFor}}</td>
+                <td>{{pointsAgainst}}</td>
+                <td>{{difference}}</td>
+            </tr>
+        {{/equal}}
+    {{/each}}
+    </tbody>
+</table>

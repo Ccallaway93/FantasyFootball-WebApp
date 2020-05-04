@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pocket Jobs</title>
+    <title>Pocket Jobs - History</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,700" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
@@ -11,12 +11,54 @@
         <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
+
 <div class="wrapper">
         {{>sidebar}}
         <div id="content">
-                <h1>HOME</h1>
+                <h1>HISTORY</h1>
+                <div class="form-group">
+                    <label for="year">Year</label>
+                        <select name="year" id="year" class="form-control">
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                    </select>
+                </div>
+                {{>total_2017}}
+                {{>total_2018}}
+                {{>total_2019}}
         </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -30,6 +72,27 @@
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
 
         <script>
+            $('#year').on('change', () => {
+
+            var year = $('#year').val();
+
+                 //console.log(year);
+                moveToNextSection(event, year);
+
+            })
+
+            function moveToNextSection(event, year){
+                event.preventDefault();
+                var currentTableId = $('#content').find('table').attr('id');
+                console.log('current table ' +currentTableId)
+                console.log(year);
+
+                $('table').addClass('d-none');
+                //$('#' +currentTableId).addClass('d-none');
+                $('#' +year).removeClass('d-none d-none')
+                //$('#2018').show();
+            }
+
         </script>
 
 

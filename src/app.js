@@ -1,11 +1,12 @@
 //  libraries
-const path       = require('path')    // This is a core NODE module that allows for string manipulation on the directory/file paths
-const express    = require('express')
-const hbs        = require('hbs')
-const bodyParser = require('body-parser');
-const moment     = require('moment');
-//const seedDB     = require('./seeds')
-                   require('./db/mongoose')
+const path          = require('path')    // This is a core NODE module that allows for string manipulation on the directory/file paths
+const express       = require('express')
+const hbs           = require('hbs')
+const bodyParser    = require('body-parser');
+const moment        = require('moment');
+//const seedDB      = require('./seeds')
+                      require('./db/mongoose')
+const HistoryRouter = require('./routes/history')
 
 const app = express()
 
@@ -42,6 +43,7 @@ hbs.registerHelper('equal', function(lvalue, rvalue, options) {
 // Setup static directory to serve
 // This means that the assets do not change!
 app.use(express.static(publicDirectoryPath))
+app.use(HistoryRouter)
 
 
 app.get('', (req,res) => {
