@@ -19,5 +19,13 @@
   "devDependencies": {
     "env-cmd": "^10.1.0",
     "nodemon": "^2.0.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ccallaway93/FantasyFootball-WebApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ccallaway93/FantasyFootball-WebApp/issues"
+  },
+  "homepage": "https://github.com/Ccallaway93/FantasyFootball-WebApp#readme"
 }
