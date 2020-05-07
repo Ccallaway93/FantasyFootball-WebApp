@@ -1,22 +1,27 @@
-<table id="2019" class="display card-table table d-none">
-    <thead>
-    <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Points For</th>
-        <th scope="col">Points Against</th>
-        <th scope="col">Difference</th>
-    </tr>
-    </thead>
-    <tbody>
-    {{#each this}}
-        {{#equal year 2019}}
+<div id="card_2019" class="shadow card d-none">
+    <div class="card-header">
+        <h3>TOTAL REGULAR SEASON POINTS</h3>
+    </div>
+        <table id="tbl_2019" class="col-6 card-table table table-striped">
+          <thead class="thead-light">
             <tr>
-                <td>{{name}}</td>
-                <td>{{pointsFor}}</td>
-                <td>{{pointsAgainst}}</td>
-                <td>{{difference}}</td>
+              <th scope="col">Name</th>
+              <th scope="col">Points For</th>
+              <th scope="col">Points Against</th>
+              <th scope="col">Difference</th>
             </tr>
-        {{/equal}}
-    {{/each}}
-    </tbody>
-</table>
+          </thead>
+          <tbody>
+          {{#each this}}
+              {{#equal year 2019}}
+                  <tr>
+                      <td>{{name}}</td>
+                      <td>{{pointsFor}}</td>
+                      <td>{{pointsAgainst}}</td>
+                      <td>{{difference}}</td>
+                  </tr>
+              {{/equal}}
+          {{/each}}
+          </tbody>
+    </table>
+</div>

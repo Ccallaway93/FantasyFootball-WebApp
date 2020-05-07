@@ -7,6 +7,7 @@ const moment        = require('moment');
 //const seedDB      = require('./seeds')
                       require('./db/mongoose')
 const HistoryRouter = require('./routes/history')
+const StandingsRouter = require('./routes/standings')
 
 const app = express()
 
@@ -44,6 +45,7 @@ hbs.registerHelper('equal', function(lvalue, rvalue, options) {
 // This means that the assets do not change!
 app.use(express.static(publicDirectoryPath))
 app.use(HistoryRouter)
+app.use(StandingsRouter)
 
 
 app.get('', (req,res) => {

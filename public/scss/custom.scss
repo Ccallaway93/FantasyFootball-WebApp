@@ -1,6 +1,9 @@
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
+body{
+  background-color: #e7e7e7;
+}
 
 .wrapper {
   display: flex;
@@ -158,10 +161,17 @@ a.article:hover {
 ----------------------------------------------------- */
 
 #content {
+
   width: 100%;
-  padding: 20px;
+  //padding: 20px;
   min-height: 100vh;
   transition: all 0.3s;
+
+  .container-fluid{
+    background-color: white;
+
+  }
+
 }
 
 /* ---------------------------------------------------

@@ -1,21 +1,31 @@
 const _ = require('lodash');
 const {Client} = require('espn-fantasy-football-api/node')
 const myClient = new Client({leagueId:606204})
+const TeamRecords = require('./models/teamRecords')
 
 //  Config for connecting to a private league
-const SWID = process.env.SWID
-const espnS2 = process.env.ESPNS2
+// const SWID = process.env.SWID
+// const espnS2 = process.env.ESPNS2
 
-console.log(SWID)
-console.log(espnS2)
+// console.log(SWID)
+// console.log(espnS2)
 
-// const SWID = 'A67BC139-899E-4769-A7A6-3ECC1C4C6CEA'
-// const espnS2 = 'AEAWzRoDdGCLxD1XZeznDjkrKWc1GGcFI9s%2FoXSAit%2BL6Ml3JdAaAAV0M4Vdl1cbm62K8uMrbBtXGJmu4lyenrnmAcDM2Lv7fEzIwmKqafOSID0YTpkcQ2dcgm8R1kWQuwTUvNcSvjL9c80gv8GwCkXpItl7wwaAauOsV8AR6xw79amYGOXZVKIubOmLidSQnh3FzDuvIBoAMa1B0RwNP%2BJwis7drFgcoYkmlrWNrcz4gc3AbVkTU9Roq%2BZ%2FsMfedirA6qvcG1ZQQhFRB1e4vI5S'
+ const SWID = 'A67BC139-899E-4769-A7A6-3ECC1C4C6CEA'
+ const espnS2 = 'AEAWzRoDdGCLxD1XZeznDjkrKWc1GGcFI9s%2FoXSAit%2BL6Ml3JdAaAAV0M4Vdl1cbm62K8uMrbBtXGJmu4lyenrnmAcDM2Lv7fEzIwmKqafOSID0YTpkcQ2dcgm8R1kWQuwTUvNcSvjL9c80gv8GwCkXpItl7wwaAauOsV8AR6xw79amYGOXZVKIubOmLidSQnh3FzDuvIBoAMa1B0RwNP%2BJwis7drFgcoYkmlrWNrcz4gc3AbVkTU9Roq%2BZ%2FsMfedirA6qvcG1ZQQhFRB1e4vI5S'
 myClient.setCookies({SWID,espnS2})
 const names = ['','Kevin', 'Duncan', 'Matt', 'Nick', 'Conner', 'Morgan', 'Seth', 'Erik']
 
 
 class Historical {
+
+
+
+
+    static test() {
+        console.log('im in here')
+        const team = TeamRecords.find({team_id:1});
+        console.log(team);
+    }
     
     //  Need to make this all more efficient
     static getPointsForYear({seasonId, scoringPeriodId}) {
@@ -23,16 +33,16 @@ class Historical {
         return myClient.getTeamsAtWeek({seasonId, scoringPeriodId}).then((teams) => {
             _.forEach(teams, (team) => {
                                         year[team.id] = {
-                                        id: team.id,
-                                        name: names[team.id],
-                                        teamName: team.name,
-                                        totalPoints: Math.max(Math.round((team.totalPointsScored) * 10)/10, 2.8), 
-                                        pointsFor: Math.max(Math.round((team.regularSeasonPointsFor) * 10)/10, 2.8), 
-                                        pointsAgainst: Math.max(Math.round((team.regularSeasonPointsAgainst) * 10)/10, 2.8), 
-                                        difference: Math.max(Math.round((team.regularSeasonPointsFor - team.regularSeasonPointsAgainst))),
-                                        wins: team.wins,
-                                        losses: team.losses
-                                     }
+                                                            id: team.id,
+                                                            name: names[team.id],
+                                                            teamName: team.name,
+                                                            totalPoints: Math.max(Math.round((team.totalPointsScored) * 10)/10, 2.8), 
+                                                            pointsFor: Math.max(Math.round((team.regularSeasonPointsFor) * 10)/10, 2.8), 
+                                                            pointsAgainst: Math.max(Math.round((team.regularSeasonPointsAgainst) * 10)/10, 2.8), 
+                                                            difference: Math.max(Math.round((team.regularSeasonPointsFor - team.regularSeasonPointsAgainst))),
+                                                            wins: team.wins,
+                                                            losses: team.losses
+                                                        }
             })
             return year;
         });
@@ -70,7 +80,7 @@ class Historical {
                 history.Totals.push(obj);
             }
          return history;
-    })
+        })
     }
 
     //  Need to Add a method to get Total number of years in the league
@@ -87,6 +97,9 @@ module.exports.Historical = Historical
 //     console.log(results)
 // })
 
-Historical.getPointsForYear({seasonId: 2018, scoringPeriodId:12}).then((results) => {
-    console.log(results);
-})
+// Historical.getPointsForYear({seasonId: 2018, scoringPeriodId:12}).then((results) => {
+//     console.log(results);
+// })
+
+const conner = Historical.test();
+console.log(conner);

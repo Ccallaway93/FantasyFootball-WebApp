@@ -18,24 +18,13 @@
         <div id="content">
             <section>
                 <div id="header" class="py-2 px-5 container-fluid">
-                    <h1 class="display-4">HISTORY</h1>
+                    <h1 class="display-4">STANDINGS</h1>
                     <p class="lead d-none d-sm-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos temporibus nostrum consequatur corrupti eveniet?</p>                  
                 </div>
-                <article class="p-4">
-                    <div class="p-3 row">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button id="2017" type="button" class="btn btn-primary active">2017</button>
-                            <button id="2018" type="button" class="btn btn-secondary">2018</button>
-                            <button id="2019" type="button" class="btn btn-secondary">2019</button>
-                        </div>
-                    </div>
-                    <div class="px-3 row">
-                        {{>total_2017}}
-                        {{>total_2018}}
-                        {{>total_2019}}
-                    </div>
-                </article>
             </section>
+            <div class="p-3">
+                {{>total_standings}}
+            </div>
         </div>
 </div>
 
@@ -82,47 +71,25 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.js"></script>
 
         <script>
-            $(document).ready(function(){
+
+            $(document).ready(function() {
                 $('table').DataTable( {
-                    "paging": false,
+                    "paging":   false,
+                    "info":     false,
                     "searching": false,
-                    "info": false,
                     "columns": [
                         {"orderable": false},
+                        {"orderable": false},
+                        null,
+                        null,
+                        null,
                         null,
                         null,
                         null
                     ],
-                    "order": [[1, "desc"]]
-                });
-            });
-
-
-            $('button').click(function(event){
-
-                 var button = this.id;
-                 
-                 $('button').addClass('btn-secondary')
-                 $('#'+button).removeClass('btn-secondary active')
-                 $('#'+button).addClass('btn-primary active')
-                 //$('#'+button).addClass('.active')
-
-                 moveToNextSection(event, this.id);
-
-            })
-               
-
-
-            function moveToNextSection(event, year){
-                event.preventDefault();
-                //var currentTableId = $('#content').find('table').attr('id');
-                //console.log('current table ' +currentTableId)
-                console.log(year);
-
-                $('.card').addClass('d-none');
-                $('#card_' +year).removeClass('d-none d-none')
-            }
-
+                    "order": [[2, "desc"]]
+                } );
+            } );
         </script>
 
 
