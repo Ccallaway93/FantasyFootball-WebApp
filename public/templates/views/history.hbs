@@ -23,42 +23,88 @@
                 </div>
             </section>
             <section id="top">
-                <div class="container text-center">
+            <div class="p-3">
+                <div id="card_records" class="shadow card">
+                    <div class="card-header">
+                    <h3>League Records</h3>
+                    </div>
+                    {{>records}}
+                </div>
+            </div>
+            <div class="p-3 row text-center">
+                <div class="p-2 col-md-6">
+                    <div id="card_points" class="shadow card">
+                        <div class="card-header">
+                            <div class="row text-center">
+                            <h3>Regular Season Points</h3>
+                                <div class="pl-5 btn-group">
+                                    <button id="btn_points" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2017</button>
+                                    <div class="dropdown-menu">
+                                        <a id="2017" class="dropdown-item" href="#">2017</a>
+                                        <a id="2018" class="dropdown-item" href="#">2018</a>
+                                        <a id="2019" class="dropdown-item" href="#">2019</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            {{>total_2017}}
+                            {{>total_2018}}
+                            {{>total_2019}}
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 col-md-6">
+                    <div id="card_playoffs" class="shadow card">
+                        <div class="card-header">
+                        <h3>Trips to the Playoffs</h3>
+                        </div>
+                        {{>playoffs}}
+                    </div>
+                </div>
+            </div>
+            <div class="p-3 row text-center">
+                <div class="p-2 col-md-6">
+                    <div id="card_losses10" class="shadow card">
+                        <div class="card-header">
+                        <h3>Losses Within 10 points</h3>
+                        </div>
+                        {{>lossesWithin10}}
+                    </div>
+                </div>
+                <div class="p-2 col-md-6">
+                    <div id="card_losses5" class="shadow card">
+                        <div class="card-header">
+                        <h3>Losses Within 5 Points</h3>
+                        </div>
+                        {{>lossesWithin5}}
+                    </div>
+                </div>
+            </div>
+                {{!-- <div class="container text-center">
                     <div class="row">
                         <div class="col-md-6 p-3">
                             <div id="card_points" class="shadow card">
                                 <div class="card-header">
-                                    <div class="row">
-                                    <h3 class="pl-3">Regular Season Points</h3>
-                                        <div class="pl-5 btn-group">
-                                            <button id="btn_points" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2017</button>
-                                            <div class="dropdown-menu">
-                                                <a id="2017" class="dropdown-item" href="#">2017</a>
-                                                <a id="2018" class="dropdown-item" href="#">2018</a>
-                                                <a id="2019" class="dropdown-item" href="#">2019</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <h3 class="pl-3">Losses within 10 points</h3>
                                 </div>
                                 <div class="card-body">
-                                    {{>total_2017}}
-                                    {{>total_2018}}
-                                    {{>total_2019}}
+                                    {{>lossesWithin10}}
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6 p-3">
                             <div id="card_points" class="shadow card">
                                 <div class="card-header">
-                                    <h3>Trips to the Playoffs</h3>
+                                    <h3 class="pl-3">Losses within 5 points</h3>
                                 </div>
                                 <div class="card-body">
-                                    {{>playoffs}}
+                                    {{>lossesWithin5}}
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
         </section>
 
 
@@ -186,6 +232,32 @@
                         null
                     ],
                     "order": [[2, "desc"]]
+                });
+            });
+
+            $(document).ready(function(){
+                $('#tbl_lossesWithin10').DataTable( {
+                    "paging": false,
+                    "searching": false,
+                    "info": false,
+                    "columns": [
+                        {"orderable": false},
+                        null
+                    ],
+                    "order": [[1, "desc"]]
+                });
+            });
+
+            $(document).ready(function(){
+                $('#tbl_lossesWithin5').DataTable( {
+                    "paging": false,
+                    "searching": false,
+                    "info": false,
+                    "columns": [
+                        {"orderable": false},
+                        null
+                    ],
+                    "order": [[1, "desc"]]
                 });
             });
 

@@ -4,6 +4,7 @@ const myClient = new Client({leagueId:606204})
 var mongoose = require('mongoose')
 const TeamRecords = require('./models/teamRecords')
 const TotalPoints = require('./models/totalPoints')
+const Records = require('./models/record')
 
 //  Config for connecting to a private league
 // const SWID = process.env.SWID
@@ -87,9 +88,10 @@ class Historical {
         return TeamRecords.find({'playoffs': true, 'team_id': id}).then((data) => {
             
             _.forEach(data, (team) => {
-                years.push(team.year)
-                name = team.name
-                team_id = team.team_id
+                
+                    years.push(team.year)
+                    name = team.name
+                    team_id = team.team_id
             })
 
             playoffTeam = {
@@ -124,14 +126,9 @@ class Historical {
     static getAllHistoricalData(){
         let total = [];
 
-        // this.getHistoricalPlayoffTeams().then((data) => {
-        //     return total = data;
-        // })
 
         const playoffs = this.getHistoricalPlayoffTeams().then((data) => {return data})
         total.push(playoffs);
-        //console.log(playoffs);
-
 
 
        const points =  TotalPoints.find({}).then((data) => {
@@ -139,17 +136,23 @@ class Historical {
         }).catch((error) => {
             console.log(error)
         })
-
-        //console.log(points);
         total.push(points);
+
+        const records = Records.find({'current': true}).then((data) => {
+            return data;
+        }).catch((error) => {
+            console.log(error)
+        })
+        total.push(records)
 
 
         return Promise.all(total).then((results) => {
-            //console.log('All Dones', results)
             const data = {
                 playoffs: results[0],
-                points: results[1]
+                points: results[1],
+                records: results[2]
             };
+            console.log(data)
             return data;
         }).catch((e) => {
             console.log(e)

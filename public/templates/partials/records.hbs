@@ -1,0 +1,24 @@
+<table id="tbl_records" class="card-table table table-striped display compact">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Record</th>
+      <th scope="col">Team 1</th>
+      <th scope="col">Team 2</th>
+      <th scope="col">Year</th>
+      <th scope="col">Week</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each records}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{team1}}</td>
+            <td>{{team2}}</td>
+            <td>{{year}}</td>
+            <td>{{week}}</td>
+            <td>{{note}}</td>
+        </tr>
+  {{/each}}
+  </tbody>
+</table>
