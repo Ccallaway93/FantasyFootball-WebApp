@@ -1,7 +1,9 @@
 const _ = require('lodash');
 const {Client} = require('espn-fantasy-football-api/node')
 const myClient = new Client({leagueId:606204})
+var mongoose = require('mongoose')
 const TeamRecords = require('./models/teamRecords')
+const TotalPoints = require('./models/totalPoints')
 
 //  Config for connecting to a private league
 // const SWID = process.env.SWID
@@ -17,15 +19,6 @@ const names = ['','Kevin', 'Duncan', 'Matt', 'Nick', 'Conner', 'Morgan', 'Seth',
 
 
 class Historical {
-
-
-
-
-    static test() {
-        console.log('im in here')
-        const team = TeamRecords.find({team_id:1});
-        console.log(team);
-    }
     
     //  Need to make this all more efficient
     static getPointsForYear({seasonId, scoringPeriodId}) {
@@ -68,7 +61,7 @@ class Historical {
                 var obj = {}
                 const team2018 = _.find(history.year2018, {'id': i})
                 const team2019 = _.find(history.year2019, {'id': i})
-                obj = {  id: team2018.id,
+                obj = {     id: team2018.id,
                             name: names[i],
                             totalPoints: team2018.totalPoints + team2019.totalPoints,
                             totalRegularSeasonPointsFor: Math.max(Math.round((team2018.pointsFor + team2019.pointsFor) * 10)/10, 2.8),
@@ -81,6 +74,88 @@ class Historical {
             }
          return history;
         })
+    }
+
+    //  Gets the each trips to the playoffs and counts and adds it to an object
+    //  Returns an object with id, name, years, and count of playoffs
+    static getTripsToThePlayoffs(id){
+        let playoffTeam = {};
+        let years = []
+        let name = ''
+        let team_id = 0;
+
+        return TeamRecords.find({'playoffs': true, 'team_id': id}).then((data) => {
+            
+            _.forEach(data, (team) => {
+                years.push(team.year)
+                name = team.name
+                team_id = team.team_id
+            })
+
+            playoffTeam = {
+                id: team_id,
+                name: name,
+                years: years,
+                total: years.length
+            };
+            return playoffTeam
+
+        })
+
+    }
+
+    static getHistoricalPlayoffTeams(){
+        
+        let playoffs = [];
+
+        for(var i = 1; i < 9; i++){
+            playoffs.push(this.getTripsToThePlayoffs(i));
+        }
+
+        return Promise.all(playoffs).then((results) => {
+            //console.log('All Dones', results)
+            return results;
+        }).catch((e) => {
+            console.log(e)
+        })
+
+    }
+
+    static getAllHistoricalData(){
+        let total = [];
+
+        // this.getHistoricalPlayoffTeams().then((data) => {
+        //     return total = data;
+        // })
+
+        const playoffs = this.getHistoricalPlayoffTeams().then((data) => {return data})
+        total.push(playoffs);
+        //console.log(playoffs);
+
+
+
+       const points =  TotalPoints.find({}).then((data) => {
+           return data;
+        }).catch((error) => {
+            console.log(error)
+        })
+
+        //console.log(points);
+        total.push(points);
+
+
+        return Promise.all(total).then((results) => {
+            //console.log('All Dones', results)
+            const data = {
+                playoffs: results[0],
+                points: results[1]
+            };
+            return data;
+        }).catch((e) => {
+            console.log(e)
+        })
+        
+        
     }
 
     //  Need to Add a method to get Total number of years in the league
@@ -100,6 +175,3 @@ module.exports.Historical = Historical
 // Historical.getPointsForYear({seasonId: 2018, scoringPeriodId:12}).then((results) => {
 //     console.log(results);
 // })
-
-const conner = Historical.test();
-console.log(conner);

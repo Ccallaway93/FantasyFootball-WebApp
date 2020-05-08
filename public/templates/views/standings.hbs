@@ -23,7 +23,23 @@
                 </div>
             </section>
             <div class="p-3">
-                {{>total_standings}}
+                <div id="card_standings" class="shadow card">
+                    <div class="card-header">
+                    <h3>REGULAR SEASON STANDINGS</h3>
+                    <div class="p-1">
+                        <div class="btn-group" role="group" aria-label="Basic example">
+                            <button id="2017" type="button" class="btn btn-secondary">2017</button>
+                            <button id="2018" type="button" class="btn btn-secondary">2018</button>
+                            <button id="2019" type="button" class="btn btn-secondary">2019</button>
+                            <button id="Total" type="button" class="btn btn-primary active">Total</button>
+                        </div>
+                    </div>
+                    </div>
+                    {{>total_standings}}
+                    {{>2017_standings}}
+                    {{>2018_standings}}
+                    {{>2019_standings}}
+                </div>
             </div>
         </div>
 </div>
@@ -73,7 +89,7 @@
         <script>
 
             $(document).ready(function() {
-                $('table').DataTable( {
+                $('#tbl_StandingsTotal').DataTable( {
                     "paging":   false,
                     "info":     false,
                     "searching": false,
@@ -89,7 +105,87 @@
                     ],
                     "order": [[2, "desc"]]
                 } );
-            } );
+
+                $('#tbl_Standings2017').DataTable( {
+                    "paging":   false,
+                    "info":     false,
+                    "searching": false,
+                      "columns": [
+                        null,
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                    ],
+                    "order": [[0, "asc"]]
+                } );
+
+                $('#tbl_Standings2018').DataTable( {
+                    "paging":   false,
+                    "info":     false,
+                    "searching": false,
+                      "columns": [
+                        null,
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                    ],
+                    "order": [[0, "asc"]]
+                });
+
+                $('#tbl_Standings2019').DataTable( {
+                    "paging":   false,
+                    "info":     false,
+                    "searching": false,
+                      "columns": [
+                        null,
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                        {"orderable": false},
+                    ],
+                    "order": [[0, "asc"]]
+                });
+            });
+
+                $(function () {
+                    $('#tbl_StandingsTotal tbody tr').each(function (idx) {
+                    $(this).children("td:eq(0)").html(idx + 1);
+                    });
+                });
+
+
+                $('button').click(function(event){
+
+                 var button = this.id;
+                 
+                 $('button').addClass('btn-secondary')
+                 $('#'+button).removeClass('btn-secondary active')
+                 $('#'+button).addClass('btn-primary active')
+                 //$('#'+button).addClass('.active')
+
+                 moveToNextSection(event, this.id);
+
+            })
+               
+
+
+            function moveToNextSection(event, year){
+                event.preventDefault();
+                //var currentTableId = $('#content').find('table').attr('id');
+                //console.log('current table ' +currentTableId)
+                console.log(year);
+
+                $('.table').addClass('d-none');
+                $('#tbl_Standings'+year).removeClass('d-none d-none')
+            }
+
+
+
         </script>
 
 

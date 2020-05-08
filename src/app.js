@@ -41,6 +41,17 @@ hbs.registerHelper('equal', function(lvalue, rvalue, options) {
     }
   });
 
+hbs.registerHelper("debug", function(optionalValue) {
+    console.log("Current Context");
+    console.log("====================");
+    console.log(this);
+    if (optionalValue) {
+        console.log("Value");
+        console.log("====================");
+        console.log(optionalValue);
+    }
+});
+
 // Setup static directory to serve
 // This means that the assets do not change!
 app.use(express.static(publicDirectoryPath))

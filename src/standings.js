@@ -34,9 +34,10 @@ class Standings {
 
     };
 
-    //  Adds each team sent by the Id to an object and adds extra values
+    //  Adds each team sent by the Id to an object and adds extra values.
+    //  This is for all season combined into one
     //  Returns an object
-    static addTeamToObject(id) {
+    static addTeamTotalsObject(id) {
         let totals = {}
         let wins = 0
         let losses = 0
@@ -84,18 +85,37 @@ class Standings {
          })
     }
 
+    static addTeamObjectPerYear(id, year){
+        let obj = {};
+        return this.getPastSeasonRecord(id).then((teams) => {
+                 obj = _.find(teams, {'year': ''+year});
+                 return obj
+
+         })
+        
+
+    }
+
     //  Gets the yearly win and loss totals
     //  Returns an array of objects
     static getRegularSeasonStandings() {
 
-        let totals = [];
+        let standings = []
 
         for (var i = 1; i < 9; i++){
-            totals.push(this.addTeamToObject(i));
+            standings.push(this.addTeamTotalsObject(i));
         }
 
-        return Promise.all(totals).then((results) => {
-            //console.log('All Dones', results)
+        for (var year = 2017; year < 2020; year++){
+
+            for (var i = 1; i < 9; i++){
+                standings.push(this.addTeamObjectPerYear(i, year));
+            }
+        }
+
+
+        return Promise.all(standings).then((results) => {
+            console.log('All Dones', results)
             return results;
         }).catch((e) => {
             console.log(e)

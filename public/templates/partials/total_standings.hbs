@@ -1,35 +1,31 @@
-<div id="card_standings" class="shadow card">
-  <div class="card-header">
-    <h3>TOTAL REGULAR SEASON STANDINGS</h3>
-  </div>
-        <table id="tbl_standings" class="card-table table table-striped">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Rank</th>
-              <th scope="col">Name</th>
-              <th scope="col">Wins</th>
-              <th scope="col">Losses</th>
-              <th scope="col">PCT</th>
-              <th scope="col">Moves</th>
-              <th scope="col">Championships</th>
-              <th scope="col">Average Finish</th>
-            </tr>
-          </thead>
-          <tbody>
-          {{#each this}}
-            {{#equal years 3}}
-                  <tr>
-                      <td  id="rank"></td>
-                      <td>{{name}}</td>
-                      <td>{{wins}}</td>
-                      <td>{{losses}}</td>
-                      <td>{{percentage}}</td>
-                      <td>{{moves}}</td>
-                      <td>{{championships}}</td>
-                      <td>{{averageFinish}}</td>
-                  </tr>
-            {{/equal}}
-          {{/each}}
-          </tbody>
-    </table>
-</di
+
+<table id="tbl_StandingsTotal" class="card-table table table-striped display compact">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Rank</th>
+      <th scope="col">Name</th>
+      <th scope="col">Wins</th>
+      <th scope="col">Losses</th>
+      <th scope="col">Win PCT</th>
+      <th scope="col">Moves</th>
+      <th scope="col">Championships</th>
+      <th scope="col">Average Finish</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each this}}
+    {{#equal years 3}}
+          <tr>
+              <td id="rank"></td>
+              <td>{{name}}</td>
+              <td>{{wins}}</td>
+              <td>{{losses}}</td>
+              <td>{{percentage}}</td>
+              <td>{{moves}}</td>
+              <td>{{championships}}</td>
+              <td>{{averageFinish}}</td>
+          </tr>
+    {{/equal}}
+  {{/each}}
+  </tbody>
+</table>

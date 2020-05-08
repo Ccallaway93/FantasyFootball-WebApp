@@ -7793,6 +7793,14 @@ body {
 #sidebar ul li a {
   text-align: left; }
 
+#sidebar.active .dropdown-toggle::after {
+  top: auto;
+  bottom: 10px;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  transform: translateX(50%); }
+
 #sidebar .sidebar-header {
   padding: 20px;
   background: #31353D; }
@@ -7829,7 +7837,7 @@ body {
 a[data-toggle="collapse"] {
   position: relative; }
 
-.dropdown-toggle::after {
+#sidebar .dropdown-toggle::after {
   display: block;
   position: absolute;
   top: 50%;

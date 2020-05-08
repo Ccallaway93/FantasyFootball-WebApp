@@ -1,0 +1,18 @@
+<table id="tbl_playoffs" class="col-6 card-table table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Years</th>
+            <th scope="col">Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each playoffs}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{years}}</td>
+                <td>{{total}}</td>
+            </tr>
+        {{/each}}
+        </tbody>
+</table>

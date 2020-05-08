@@ -1,0 +1,27 @@
+
+<table id="tbl_Standings2017" class="d-none card-table table table-striped">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">Rank</th>
+        <th scope="col">Name</th>
+        <th scope="col">Wins</th>
+        <th scope="col">Losses</th>
+        <th scope="col">Win PCT</th>
+        <th scope="col">Moves</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{#each this}}
+            {{#equal year 2017}}
+                    <tr>
+                        <td>{{finalStanding}}</td>
+                        <td>{{name}}</td>
+                        <td>{{wins}}</td>
+                        <td>{{losses}}</td>
+                        <td>{{winPercentage}}</td>
+                        <td>{{moves}}</td>
+                    </tr>
+            {{/equal}}
+        {{/each}}
+    </tbody>
+</table>

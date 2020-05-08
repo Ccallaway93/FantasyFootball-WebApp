@@ -1,27 +1,22 @@
-<div id="card_2017" class="shadow card">
-  <div class="card-header">
-    <h3>TOTAL REGULAR SEASON POINTS</h3>
-  </div>
-        <table id="tbl_2017" class="col-6 card-table table table-striped">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Points For</th>
-              <th scope="col">Points Against</th>
-              <th scope="col">Difference</th>
-            </tr>
-          </thead>
-          <tbody>
-          {{#each this}}
-              {{#equal year 2017}}
-                  <tr>
-                      <td>{{name}}</td>
-                      <td>{{pointsFor}}</td>
-                      <td>{{pointsAgainst}}</td>
-                      <td>{{difference}}</td>
-                  </tr>
-              {{/equal}}
-          {{/each}}
-          </tbody>
-    </table>
-</div>
+<table id="tbl_2017" class="col-6 card-table table table-striped">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Points For</th>
+          <th scope="col">Points Against</th>
+          <th scope="col">Difference</th>
+        </tr>
+      </thead>
+      <tbody>
+      {{#each points}}
+          {{#equal year 2017}}
+              <tr>
+                  <td>{{name}}</td>
+                  <td>{{pointsFor}}</td>
+                  <td>{{pointsAgainst}}</td>
+                  <td>{{difference}}</td>
+              </tr>
+          {{/equal}}
+      {{/each}}
+      </tbody>
+</table>
