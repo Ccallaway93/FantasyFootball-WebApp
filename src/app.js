@@ -8,6 +8,7 @@ const moment        = require('moment');
                       require('./db/mongoose')
 const HistoryRouter = require('./routes/history')
 const StandingsRouter = require('./routes/standings')
+const SeedRouter = require('./routes/seed')
 
 const app = express()
 
@@ -57,6 +58,7 @@ hbs.registerHelper("debug", function(optionalValue) {
 app.use(express.static(publicDirectoryPath))
 app.use(HistoryRouter)
 app.use(StandingsRouter)
+app.use(SeedRouter)
 
 
 app.get('', (req,res) => {

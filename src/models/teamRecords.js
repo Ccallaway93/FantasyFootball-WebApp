@@ -28,12 +28,30 @@ const teamRecordsSchema = new mongoose.Schema({
     playoffs: {
         type: Boolean
     },
-    h2h: [{
-        team_id: Number,
-        name: String,
-        wins: Number,
-        losses: Number
-    }]
+    h2h: [
+        game = {
+            oppId: Number,
+            oppName: String,
+            scoringPeriodId: Number,
+            matchupPeriodId: Number,
+            oppScore: Number,
+            hostScore: Number,
+            win: Boolean,
+            margin: Number,
+            hostStartingMVP: String,
+            hostStartingMVPScore: Number,
+            hostStartingMVPPosition: String,
+            hostBenchMVP: String,
+            hostBenchMVPScore: Number,
+            hostBenchMVPPosition: String,
+            oppStartingMVP: String,
+            oppStartingMVPScore: Number,
+            oppStartingMVPPosition: String,
+            oppBenchMVP: String,
+            oppBenchMVPScore: Number,
+            oppBenchMVPPosition: String
+        }
+    ]
 });
 
 
