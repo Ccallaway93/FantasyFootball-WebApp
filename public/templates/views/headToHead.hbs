@@ -20,31 +20,60 @@
                     <p class="lead d-none d-sm-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos temporibus nostrum consequatur corrupti eveniet?</p>                  
                 </div>
             </section>
-            <div class="container-fluid card" style="width: 18rem;">
-            <div class="card-header">
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button id="1" class="dropdown-item" type="button">Kevin</button>
-                        <button id="2" class="dropdown-item" type="button">Duncan</button>
-                        <button id="3" class="dropdown-item" type="button">Matt</button>
+            <div class="row">
+                <div class="container-fluid card" style="width: 18rem;">
+                <div class="card-header">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div id="left" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                            <button id="1" class="dropdown-item" type="button">Kevin</button>
+                            <button id="2" class="dropdown-item" type="button">Duncan</button>
+                            <button id="3" class="dropdown-item" type="button">Matt</button>
+                            <button id="4" class="dropdown-item" type="button">Nick</button>
+                            <button id="5" class="dropdown-item" type="button">Conner</button>
+                            <button id="6" class="dropdown-item" type="button">Morgan</button>
+                            <button id="7" class="dropdown-item" type="button">Seth</button>
+                            <button id="8" class="dropdown-item" type="button">Erik</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <ul class="list-group list-group-flush">
-                {{#each this}}
-                    {{#each h2h}}
-                        {{#equal oppId 1}}
-                            <li class="list-group-item">Name: {{oppName}}</li>
-                            <li class="list-group-item">Score: {{oppScore}}</li>
-                            <li class="list-group-item">Host Score: {{hostScore}}</li>
-                        {{/equal}}
-                    {{/each}}
-                {{/each}}
-            </ul>
-            </div>
+                <ul class="list-group list-group-flush">
+                    <li id="leftWins" class="list-group-item"></li>
+                    <li id="leftOppName" class="list-group-item"></li>
+                    <li id="leftOppScore" class="list-group-item"></li>
+                    <li id="leftHostScore" class="list-group-item"></li>
+                </ul>
+                </div>
+
+
+                <div class="container-fluid card" style="width: 18rem;">
+                <div class="card-header">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Dropdown
+                        </button>
+                        <div id="right" class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                            <button id="1" class="dropdown-item" type="button">Kevin</button>
+                            <button id="2" class="dropdown-item" type="button">Duncan</button>
+                            <button id="3" class="dropdown-item" type="button">Matt</button>
+                            <button id="4" class="dropdown-item" type="button">Nick</button>
+                            <button id="5" class="dropdown-item" type="button">Conner</button>
+                            <button id="6" class="dropdown-item" type="button">Morgan</button>
+                            <button id="7" class="dropdown-item" type="button">Seth</button>
+                            <button id="8" class="dropdown-item" type="button">Erik</button>
+                        </div>
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li id="rightWins" class="list-group-item"></li>
+                    <li id="rightOppName" class="list-group-item"></li>
+                    <li id="rightOppScore" class="list-group-item"></li>
+                    <li id="rightHostScore" class="list-group-item"></li>
+                </ul>
+                </div>
+        </div>
     </div>
 
 </div>
@@ -63,19 +92,49 @@
 
         <script>
 
-            var test = {string: 'Hello World!'}
-            
+            var left = 0;
+            var right = 0;
 
-            $("button").click(function(){
-                console.log('we are in!')
-                $.ajax({
-                    type: 'POST',
-                    url: "/headTohead",
-                    data: {cart_item: 'cart'},
-                    success: function(result){
-                        console.log(result)
-                }});
-            });
+            $('#left').find('button').click(function(){
+                left = this.id;
+              console.log(left);
+            })
+
+            $('#right').find('button').click(function(){
+                right = this.id;
+                console.log(right);
+            })
+
+            $('button').click(function() {
+                if (left >= 1 && right >= 1){
+                    console.log('we are in here')
+
+
+                const hostId = this.id
+                console.log(hostId);
+                $.post('/headTohead', {leftId: left, rightId: right}, function(data) {
+                    {{!-- console.log(data[0].h2h);
+                    const result = data[0].h2h.find(({oppName}) => oppName === 'Erik')
+                    console.log(result) --}}
+
+                    console.log(data);
+
+                    $('#leftWins').text(`Wins: ${data.left.wins}`)
+                    $('#leftOppName').text(`OppName: ${data.left.oppName}`)
+                    $('#leftOppScore').text(`OppScore: ${data.left.oppScore}`)
+                    $('#leftHostScore').text(`HostScore: ${data.left.hostScore}`)
+
+                    $('#rightWins').text(`Wins: ${data.right.wins}`)
+                    $('#rightOppName').text(`OppName: ${data.right.oppName}`)
+                    $('#rightOppScore').text(`OppScore: ${data.right.oppScore}`)
+                    $('#rightHostScore').text(`HostScore: ${data.right.hostScore}`)
+
+                });
+                }
+                else{
+                    console.log('we are not')
+                }
+            })
 
         </script>
 

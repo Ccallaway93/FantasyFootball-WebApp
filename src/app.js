@@ -15,6 +15,9 @@ const app = express()
 
 app.use(express.json())
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}))
+
 
 console.log('directory ' + __dirname)  // Path to directory the current script lives in
 console.log(__filename) // This provides the path to the file itself
