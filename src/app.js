@@ -9,6 +9,7 @@ const moment        = require('moment');
 const HistoryRouter = require('./routes/history')
 const StandingsRouter = require('./routes/standings')
 const SeedRouter = require('./routes/seed')
+const HeadToHeadRouter = require('./routes/headTohead')
 
 const app = express()
 
@@ -59,7 +60,7 @@ app.use(express.static(publicDirectoryPath))
 app.use(HistoryRouter)
 app.use(StandingsRouter)
 app.use(SeedRouter)
-
+app.use(HeadToHeadRouter)
 
 app.get('', (req,res) => {
     res.render('index')

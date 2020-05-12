@@ -49,7 +49,11 @@ const teamRecordsSchema = new mongoose.Schema({
             oppStartingMVPPosition: String,
             oppBenchMVP: String,
             oppBenchMVPScore: Number,
-            oppBenchMVPPosition: String
+            oppBenchMVPPosition: String,
+            lowestMargin: Number,
+            largestMargin: Number,
+            wins: Number,
+            losses: Number
         }
     ]
 });
