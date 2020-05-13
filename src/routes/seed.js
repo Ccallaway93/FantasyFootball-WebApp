@@ -12,6 +12,8 @@ const TeamRecords = require('../models/teamRecords')
 
 router.get('/seed', (req, res) => {
 
+    //Seed.UpdateTotalHeadToHeadDB(8);
+    //Seed.getTotalHeadToHeadPerSeason(1,2019,3);
 
 })
 

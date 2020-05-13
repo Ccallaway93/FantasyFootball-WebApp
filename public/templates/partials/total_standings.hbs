@@ -8,8 +8,8 @@
       <th scope="col">Losses</th>
       <th scope="col">Win PCT</th>
       <th scope="col">Moves</th>
-      <th scope="col">Championships</th>
-      <th scope="col">Average Finish</th>
+      <th style="width: 10%;" scope="col">Championships</th>
+      <th style="width: 10%;" scope="col">Average Finish</th>
     </tr>
   </thead>
   <tbody>
@@ -20,10 +20,10 @@
               <td>{{name}}</td>
               <td>{{wins}}</td>
               <td>{{losses}}</td>
-              <td>{{percentage}}</td>
+              <td>{{percentage}}%</td>
               <td>{{moves}}</td>
-              <td>{{championships}}</td>
-              <td>{{averageFinish}}</td>
+              <td style="width: 10%;">{{championships}}</td>
+              <td style="width: 10%;">{{averageFinish}}</td>
           </tr>
     {{/equal}}
   {{/each}}

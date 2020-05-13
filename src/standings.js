@@ -52,19 +52,22 @@ class Standings {
          return this.getPastSeasonRecord(id).then((teams) => {
             _.forEach(teams, (team) => { 
 
-                wins = team.wins + wins;
-                losses = team.losses + losses;
-                moves = team.moves + moves;
-                years++;
-                finish = team.finalStanding + finish;
-                if(team.finalStanding === 1){
-                    championships++
-                }
-                else{
-                    championships = championships;
+                if(team.year !== 'Total'){
+
+                    wins = team.wins + wins;
+                    losses = team.losses + losses;
+                    moves = team.moves + moves;
+                    years++;
+                    finish = team.finalStanding + finish;
+                    if(team.finalStanding === 1){
+                        championships++
+                    }
+                    else{
+                        championships = championships;
+                    }
+
                 }
 
-                
 
             })
 

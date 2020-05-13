@@ -18,20 +18,9 @@ body{
   transition: all 0.3s;
 }
 
-// #sidebar.active {
-//   min-width: 80px;
-//   max-width: 80px;
-//   text-align: center;
-// }
-
-// #sidebar.active .sidebar-header h3,
-// #sidebar.active .CTAs {
-//   display: none;
-// }
-
-// #sidebar.active .sidebar-header strong {
-//   display: block;
-// }
+.twitter{
+  border: pink;
+}
 
 #sidebar ul li a {
   text-align: left;
@@ -172,7 +161,12 @@ a.article:hover {
 
   }
 
+  #tbl_h2h{
+    font-size: 1.5rem;
+  }
+
 }
+
 
 /* ---------------------------------------------------
   MEDIAQUERIES
@@ -190,6 +184,11 @@ a.article:hover {
     max-width: 80px;
     text-align: center;
 
+}
+
+#tbl_h2h{
+  font-size: 1rem;
+  margin-left: 5rem;
 }
 
 .dropdown-toggle::after {

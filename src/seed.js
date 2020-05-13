@@ -21,6 +21,7 @@ class Seed {
                TeamRecords.findOneAndUpdate({team_id: id, year: 'Total'}, {h2h: data}).then((test) => {
                     console.log('Team Records has been updated!')
                 }).catch((error)=> {
+                    console.log(error);
                     console.log('Failed to update')
                 })
     
@@ -53,6 +54,8 @@ class Seed {
                             hostScore: Math.round((team.reduce(function(prev, current){return (prev.hostScore + current.hostScore)})) * 100)/100,
                             hostStartingMVP: team.reduce(function(prev, current){return (prev.hostStartingMVPScore > current.hostStartingMVPScore) ? prev.hostStartingMVP : current.hostStartingMVP}),
                             hostStartingMVPScore: Math.round((team.reduce(function(prev, current){return (prev.hostStartingMVPScore > current.hostStartingMVPScore) ? prev.hostStartingMVPScore : current.hostStartingMVPScore})) * 100)/100,
+                            hostBenchMVP: team.reduce(function(prev, current){return (prev.hostBenchMVPScore > current.hostBenchMVPScore) ? prev.hostBenchMVP : current.hostBenchMVP}),
+                            hostBenchMVPScore: Math.round((team.reduce(function(prev, current){return (prev.hostBenchMVPScore > current.hostBenchMVPScore) ? prev.hostBenchMVPScore : current.hostBenchMVPScore})) * 100)/100,
                             oppStartingMVP: team.reduce(function(prev, current){return (prev.oppStartingMVPScore > current.oppStartingMVPScore) ? prev.oppStartingMVP : current.oppStartingMVP}),
                             oppStartingMVPScore: Math.round((team.reduce(function(prev, current){return (prev.oppStartingMVPScore > current.oppStartingMVPScore) ? prev.oppStartingMVPScore : current.oppStartingMVPScore})) * 100)/100,
                             lowestMargin: team.reduce(function(prev, current){return (prev.lowestMargin < current.lowestMargin) ? prev.lowestMargin : current.lowestMargin}),
@@ -60,6 +63,11 @@ class Seed {
                             wins: team.reduce(function(prev, current){return (prev.wins + current.wins)}),
                             losses: team.reduce(function(prev, current){return (prev.losses + current.losses)}),
                         }
+
+                        if(obj.lowestMargin === null){
+                            obj.lowestMargin = obj.largestMargin;
+                        }
+
                         member.push(obj);
                 }
 
@@ -105,6 +113,60 @@ class Seed {
 
     }
 
+    // static evaluateTotalMargins(teams, marginType){
+    //     let high = null;
+    //     let low = null;
+
+    //     _.forEach(teams, (game) => {
+    //         if(game.lowestMargin === null){
+    //             game.lowestMargin === game.largestMargin
+    //         }
+    //         else if(game.largestMargin === null){
+    //             game.largestMargin === game.lowestMargin
+    //         }
+            
+    //     })
+
+    //     if(marginType === 'high'){
+    //         high = teams.reduce(function(prev, current){return (prev.lowestMargin < current.lowestMargin) ? prev.lowestMargin : current.lowestMargin})
+    //         return high
+    //     }else if (marginType === 'low'){
+    //         low = team.reduce(function(prev, current){return (prev.largestMargin > current.largestMargin) ? prev.largestMargin : current.largestMargin})
+    //         return low
+    //     }
+    // }
+
+    static evaluateMargins(wins, marginType){
+        let high = null;
+        let low = null;
+
+        if(wins.length > 1){
+
+            if(marginType === 'low'){
+                low = wins.reduce(function(prev, current){return (prev.margin < current.margin) ? prev.margin : current.margin})
+                return low
+            }
+            else if (marginType === 'high'){
+                high = wins.reduce(function(prev, current){return (prev.margin > current.margin) ? prev.margin : current.margin})
+                return high
+            }
+        } else if(wins.length === 1){
+
+            if(marginType === 'low'){
+                low = wins[0].margin;
+                return low
+            }
+            else if (marginType === 'high'){
+                high = wins[0].margin;
+                return high
+            }
+
+        } 
+        else {
+            return null;
+        }
+    }
+
 
     static getTotalHeadToHeadPerSeason(id, seasonId, oppId) {
 
@@ -126,10 +188,12 @@ class Seed {
                         hostScore: team.reduce(function(prev, current){return (prev.hostScore + current.hostScore)}),
                         hostStartingMVP: team.reduce(function(prev, current){return (prev.hostStartingMVPScore > current.hostStartingMVPScore) ? prev.hostStartingMVP : current.hostStartingMVP}),
                         hostStartingMVPScore: team.reduce(function(prev, current){return (prev.hostStartingMVPScore > current.hostStartingMVPScore) ? prev.hostStartingMVPScore : current.hostStartingMVPScore}),
+                        hostBenchMVP: team.reduce(function(prev, current){return (prev.hostBenchMVPScore > current.hostBenchMVPScore) ? prev.hostBenchMVP : current.hostBenchMVP}),
+                        hostBenchMVPScore: team.reduce(function(prev, current){return (prev.hostBenchMVPScore > current.hostBenchMVPScore) ? prev.hostBenchMVPScore : current.hostBenchMVPScore}),
                         oppStartingMVP: team.reduce(function(prev, current){return (prev.oppStartingMVPScore > current.oppStartingMVPScore) ? prev.oppStartingMVP : current.oppStartingMVP}),
                         oppStartingMVPScore: team.reduce(function(prev, current){return (prev.oppStartingMVPScore > current.oppStartingMVPScore) ? prev.oppStartingMVPScore : current.oppStartingMVPScore}),
-                        lowestMargin: team.reduce(function(prev, current){return (prev.margin < current.margin) ? prev.margin : current.margin}),
-                        largestMargin: team.reduce(function(prev, current){return (prev.margin > current.margin) ? prev.margin : current.margin}),
+                        lowestMargin: this.evaluateMargins(wins, 'low'), //team.reduce(function(prev, current){return (prev.margin < current.margin) ? prev.margin : current.margin}),
+                        largestMargin: this.evaluateMargins(wins, 'high'),  //team.reduce(function(prev, current){return (prev.margin > current.margin) ? prev.margin : current.margin}),
                         wins: wins.length,
                         losses: losses.length
                     }
@@ -143,10 +207,12 @@ class Seed {
                         hostScore: team[0].hostScore,
                         hostStartingMVP: team[0].hostStartingMVP,
                         hostStartingMVPScore: team[0].hostStartingMVPScore,
+                        hostBenchMVP: team[0].hostStartingMVP,
+                        hostBenchMVPScore: team[0].hostStartingMVPScore,
                         oppStartingMVP: team[0].oppStartingMVP,
                         oppStartingMVPScore: team[0].oppStartingMVPScore,
-                        lowestMargin: team[0].margin,
-                        largestMargin: team[0].margin,
+                        lowestMargin: this.evaluateMargins(wins, 'low'), //team[0].margin,
+                        largestMargin: this.evaluateMargins(wins, 'high'), //team[0].margin,
                         wins: wins.length,
                         losses: losses.length
                     }

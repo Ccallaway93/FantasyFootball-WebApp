@@ -7,6 +7,7 @@ const {Standings} = require('../standings');
 router.get('/standings', (req,res) => {
 
     Standings.getRegularSeasonStandings().then((teams) => {
+        console.log(teams);
         res.render('standings', _.sortBy(teams, o => o.wins));
     }).catch((error) => {
         console.log(error)

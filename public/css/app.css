@@ -7790,6 +7790,9 @@ body {
   color: #525965;
   transition: all 0.3s; }
 
+.twitter {
+  border: pink; }
+
 #sidebar ul li a {
   text-align: left; }
 
@@ -7881,6 +7884,8 @@ a.article:hover {
   transition: all 0.3s; }
   #content .container-fluid, #content .container-sm, #content .container-md, #content .container-lg, #content .container-xl {
     background-color: white; }
+  #content #tbl_h2h {
+    font-size: 1.5rem; }
 
 /* ---------------------------------------------------
   MEDIAQUERIES
@@ -7890,6 +7895,10 @@ a.article:hover {
     min-width: 80px;
     max-width: 80px;
     text-align: center; }
+
+  #tbl_h2h {
+    font-size: 1rem;
+    margin-left: 5rem; }
 
   .dropdown-toggle::after {
     top: auto;
