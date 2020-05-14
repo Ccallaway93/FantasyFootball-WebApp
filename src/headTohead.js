@@ -38,9 +38,4 @@ class HeadToHead {
 
 }
 
-
-// Seed.getHeadtoHead(1).then((data) => {
-//     console.log(data);
-// })
-
 module.exports.HeadToHead = HeadToHead

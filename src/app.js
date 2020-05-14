@@ -10,6 +10,7 @@ const HistoryRouter = require('./routes/history')
 const StandingsRouter = require('./routes/standings')
 const SeedRouter = require('./routes/seed')
 const HeadToHeadRouter = require('./routes/headTohead')
+const MemberRouter = require('./routes/member')
 
 const app = express()
 
@@ -64,6 +65,7 @@ app.use(HistoryRouter)
 app.use(StandingsRouter)
 app.use(SeedRouter)
 app.use(HeadToHeadRouter)
+app.use(MemberRouter)
 
 app.get('', (req,res) => {
     res.render('index')

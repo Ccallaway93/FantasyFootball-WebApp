@@ -32,6 +32,7 @@ const teamRecordsSchema = new mongoose.Schema({
         game = {
             oppId: Number,
             oppName: String,
+            seasonId: Number,
             scoringPeriodId: Number,
             matchupPeriodId: Number,
             oppScore: Number,

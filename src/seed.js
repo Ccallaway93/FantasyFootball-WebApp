@@ -43,8 +43,8 @@ class Seed {
 
                 if(i != id){
 
-          
                     var team = _.filter(data, function(o) {return o.oppId === i})
+
 
 
                         obj = {
@@ -113,28 +113,6 @@ class Seed {
 
     }
 
-    // static evaluateTotalMargins(teams, marginType){
-    //     let high = null;
-    //     let low = null;
-
-    //     _.forEach(teams, (game) => {
-    //         if(game.lowestMargin === null){
-    //             game.lowestMargin === game.largestMargin
-    //         }
-    //         else if(game.largestMargin === null){
-    //             game.largestMargin === game.lowestMargin
-    //         }
-            
-    //     })
-
-    //     if(marginType === 'high'){
-    //         high = teams.reduce(function(prev, current){return (prev.lowestMargin < current.lowestMargin) ? prev.lowestMargin : current.lowestMargin})
-    //         return high
-    //     }else if (marginType === 'low'){
-    //         low = team.reduce(function(prev, current){return (prev.largestMargin > current.largestMargin) ? prev.largestMargin : current.largestMargin})
-    //         return low
-    //     }
-    // }
 
     static evaluateMargins(wins, marginType){
         let high = null;
@@ -174,6 +152,7 @@ class Seed {
 
               return TeamRecords.find({'team_id': id, 'year': seasonId}).then((data) => {
                 var member = data[0].h2h;
+                console.log(data);
     
                 var team = _.filter(member, function(o) {return o.oppId === oppId})
                 var wins = _.filter(team, function(o){return o.win === true});
@@ -207,8 +186,8 @@ class Seed {
                         hostScore: team[0].hostScore,
                         hostStartingMVP: team[0].hostStartingMVP,
                         hostStartingMVPScore: team[0].hostStartingMVPScore,
-                        hostBenchMVP: team[0].hostStartingMVP,
-                        hostBenchMVPScore: team[0].hostStartingMVPScore,
+                        hostBenchMVP: team[0].hostBenchMVP,
+                        hostBenchMVPScore: team[0].hostBenchMVPScore,
                         oppStartingMVP: team[0].oppStartingMVP,
                         oppStartingMVPScore: team[0].oppStartingMVPScore,
                         lowestMargin: this.evaluateMargins(wins, 'low'), //team[0].margin,
@@ -275,6 +254,7 @@ class Seed {
                       game = {
                         oppId: boxscore.awayTeamId,
                         oppName: names[boxscore.awayTeamId],
+                        seasonId: seasonId,
                         scoringPeriodId: scoringPeriodId,
                         matchupPeriodId: matchupPeriodId,
                         oppScore: boxscore.awayScore,
@@ -303,6 +283,7 @@ class Seed {
                       game = {
                         oppId: boxscore.homeTeamId,
                         oppName: names[boxscore.homeTeamId],
+                        seasonId:seasonId,
                         scoringPeriodId: scoringPeriodId,
                         matchupPeriodId: matchupPeriodId,
                         oppScore: boxscore.homeScore,
@@ -340,7 +321,7 @@ class Seed {
     
     }
 
-    //  Gets the highest scoring starter and bench player
+    //  Gets the highest scoring starter and bench player for the year!
     //  Returns an object with both above objects in it
     static getMVPForTeam(roster){
         let team = [];
