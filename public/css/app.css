@@ -7886,6 +7886,9 @@ a.article:hover {
     background-color: white; }
   #content #tbl_h2h {
     font-size: 1.5rem; }
+  #content .trophy {
+    color: gold;
+    box-shadow: black; }
 
 /* ---------------------------------------------------
   MEDIAQUERIES
