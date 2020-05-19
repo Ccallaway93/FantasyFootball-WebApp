@@ -44,13 +44,13 @@ class Member {
 
         return this.allAPIData(teamId, 2018).then((team) => {
 
-            return this.getFullRosters(1,1,2018).then((year2018) => {
+            return this.getFullRosters(teamId,1,2018).then((year2018) => {
                 
-                return this.getFullRosters(1,13,2018).then((year20182) => {
+                return this.getFullRosters(teamId,13,2018).then((year20182) => {
 
-                    return this.getFullRosters(1,1,2019).then((year2019) => {
+                    return this.getFullRosters(teamId,1,2019).then((year2019) => {
 
-                        return this.getFullRosters(1,13,2019).then((year20192) => {
+                        return this.getFullRosters(teamId,13,2019).then((year20192) => {
 
                               team.seasons = [
                                 year = {

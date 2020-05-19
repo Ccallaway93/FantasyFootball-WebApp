@@ -3,22 +3,16 @@ const express = require('express')
 const router = express.Router();
 const {Standings} = require('../standings');
 const {Seed} = require('../seed');
-const {Member} = require('../member');
+const Member = require('../models/member');
 
 
-router.get('/member', (req,res) => {
 
-    //  Member.allAPIData(1, 2018).then((data) => {
-    //     console.log(data);
-    // })
+router.get('/kevin', (req,res) => {
 
-    //Member.test(1);
-    Member.updateMemberDB(8);
-    //console.log(test);
-
-    // Seed.getMatchupData(1,1,1,2018).then((data) => {
-    //     //console.log(data)
-    // })
+    Member.findOne({team_id: 1}).then((data) => {
+        console.log(data)
+        res.render('kevin',data);
+    })
 
 })
 

@@ -3,11 +3,13 @@ const mongoose = require('mongoose')
 const memberSchema = new mongoose.Schema({
     team_id: Number,
     name: String,
+    role: String,
+    currentStanding: Number,
     active: Boolean,
     wins: Number,
     losses: Number,
-    playoffWins: Number, //not done
-    playoffLosses: Number, // not done
+    playoffWins: Number, 
+    playoffLosses: Number, 
     winPercentage: Number,
     moves: Number,
     totalPoints: Number,
@@ -70,6 +72,8 @@ const memberSchema = new mongoose.Schema({
         year = {
             seasonId: Number,
             teamName: String,
+            personalDraftGrade: String,
+            leagueDraftGrade: String,
             draftRoster: [
                 player = {
                     fullName: String,
