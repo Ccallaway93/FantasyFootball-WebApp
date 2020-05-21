@@ -7831,11 +7831,13 @@ body {
 
 #sidebar ul li a i.trophy {
   margin-left: 50px;
-  color: gold; }
+  color: gold;
+  text-shadow: 1px 1px 2px #000000; }
 
 #sidebar ul li a i.poop {
   margin-left: 50px;
-  color: brown; }
+  color: #411414;
+  text-shadow: 1px 1px 2px #000000; }
 
 a[data-toggle="collapse"] {
   position: relative; }
@@ -7886,9 +7888,58 @@ a.article:hover {
     background-color: white; }
   #content #tbl_h2h {
     font-size: 1.5rem; }
-  #content .trophy {
-    color: gold;
-    box-shadow: black; }
+  #content #member #memberCard {
+    background: url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
+    font-family: 'Pangolin', cursive; }
+    #content #member #memberCard h5 {
+      font-size: 1.8rem;
+      padding-bottom: 1rem; }
+    #content #member #memberCard span {
+      font-size: 1rem; }
+    #content #member #memberCard p {
+      font-size: 1rem;
+      font-family: 'Inconsolata', monospace;
+      color: #8395a7;
+      text-shadow: 1px 1px 2px #000000; }
+  #content #member .card-header h3 {
+    font-family: 'Rokkitt', serif;
+    font-size: 2.2rem; }
+  #content #member .card-header #memberName {
+    font-family: 'Rokkitt', serif;
+    font-size: 3rem; }
+    #content #member .card-header #memberName .trophy {
+      color: gold;
+      text-shadow: 2px 2px 2px #000000;
+      font-size: 2rem; }
+    #content #member .card-header #memberName .poop {
+      color: #411414;
+      text-shadow: 1px 1px 1px #ffffff;
+      font-size: 2rem; }
+  #content #member #regularSeason p strong {
+    font-size: 1.4rem; }
+  #content #member #regularSeason #stats .border-bottom {
+    font-family: 'Rokkitt', serif;
+    font-size: 1.7rem;
+    color: #bdc3c7; }
+  #content #member #MVP {
+    background-color: #00695C; }
+    #content #member #MVP h4 {
+      text-shadow: .5px .5px 2px #000000; }
+    #content #member #MVP p {
+      text-shadow: .5px .5px 2px #000000;
+      color: #9E9E9E; }
+  #content #member #keeper {
+    background-color: #607D8B; }
+    #content #member #keeper ul {
+      background-color: #607D8B; }
+      #content #member #keeper ul .keeper-head {
+        background-color: #607D8B;
+        color: #9E9E9E;
+        text-shadow: .5px .5px 2px #000000; }
+      #content #member #keeper ul .keeper-list {
+        font-weight: bold;
+        background-color: #607D8B;
+        text-shadow: .5px .5px 2px #000000; }
 
 /* ---------------------------------------------------
   MEDIAQUERIES

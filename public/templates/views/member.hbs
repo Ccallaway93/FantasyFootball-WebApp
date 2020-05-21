@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Jobs</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,500,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@500&family=Inconsolata:wght@900&family=Pangolin&family=Rokkitt:wght@500&display=swap" rel="stylesheet">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" />
+        <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="wrapper">
+        {{>sidebar}}
+        <div id="content">
+                <section>
+                        <div id="header" class="py-2 px-5 container-fluid">
+                                <h1 class="display-4">Member</h1>
+                                <p class="lead d-none d-sm-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos temporibus nostrum consequatur corrupti eveniet?</p>                  
+                        </div>
+                </section>
+                <div id="member" class="row m-2">
+                        <div class="col-xl-6 col-lg-12">
+                                <div id="memberCard" class="m-1 chalk card text-white">
+                                        <div class="card-header text-center">
+                                        <h3 id="memberName">{{general/name}} <span></span> </h3>
+                                        </div>
+                                        <div class="card-body text-center">
+                                        <div class="row">
+                                                <div class="col-6">
+                                                        <p>Standing:</p>
+                                                        <h5>{{general/currentStanding}}</h5>
+                                                        <p>Record:</p>
+                                                        <h5>{{general/wins}} - {{general/losses}}</h5>
+                                                        <p>Total Points:</p>
+                                                        <h5>{{general/totalPoints}}</h5>
+                                                        <p>Difference:</p>
+                                                        <h5>{{general/different}}</h5>
+                                                        <p>Highest Score:</p>
+                                                        <h5>
+                                                                {{general/highestScore/score}}
+                                                                <br>
+                                                                <span>({{general/highestScore/season}} Week {{general/highestScore/week}} vs {{general/highestScore/oppName}})</span>
+                                                        </h5>
+                                                        <p>Biggest Win Margin:</p>
+                                                        <h5>
+                                                                {{general/biggestWinMargin/margin}}
+                                                                <br>
+                                                                <span>({{general/biggestWinMargin/season}} Week {{general/biggestWinMargin/week}} vs {{general/biggestWinMargin/oppName}})</span>
+                                                        </h5>
+                                                        <p>Biggest Loss Margin:</p>
+                                                        <h5>
+                                                                {{general/biggestLossMargin/margin}}
+                                                                <br>
+                                                                <span>({{general/biggestLossMargin/season}} Week {{general/biggestLossMargin/week}} vs {{general/biggestLossMargin/oppName}})</span>
+                                                        </h5>                                                                                                                                                                     
+                                                </div>
+                                                <div class="col-6">
+                                                        <p>Role:</p>
+                                                        <h5>{{general/role}}</h5>
+                                                        <p>Seasons:</p>
+                                                        <h5>{{general/years}}</h5>
+                                                        <p>Total Points Against:</p>
+                                                        <h5>{{general/totalPointsAgainst}}</h5>
+                                                        <p>Average Points:</p>
+                                                        <h5>{{general/averagePoints}}</h5>
+                                                        <p>Lowest Score:</p>
+                                                        <h5>
+                                                                {{general/lowestScore/score}}
+                                                                <br>
+                                                                <span>({{general/lowestScore/season}} Week {{general/lowestScore/week}} vs {{general/lowestScore/oppName}})</span>
+                                                        </h5>
+                                                        <p>Lowest Win Margin:</p>
+                                                        <h5>
+                                                                {{general/lowestWinMargin/margin}}
+                                                                <br>
+                                                                <span>({{general/lowestWinMargin/season}} Week {{general/lowestWinMargin/week}} vs {{general/lowestWinMargin/oppName}})</span>
+                                                        </h5>
+                                                        <p>Lowest Loss Margin:</p>
+                                                        <h5>
+                                                                {{general/lowestLossMargin/margin}}
+                                                                <br>
+                                                                <span>({{general/lowestLossMargin/season}} Week {{general/lowestLossMargin/week}} vs {{general/lowestLossMargin/oppName}})</span>
+                                                        </h5>  
+                                                </div>
+                                        </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-12">
+                                <div class="row m-1">
+                                        <div class="col-xl-6 col-lg-12">
+                                                <div id="MVP" class="mb-1 card border-dark text-white">
+                                                        <div class="card-header text-center">
+                                                                <h3>MVP</h3>
+                                                        </div>
+                                                        <div class="py-4 card-body text-center">
+                                                        <h4>{{general/MVP/fullName}} ({{general/MVP/points}}pts)</h4>
+                                                        <p>{{general/MVP/season}} Week {{general/MVP/week}} vs {{general/MVP/oppName}}</p>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-12">
+                                                <div id="keeper" class="mb-1 card text-white border-dark">
+                                                        <div class="card-header text-center">
+                                                                <h3>KEEPERS</h3>
+                                                        </div>
+                                                        <ul class="list-group list-group-flush">
+                                                                <li class="keeper-head list-group-item d-flex justify-content-between align-items-center">
+                                                                        PLAYER
+                                                                        <span>ELIGIBILITY</span>
+                                                                </li> 
+                                                        {{#each keepers}}
+                                                                <li class="keeper-list list-group-item d-flex justify-content-between align-items-center">
+                                                                        {{name}}
+                                                                        <span class="badge badge-danger badge-pill">{{yearsLeft}}</span>
+                                                                </li>                                                           
+                                                        {{/each}}                              
+                                                        </ul>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="row m-1">
+                                        <div class="col-xl-12">
+                                                <div id="regularSeason" class="m-1 card">
+                                                        <div class="card-header">
+                                                                <h4>Regular Season</h4>
+                                                        </div>
+                                                        <div class="card-body">
+                                                                <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                                <div class="pb-4 row">
+                                                                                        <div class=" col-md-4">
+                                                                                                <canvas id="doughnut-regular" width="800" height="450" data-centerval="{{general/winPercentage}}"></canvas>
+                                                                                        </div>
+                                                                                        <div id="stats" class="col-md-8">
+                                                                                                <div class="row text-center">
+                                                                                                        <div class="col-md-4">
+                                                                                                                <div class="m-2 border-bottom">Win</div>
+                                                                                                                <p><strong>{{general/wins}}</strong></p>
+                                                                                                        </div>
+                                                                                                        <div class="col-md-4">
+                                                                                                                <div class="m-2 border-bottom">Loss</div>
+                                                                                                                <p><strong>{{general/losses}}</strong></p>
+                                                                                                        </div>
+                                                                                                        <div class="col-md-4">
+                                                                                                                <div class="m-2 border-bottom">Moves</div>
+                                                                                                                <p><strong>{{general/moves}}</strong></p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                        
+
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                                <div class="row text-center">
+                                                                                        <div class="col-md-4">
+                                                                                                <div class="card">
+                                                                                                        <div class="card-header">
+                                                                                                        Seasons
+                                                                                                        </div>
+                                                                                                        <div class="card-body">
+                                                                                                                <p><strong>{{general/years}}</strong></p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <div class="card">
+                                                                                                        <div class="card-header">
+                                                                                                        Average Finish
+                                                                                                        </div>
+                                                                                                        <div class="card-body">
+                                                                                                                <p><strong>{{general/averageFinish}}</strong></p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <div class="card">
+                                                                                                        <div class="card-header">
+                                                                                                        Last Place Finishes
+                                                                                                        </div>
+                                                                                                        <div class="card-body">
+                                                                                                                <p><strong>{{general/lastPlaceFinishes}}</strong></p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                                <div class="row m-1">
+                                        <div class="col-xl-12">
+                                                <div id="regularSeason" class="m-1 card">
+                                                        <div class="card-header">
+                                                                <h4>Playoff Season</h4>
+                                                        </div>
+                                                        <div class="card-body">
+                                                                <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                                <div class="pb-4 row">
+                                                                                        <div class=" col-md-4">
+                                                                                                <canvas id="doughnut-playoff" width="800" height="450" data-centerval=""></canvas>
+                                                                                        </div>
+                                                                                        <div id="stats" class="col-md-8">
+                                                                                                <div class="row text-center">
+                                                                                                        <div class="col-md-6">
+                                                                                                                <div class="m-2 border-bottom">Win</div>
+                                                                                                                <p><strong>{{general/playoffWins}}</strong></p>
+                                                                                                        </div>
+                                                                                                        <div class="col-md-6">
+                                                                                                                <div class="m-2 border-bottom">Loss</div>
+                                                                                                                <p><strong>{{general/playoffLosses}}</strong></p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+
+                                                                        </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                                <div class="row text-center">
+                                                                                        <div class="col-md-4">
+                                                                                                <div class="card">
+                                                                                                        <div class="card-header">
+                                                                                                        Playoff Appearances
+                                                                                                        </div>
+                                                                                                        <div class="card-body">
+                                                                                                                <p><strong>{{general/playoffAppearances}}</strong></p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <div class="card">
+                                                                                                        <div class="card-header">
+                                                                                                        Championship Appearances
+                                                                                                        </div>
+                                                                                                        <div class="card-body">
+                                                                                                                <p><strong>{{general/championshipAppearances}}</strong></p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                        <div class="col-md-4">
+                                                                                                <div class="card">
+                                                                                                        <div class="card-header">
+                                                                                                        Championships
+                                                                                                        </div>
+                                                                                                        <div class="card-body">
+                                                                                                                <p><strong>{{general/championships}}</strong></p>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div id="accordion" class="row m-2">
+                        <div class="col-xl-6 col-lg-12">
+                                <div class="m-1 card border-secondary">
+                                        <div class="card-header">
+                                                <div class="row">
+                                                        <div class="col-lg-12">
+                                                                <div class="row">
+                                                                        <div class="col-lg-9">
+                                                                                <h3>2018 Roster</h3>
+                                                                                {{#each general/seasons}}{{#equal seasonId 2018}}<p>{{teamName}}</p>{{/equal}}{{/each}} 
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="card-body">
+                                                <div class="m-1 card shadow">
+                                                        <div class="card-header">
+                                                                <h2 class="mb-0">
+                                                                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"><i class="fa fa-plus"></i> DRAFTED ROSTER</button>									
+                                                                </h2>
+                                                        </div>
+                                                        <div id="collapseOne" class="collapse" data-parent="#accordion">
+                                                                <table id="2018_draft" class="card-table table table-striped">
+                                                                        <thead class="thead-light">
+                                                                        <tr>
+                                                                                <th scope="col">Player</th>
+                                                                                <th scope="col">Position</th>
+                                                                                <th scope="col">Team</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        {{#each general/seasons}}
+                                                                                {{#equal seasonId 2018}}
+                                                                                        {{#each draftRoster}}
+                                                                                                {{#if keeper}}
+                                                                                                <tr>
+                                                                                                        <td class="list-group-item-success">{{fullName}}</td>
+                                                                                                        <td class="list-group-item-success">{{position}}</td>
+                                                                                                        <td class="list-group-item-success">{{proTeamAbbreviation}}</td>
+                                                                                                </tr>
+                                                                                                {{else}}
+                                                                                                <tr>
+                                                                                                        <td>{{fullName}}</td>
+                                                                                                        <td>{{position}}</td>
+                                                                                                        <td>{{proTeamAbbreviation}}</td>
+                                                                                                </tr>
+                                                                                                {{/if}}
+                                                                                        {{/each}}
+                                                                                {{/equal}}
+                                                                        {{/each}}
+                                                                        </tbody>
+                                                                </table>
+                                                        </div>
+                                                </div>
+                                                <div class="m-1 card shadow">
+                                                        <div class="card-header">
+                                                                <h2 class="mb-0">
+                                                                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i> PLAYOFF ROSTER</button>									
+                                                                </h2>
+                                                        </div>
+                                                        <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                                                                <table id="2018_playoff" class="card-table table table-striped">
+                                                                        <thead class="thead-light">
+                                                                        <tr>
+                                                                                <th scope="col">Player</th>
+                                                                                <th scope="col">Position</th>
+                                                                                <th scope="col">Team</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        {{#each general/seasons}}
+                                                                                {{#equal seasonId 2018}}
+                                                                                        {{#each playoffRoster}}
+                                                                                                {{#if keeper}}
+                                                                                                <tr>
+                                                                                                        <td class="list-group-item-success">{{fullName}}</td>
+                                                                                                        <td class="list-group-item-success">{{position}}</td>
+                                                                                                        <td class="list-group-item-success">{{proTeamAbbreviation}}</td>
+                                                                                                </tr>
+                                                                                                {{else}}
+                                                                                                <tr>
+                                                                                                        <td>{{fullName}}</td>
+                                                                                                        <td>{{position}}</td>
+                                                                                                        <td>{{proTeamAbbreviation}}</td>
+                                                                                                </tr>
+                                                                                                {{/if}}
+                                                                                        {{/each}}
+                                                                                {{/equal}}
+                                                                        {{/each}}
+                                                                        </tbody>
+                                                                </table>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-12">
+                                <div class="m-1 card border-secondary">
+                                        <div class="card-header">
+                                                <div class="row">
+                                                        <div class="col-lg-12">
+                                                                <div class="row">
+                                                                        <div class="col-lg-9">
+                                                                                <h3>2019 Roster</h3>
+                                                                                {{#each general/seasons}}{{#equal seasonId 2019}}<p>{{teamName}}</p>{{/equal}}{{/each}} 
+                                                                        </div>
+                                                                        <div class="col-lg-3">
+                                                                                <h3>Grade: {{#each general/seasons}}{{#equal seasonId 2019}}{{leagueDraftGrade}}{{/equal}}{{/each}}</h3>
+                                                                                
+                                                                        </div>
+                                                                </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                        <div class="card-body">
+                                                <div class="m-1 card shadow">
+                                                        <div class="card-header">
+                                                                <h2 class="mb-0">
+                                                                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-plus"></i> DRAFTED ROSTER</button>									
+                                                                </h2>
+                                                        </div>
+                                                        <div id="collapseThree" class="collapse" data-parent="#accordion">
+                                                                <table id="2018_draft" class="card-table table table-striped">
+                                                                        <thead class="thead-light">
+                                                                        <tr>
+                                                                                <th scope="col">Player</th>
+                                                                                <th scope="col">Position</th>
+                                                                                <th scope="col">Team</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        {{#each general/seasons}}
+                                                                                {{#equal seasonId 2019}}
+                                                                                        {{#each draftRoster}}
+                                                                                                {{#if keeper}}
+                                                                                                <tr>
+                                                                                                        <td class="list-group-item-success">{{fullName}}</td>
+                                                                                                        <td class="list-group-item-success">{{position}}</td>
+                                                                                                        <td class="list-group-item-success">{{proTeamAbbreviation}}</td>
+                                                                                                </tr>
+                                                                                                {{else}}
+                                                                                                <tr>
+                                                                                                        <td>{{fullName}}</td>
+                                                                                                        <td>{{position}}</td>
+                                                                                                        <td>{{proTeamAbbreviation}}</td>
+                                                                                                </tr>
+                                                                                                {{/if}}
+                                                                                        {{/each}}
+                                                                                {{/equal}}
+                                                                        {{/each}}
+                                                                        </tbody>
+                                                                </table>
+                                                        </div>
+                                                </div>
+                                                <div class="m-1 card shadow">
+                                                        <div class="card-header">
+                                                                <h2 class="mb-0">
+                                                                        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseFour"><i class="fa fa-plus"></i> PLAYOFF ROSTER</button>									
+                                                                </h2>
+                                                        </div>
+                                                        <div id="collapseFour" class="collapse" data-parent="#accordion">
+                                                                <table id="2018_playoff" class="card-table table table-striped">
+                                                                        <thead class="thead-light">
+                                                                        <tr>
+                                                                                <th scope="col">Player</th>
+                                                                                <th scope="col">Position</th>
+                                                                                <th scope="col">Team</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                        {{#each general/seasons}}
+                                                                                {{#equal seasonId 2019}}
+                                                                                        {{#each playoffRoster}}
+                                                                                                {{#if keeper}}
+                                                                                                <tr>
+                                                                                                        <td class="list-group-item-success">{{fullName}}</td>
+                                                                                                        <td class="list-group-item-success">{{position}}</td>
+                                                                                                        <td class="list-group-item-success">{{proTeamAbbreviation}}</td>
+                                                                                                </tr>
+                                                                                                {{else}}
+                                                                                                <tr>
+                                                                                                        <td>{{fullName}}</td>
+                                                                                                        <td>{{position}}</td>
+                                                                                                        <td>{{proTeamAbbreviation}}</td>
+                                                                                                </tr>
+                                                                                                {{/if}}
+                                                                                        {{/each}}
+                                                                                {{/equal}}
+                                                                        {{/each}}
+                                                                        </tbody>
+                                                                </table>
+                                                        </div>
+                                                </div>
+
+                                        </div>
+
+                                </div>
+                        </div>
+                </div>
+                <div class="row m-2">
+                        <div class="col-lg-12">
+                                <div class="card">
+                                        <div class="card-header">
+                                                <h4 class="card-title">Yearly Performance</h3>
+                                        </div>
+                                        <div class="card-body">
+                                                <canvas id="myChart" width="1500" height="400" data-centerval=""></canvas>
+                                        </div>
+                                </div>
+                        </div>
+
+                </div>
+
+                
+        </div>
+</div>
+
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        {{!-- <script src="bootstrap/dist/js/bootstrap.min.js"></script> --}}
+        <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
+
+        <script>
+                var member = [];
+                var playoffPercentage = ({{general/playoffWins}}/({{general/playoffWins}}+{{general/playoffLosses}}))*100
+                var years = {{general/years}}
+                var finishes = [];
+                var championships = {{general/championships}}
+                var lastPlaceFinishes = {{general/lastPlaceFinishes}}
+                var trophyIcon = ' <i class="trophy fas fa-trophy"></i>'
+                var poopIcon = ' <i class="poop fas fa-poo"></i>'
+
+                        {{#each records}}
+                                {{#if finalStanding}}
+                                var obj = {
+                                        finalStanding: {{finalStanding}},
+                                        year: {{year}}
+                                };
+                                        finishes.push(obj)
+                                {{/if}}
+                        {{/each}}
+                        console.log(finishes)
+
+                        for(i = 0; i < finishes.length; i++){
+                                if(finishes[i].finalStanding === 1){
+                                        $('#memberName').find('span').append(trophyIcon);
+                                }
+                                else if(finishes[i].finalStanding === 8){
+                                        $('#memberName').find('span').append(poopIcon);
+                                }
+                        }
+
+
+
+
+
+
+                $(document).ready(function(){
+                        // Add minus icon for collapse element which is open by default
+                        $(".collapse.show").each(function(){
+                                $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+                        });
+                        
+                        // Toggle plus minus icon on show hide of collapse element
+                        $(".collapse").on('show.bs.collapse', function(){
+                                $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+                        }).on('hide.bs.collapse', function(){
+                                $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+                        });
+                }); 
+
+
+                        {{#each records}}
+                                wins = {{wins}}
+                                member.push(wins);
+                        {{/each}}
+                
+
+                new Chart(document.getElementById("myChart"), {
+                        type: 'line',
+                        data: {
+                        labels: [2017,2018,2019],
+                        datasets: [{ 
+                                data: member,
+                                borderColor: "rgba(65, 131, 215, 1)",
+                                fill: true
+                        }
+                        ]
+                        },
+                        options: {
+                                legend:{
+                                        display: false
+                                },
+                                scales: {
+                                        yAxes:[{
+                                                display: true,
+                                                ticks: {
+                                                        suggestMin: 0,
+                                                        stepSize: 1,
+                                                        stepValue: 1,
+                                                        beginAtZero: true,
+                                                        max: 12
+                                                }
+                                        }]
+
+                                }
+
+                        }
+                });
+
+                var regularChart = new Chart(document.getElementById("doughnut-regular"), {
+                        type: 'doughnut',
+                        title:{
+                                text:'Test',
+                                verticalAlign: 'center',
+                                dockInsidePlotArea: true
+                        },
+                        data: {
+                        labels:['Wins', 'Losses'],
+                        datasets: [
+                                {
+                                backgroundColor: ['#f22613','#95a5a6'],
+                                data: [{{general/wins}},{{general/losses}}]
+                                }
+                        ]
+                        },
+                        options: {
+                                responsive: true,
+                                legend: {
+                                        display: false
+                                },
+                                animation: {
+                                        animateRotate: true,
+                                        animateScale: false
+
+                                },
+                                cutoutPercentage: 60
+                        }
+                });
+
+      
+                var playOffChart = new Chart(document.getElementById("doughnut-playoff"), {
+                        type: 'doughnut',
+                        data: {
+                        labels:['Wins', 'Losses'],
+                        datasets: [
+                                {
+                                backgroundColor: ['#f22613','#95a5a6'],
+                                data: [{{general/playoffWins}},{{general/playoffLosses}}]
+                                }
+                        ]
+                        },
+                        options: {
+                                responsive:true,
+                                legend: {
+                                        display:false
+                                },
+                                animation: {
+                                        animateRotate: true,
+                                        animateScale: false
+
+                                },
+                                cutoutPercentage: 60
+                        }
+                });
+
+                $('#doughnut-playoff').attr('data-centerval',playoffPercentage)
+
+                
+                Chart.pluginService.register({
+                        beforeDraw: function(chart) {
+                        var width = chart.chart.width,
+                                height = chart.chart.height,
+                                ctx = chart.chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 114).toFixed(2);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = $('#'+chart.canvas.id).attr('data-centerval'),
+                                textX = Math.round((width - ctx.measureText(text).width) / 2),
+                                textY = height / 2;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                        }
+                });
+
+
+
+
+
+        </script>
+
+
+</body>
+</html>
