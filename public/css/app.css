@@ -7806,7 +7806,14 @@ body {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #31353D; }
+  background: #31353D;
+  font-family: 'Luckiest Guy', cursive; }
+  #sidebar .sidebar-header h3 {
+    color: #16c7ff;
+    text-shadow: 1px 1px 2px #000000; }
+    #sidebar .sidebar-header h3 span {
+      color: #fbff09;
+      text-shadow: 1px 1px 2px #000000; }
 
 #sidebar .sidebar-header strong {
   display: none;
@@ -7817,9 +7824,11 @@ body {
   border-bottom: 1px solid #47748b; }
 
 #sidebar ul li a {
+  font-family: 'Baloo Chettan 2', cursive;
   padding: 10px;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: #525965;
+  text-shadow: 1px 1px .5px #000000;
   display: block; }
 
 #sidebar ul li a:hover {
@@ -7827,7 +7836,8 @@ body {
 
 #sidebar ul li a i {
   margin-right: 10px;
-  color: #16c7ff; }
+  color: #16c7ff;
+  text-shadow: 1px 1px 2px #000000; }
 
 #sidebar ul li a i.trophy {
   margin-left: 50px;
@@ -7970,7 +7980,12 @@ a.article:hover {
     display: none; }
 
   #sidebar .sidebar-header strong {
-    display: block; }
+    display: block;
+    color: #16c7ff;
+    text-shadow: 1px 1px 2px #000000; }
+    #sidebar .sidebar-header strong span {
+      color: #fbff09;
+      text-shadow: 1px 1px 2px #000000; }
 
   #sidebar ul li a {
     padding: 20px 10px;

@@ -13,8 +13,43 @@
 <body>
 <div class="wrapper">
         {{>sidebar}}
-        <div class="shadow" id="content">
-                <h1>HOME</h1>
+        <div id="content">
+            <section>
+                <div id="header" class="py-2 px-5 container-fluid">
+                    <h1 class="display-4">HOT TAKES</h1>
+                    <p class="lead d-none d-sm-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos temporibus nostrum consequatur corrupti eveniet?</p>                  
+                </div>
+            </section>
+            <div class="col-12">
+            <div class="card m-5">
+                <table id="tbl_StandingsTotal" class="card-table table table-responsive-sm table-striped table-dark">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Bettor</th>
+                        <th scope="col">Recipient</th>
+                        <th scope="col">Year</th>
+                        <th scope="col">Bet</th>
+                        <th scope="col">Term</th>
+                        <th scope="col">Winner</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {{#each this}}
+                    {{#equal __v 0}}
+                            <tr>
+                                <td>{{#each persons}}{{#if bettor}} {{name}} {{/if}}{{/each}}</td>
+                                <td>{{#each persons}}{{#unless bettor}} {{name}} {{/unless}}{{/each}}</td>
+                                <td>{{year}}</td>
+                                <td>{{bet}}</td>
+                                <td>{{term}}</td>
+                                <td>{{#each persons}}{{#if winner}} {{name}} {{/if}}{{/each}}</td>
+                            </tr>
+                        {{/equal}}
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+            </div>
         </div>
             
 </div>

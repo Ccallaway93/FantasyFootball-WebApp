@@ -55,6 +55,15 @@ body{
 #sidebar .sidebar-header {
   padding: 20px;
   background: #31353D;
+  font-family: 'Luckiest Guy', cursive;
+  h3{
+    color: #16c7ff;
+    text-shadow: 1px 1px 2px #000000;
+    span{
+      color: #fbff09;
+      text-shadow: 1px 1px 2px #000000;
+    }
+  }
 }
 
 #sidebar .sidebar-header strong {
@@ -68,9 +77,11 @@ body{
 }
 
 #sidebar ul li a {
+  font-family: 'Baloo Chettan 2', cursive;
   padding: 10px;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: #525965;
+  text-shadow: 1px 1px .5px #000000;
   display: block;
 }
 
@@ -81,6 +92,7 @@ body{
 #sidebar ul li a i {
   margin-right: 10px;
   color: #16c7ff;
+  text-shadow: 1px 1px 2px #000000;
 }
 
 #sidebar ul li a i.trophy{
@@ -306,6 +318,12 @@ a.article:hover {
   }
   #sidebar .sidebar-header strong {
       display: block;
+      color: #16c7ff;
+      text-shadow: 1px 1px 2px #000000;
+      span{
+        color: #fbff09;
+        text-shadow: 1px 1px 2px #000000;
+      }
   }
 
 //   #sidebar ul li a {
