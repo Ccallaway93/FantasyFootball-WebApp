@@ -7776,6 +7776,15 @@ a.text-dark:hover, a.text-dark:focus {
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
+@keyframes swinging {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(10deg); }
+  75% {
+    transform: rotate(-10deg); }
+  100% {
+    transform: rotate(0deg); } }
 body {
   background-color: #e7e7e7; }
 
@@ -7833,6 +7842,11 @@ body {
 
 #sidebar ul li a:hover {
   color: #fff; }
+  #sidebar ul li a:hover i {
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+    -webkit-animation: swinging 2s linear forwards infinite;
+    animation: swinging 2s linear forwards infinite; }
 
 #sidebar ul li a i {
   margin-right: 10px;
