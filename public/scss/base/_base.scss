@@ -1,0 +1,33 @@
+body{
+    //background-color: #e7e7e7;
+    background-color: $color-grey-light-1;
+  }
+  
+  .wrapper {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  
+  
+  /* ---------------------------------------------------
+    CONTENT STYLE
+  ----------------------------------------------------- */
+  
+  #content {
+  
+    width: 100%;
+    //padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+  
+    .container-fluid{
+      background-color: white;
+  
+    }
+  
+    #tbl_h2h{
+      font-size: 1.5rem;
+    }
+  
+  }

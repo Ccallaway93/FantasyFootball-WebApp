@@ -1,8 +1,9 @@
-// override default colors
+// override BOOTSTRAP default colors
 $theme-colors: (
     "primary": #16c7ff,
     "secondary": #636e72,
     "warning": #ff7675
 );
+
 // import bootstrap
 @import "../bootstrap/scss/bootstrap.scss";

@@ -1,3 +1,31 @@
+@keyframes swinging {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(10deg); }
+  75% {
+    transform: rotate(-10deg); }
+  100% {
+    transform: rotate(0deg); } }
+body {
+  background-color: #f7f7f7; }
+
+.wrapper {
+  display: flex;
+  align-items: stretch; }
+
+/* ---------------------------------------------------
+  CONTENT STYLE
+----------------------------------------------------- */
+#content {
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s; }
+  #content .container-fluid, #content .container-sm, #content .container-md, #content .container-lg, #content .container-xl {
+    background-color: white; }
+  #content #tbl_h2h {
+    font-size: 1.5rem; }
+
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -7774,33 +7802,14 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 /* ---------------------------------------------------
-    SIDEBAR STYLE
+  MEDIAQUERIES
 ----------------------------------------------------- */
-@keyframes swinging {
-  0% {
-    transform: rotate(0deg); }
-  25% {
-    transform: rotate(10deg); }
-  75% {
-    transform: rotate(-10deg); }
-  100% {
-    transform: rotate(0deg); } }
-body {
-  background-color: #e7e7e7; }
-
-.wrapper {
-  display: flex;
-  align-items: stretch; }
-
 #sidebar {
   min-width: 250px;
   max-width: 250px;
-  background: #31353D;
-  color: #525965;
+  background-color: #333;
+  color: #eee;
   transition: all 0.3s; }
-
-.twitter {
-  border: pink; }
 
 #sidebar ul li a {
   text-align: left; }
@@ -7815,14 +7824,14 @@ body {
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #31353D;
+  background-color: #333;
   font-family: 'Luckiest Guy', cursive; }
   #sidebar .sidebar-header h3 {
     color: #16c7ff;
-    text-shadow: 1px 1px 2px #000000; }
+    text-shadow: 1px 1px 2px #000; }
     #sidebar .sidebar-header h3 span {
       color: #fbff09;
-      text-shadow: 1px 1px 2px #000000; }
+      text-shadow: 1px 1px 2px #000; }
 
 #sidebar .sidebar-header strong {
   display: none;
@@ -7830,14 +7839,14 @@ body {
 
 #sidebar ul.components {
   padding: 20px 0;
-  border-bottom: 1px solid #47748b; }
+  border-bottom: 1px solid #16c7ff; }
 
 #sidebar ul li a {
   font-family: 'Baloo Chettan 2', cursive;
   padding: 10px;
   font-size: 1.1rem;
-  color: #525965;
-  text-shadow: 1px 1px .5px #000000;
+  color: #f7f7f7;
+  text-shadow: 1px 1px 0.5px #000;
   display: block; }
 
 #sidebar ul li a:hover {
@@ -7851,17 +7860,17 @@ body {
 #sidebar ul li a i {
   margin-right: 10px;
   color: #16c7ff;
-  text-shadow: 1px 1px 2px #000000; }
+  text-shadow: 1px 1px 2px #000; }
 
 #sidebar ul li a i.trophy {
   margin-left: 50px;
   color: gold;
-  text-shadow: 1px 1px 2px #000000; }
+  text-shadow: 1px 1px 2px #000; }
 
 #sidebar ul li a i.poop {
   margin-left: 50px;
   color: #411414;
-  text-shadow: 1px 1px 2px #000000; }
+  text-shadow: 1px 1px 2px #000; }
 
 a[data-toggle="collapse"] {
   position: relative; }
@@ -7876,7 +7885,7 @@ a[data-toggle="collapse"] {
 ul ul a {
   font-size: 0.9em !important;
   padding-left: 30px !important;
-  background: #31353D; }
+  background-color: #333; }
 
 ul.CTAs {
   padding: 20px; }
@@ -7894,78 +7903,13 @@ ul.CTAs li a {
 
 a.download {
   border-radius: 1.5rem;
-  border-color: #16c7ff;
-  color: #31353D; }
+  border-color: #16c7ff; }
 
 a.article,
 a.article:hover {
   color: #525965 !important; }
 
-/* ---------------------------------------------------
-  CONTENT STYLE
------------------------------------------------------ */
-#content {
-  width: 100%;
-  min-height: 100vh;
-  transition: all 0.3s; }
-  #content .container-fluid, #content .container-sm, #content .container-md, #content .container-lg, #content .container-xl {
-    background-color: white; }
-  #content #tbl_h2h {
-    font-size: 1.5rem; }
-  #content #member #memberCard {
-    background: url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
-    font-family: 'Pangolin', cursive; }
-    #content #member #memberCard h5 {
-      font-size: 1.8rem;
-      padding-bottom: 1rem; }
-    #content #member #memberCard span {
-      font-size: 1rem; }
-    #content #member #memberCard p {
-      font-size: 1rem;
-      font-family: 'Inconsolata', monospace;
-      color: #8395a7;
-      text-shadow: 1px 1px 2px #000000; }
-  #content #member .card-header h3 {
-    font-family: 'Rokkitt', serif;
-    font-size: 2.2rem; }
-  #content #member .card-header #memberName {
-    font-family: 'Rokkitt', serif;
-    font-size: 3rem; }
-    #content #member .card-header #memberName .trophy {
-      color: gold;
-      text-shadow: 2px 2px 2px #000000;
-      font-size: 2rem; }
-    #content #member .card-header #memberName .poop {
-      color: #411414;
-      text-shadow: 1px 1px 1px #ffffff;
-      font-size: 2rem; }
-  #content #member #regularSeason p strong {
-    font-size: 1.4rem; }
-  #content #member #regularSeason #stats .border-bottom {
-    font-family: 'Rokkitt', serif;
-    font-size: 1.7rem;
-    color: #bdc3c7; }
-  #content #member #MVP {
-    background-color: #00695C; }
-    #content #member #MVP h4 {
-      text-shadow: .5px .5px 2px #000000; }
-    #content #member #MVP p {
-      text-shadow: .5px .5px 2px #000000;
-      color: #9E9E9E; }
-  #content #member #keeper {
-    background-color: #607D8B; }
-    #content #member #keeper ul {
-      background-color: #607D8B; }
-      #content #member #keeper ul .keeper-head {
-        background-color: #607D8B;
-        color: #9E9E9E;
-        text-shadow: .5px .5px 2px #000000; }
-      #content #member #keeper ul .keeper-list {
-        font-weight: bold;
-        background-color: #607D8B;
-        text-shadow: .5px .5px 2px #000000; }
-
-/* ---------------------------------------------------
+  /* ---------------------------------------------------
   MEDIAQUERIES
 ----------------------------------------------------- */
 @media (max-width: 768px) {
@@ -7996,10 +7940,10 @@ a.article:hover {
   #sidebar .sidebar-header strong {
     display: block;
     color: #16c7ff;
-    text-shadow: 1px 1px 2px #000000; }
+    text-shadow: 1px 1px 2px #000; }
     #sidebar .sidebar-header strong span {
       color: #fbff09;
-      text-shadow: 1px 1px 2px #000000; }
+      text-shadow: 1px 1px 2px #000; }
 
   #sidebar ul li a {
     padding: 20px 10px;
@@ -8032,5 +7976,57 @@ a.article:hover {
 
   #sidebar ul li a i.poop {
     margin-left: 5px; } }
+#member #memberCard {
+  background: url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
+  font-family: 'Pangolin', cursive; }
+  #member #memberCard h5 {
+    font-size: 1.8rem;
+    padding-bottom: 1rem; }
+  #member #memberCard span {
+    font-size: 1rem; }
+  #member #memberCard p {
+    font-size: 1rem;
+    font-family: 'Inconsolata', monospace;
+    color: #8395a7;
+    text-shadow: 1px 1px 2px #000; }
+#member .card-header h3 {
+  font-family: 'Rokkitt', serif;
+  font-size: 2.2rem; }
+#member .card-header #memberName {
+  font-family: 'Rokkitt', serif;
+  font-size: 3rem; }
+  #member .card-header #memberName .trophy {
+    color: gold;
+    text-shadow: 2px 2px 2px #000;
+    font-size: 2rem; }
+  #member .card-header #memberName .poop {
+    color: #411414;
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 2rem; }
+#member #regularSeason p strong {
+  font-size: 1.4rem; }
+#member #regularSeason #stats .border-bottom {
+  font-family: 'Rokkitt', serif;
+  font-size: 1.7rem;
+  color: #bdc3c7; }
+#member #MVP {
+  background-color: #00695C; }
+  #member #MVP h4 {
+    text-shadow: .5px .5px 2px #000000; }
+  #member #MVP p {
+    text-shadow: .5px .5px 2px #000000;
+    color: #9E9E9E; }
+#member #keeper {
+  background-color: #607D8B; }
+  #member #keeper ul {
+    background-color: #607D8B; }
+    #member #keeper ul .keeper-head {
+      background-color: #607D8B;
+      color: #9E9E9E;
+      text-shadow: .5px .5px 2px #000000; }
+    #member #keeper ul .keeper-list {
+      font-weight: bold;
+      background-color: #607D8B;
+      text-shadow: .5px .5px 2px #000000; }
 
 /*# sourceMappingURL=app.css.map */

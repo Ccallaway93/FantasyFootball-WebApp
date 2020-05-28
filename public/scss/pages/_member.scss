@@ -1,0 +1,89 @@
+#member{
+
+    #memberCard{
+      background:url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
+      font-family: 'Pangolin', cursive;
+      h5{
+        font-size: 1.8rem;
+        padding-bottom: 1rem;
+      }
+      span{
+        font-size: 1rem;
+      }
+      p{
+        font-size: 1rem;
+        font-family: 'Inconsolata', monospace;
+        color: #8395a7;
+        text-shadow: 1px 1px 2px $color-black;
+      }
+    }
+
+    .card-header{
+      h3{
+        font-family: 'Rokkitt', serif;
+        font-size: 2.2rem;
+      }
+      #memberName{
+        font-family: 'Rokkitt', serif;
+        font-size: 3rem;
+        .trophy{
+          color: gold;
+          text-shadow: 2px 2px 2px $color-black;
+          font-size: 2rem;
+        }
+        .poop{
+          color: rgb(65, 20, 20);
+          text-shadow: 1px 1px 1px $color-white;
+          font-size: 2rem;
+        }
+      }
+
+    }
+
+    #regularSeason{
+      p{
+        strong{
+          font-size: 1.4rem;
+        }
+      }
+
+      #stats{
+
+        .border-bottom{
+          font-family: 'Rokkitt', serif;
+          font-size: 1.7rem;
+          color: #bdc3c7;
+        }
+
+      }
+    }
+
+    #MVP{
+      background-color: #00695C;
+      h4{
+        text-shadow: .5px .5px 2px #000000;
+      }
+      p{
+        text-shadow: .5px .5px 2px #000000;
+        color: #9E9E9E;
+      }
+    }
+    #keeper{
+      background-color: #607D8B;
+      
+      ul{
+        background-color: #607D8B;
+        .keeper-head{
+          background-color: #607D8B;
+          color: #9E9E9E;
+          text-shadow: .5px .5px 2px #000000;
+        }
+        .keeper-list{
+          font-weight: bold;
+          background-color: #607D8B;
+          text-shadow: .5px .5px 2px #000000;
+        }
+      }
+    }
+
+  }
