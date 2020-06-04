@@ -1,0 +1,164 @@
+// .test {
+//     -webkit-clip-path: polygon(100% 0, 100% 84%, 67% 100%, 34% 100%, 0 84%, 0 0);
+//     clip-path: polygon(100% 0, 100% 84%, 67% 100%, 34% 100%, 0 84%, 0 0);
+// }
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.team {
+    overflow: hidden;
+
+
+    &__1 {
+        border-radius: 6px 0 0 0;
+    }
+
+    &__2 {
+        border-radius: 0 6px 0 0;
+    }
+
+    &__totals {
+        background-color: #eee;
+
+        
+        &-1 {
+            -webkit-clip-path: polygon(0 0,65% 0,100% 16%,100% 100%,0 100%);
+            clip-path: polygon(0 0,65% 0,100% 16%,100% 100%,0 100%);
+        }
+
+        &-2 {
+            -webkit-clip-path: polygon(0 16%,35% 0,100% 0,100% 100%,0 100%);
+            clip-path: polygon(0 16%,35% 0,100% 0,100% 100%,0 100%);
+        }
+
+    }
+
+    &__record {
+        text-align: center;
+        font-size: 7rem;
+        font-weight: 200;
+        padding: 14px 7px 24px;
+        margin-bottom: 0;
+        text-shadow: 1px 2px 12px rgba(0,0,0,.44);
+
+        &-1 {
+            // box-shadow: inset 0 4px 14px rgba(220,51,51,.18);
+            box-shadow: inset 0 4px 14px $color-secondary;
+        }
+
+        &-2 {
+            // box-shadow: inset 0 4px 14px rgba(24,125,207,.211765);
+            box-shadow: inset 0 4px 14px $color-primary;
+        }
+    }
+
+    &__selector {
+        height: 50px;
+        border: 0;
+        color: #333;
+        margin: 0;
+        padding: 6px 24px 6px 6px;
+        font-size: .75rem;
+        font-weight: 700;
+        background-color: #bbb;
+        border-radius: 0 !important;
+        border-top: 1px solid #cfcfcf;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 0 #d4d4d4;
+        -webkit-appearance: none;
+
+        &-option {
+            background-color: #bbb;
+        }
+
+        &:focus {
+            background-color: #bbb;
+        }
+    }
+
+    &__stats {
+        padding: 64px 0 24px;
+        background-color: #343a40;
+        color: #fff;
+        margin-bottom: 34px;
+        position: relative;
+        -webkit-box-shadow: inset 1px 1px 24px rgba(0,0,0,.541176);
+        box-shadow: inset 1px 1px 24px rgba(0,0,0,.541176);
+        // -webkit-clip-path: polygon(0 0,100% 0,100% 93%,85% 100%,15% 100%,0 93%);
+        // clip-path: polygon(0 0,100% 0,100% 93%,85% 100%,15% 100%,0 93%);
+        -webkit-clip-path: polygon(0 0,100% 0,100% 85%,85% 100%,15% 100%,0 85%);
+                clip-path: polygon(0 0,100% 0,100% 85%,85% 100%,15% 100%,0 85%);
+        max-height: 1132px;
+        -webkit-transition: all .6s ease-in-out;
+        transition: all .6s ease-in-out;
+
+        &::before {
+            content: "";
+            height: 0;
+            width: 0;
+            position: absolute;
+            display: block;
+            border: 16px solid transparent;
+            border-top: 8px solid #fff;
+            top: 0;
+            left: 50%;
+            margin-left: -16px;
+        }
+    }
+
+    &__numbers {
+
+        p {
+            position: relative;
+            text-align: center;
+            margin-bottom: 42px;
+            font-size: 2em;
+             border-bottom: 1px solid #333;
+            -webkit-box-shadow: 0 1px 0 0 #ffffff0f;
+            box-shadow: 0 1px 0 0 #ffffff0f;
+            text-shadow: 1px 1px 1px #000;
+
+            // :not(:first-child){
+
+            // }
+
+            strong {
+                position: absolute;
+                width: 200%;
+                top: -28px;
+                left: 50%;
+                margin-left: -42%;
+                text-align: center;
+                font-size: .75rem;
+                font-weight: 100;
+                letter-spacing: 3px;
+                text-shadow: 1px 1px 0 #000;
+                color: #ffffff7a;
+            }
+        }
+    }
+
+    &__image {
+        height: 70px;
+        background-position: 50%;
+        background-size: 90px;
+        -webkit-box-shadow: inset 0 1px 13px $color-primary;
+        box-shadow: inset 0 1px 13px $color-primary;
+        background-image: url('../images/logo_4.jpg');
+    }
+}
+
+.hidden {
+    padding: 0;
+    max-height: 16px;
+    -webkit-clip-path: polygon(0 0,100% 0,100% 0,85% 100%,15% 100%,0 0);
+     clip-path: polygon(0 0,100% 0,100% 0,85% 100%,15% 100%,0 0);
+}
+
+.visible {
+    visibility: visible !important;
+}

@@ -1,5 +1,8 @@
 // combibnes 2 files
 
+@import "custom_bootstrap";
+@import "custom";
+
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
@@ -9,12 +12,12 @@
 
 
 
-@import "custom_bootstrap";
-@import "custom";
-
 @import"layout/sidebar";
 
+
+
 @import "pages/member";
+@import "pages/headTohead";
 
 
 

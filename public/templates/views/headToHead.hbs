@@ -15,95 +15,230 @@
         {{>sidebar}}
         <div id="content">
             <section>
-                <div id="header" class="py-2 px-5 container-fluid">
+                <div id="header" class="header py-2 px-5 mb-4 container-fluid">
                     <h1 class="display-4">Head To Head</h1>
                     <p class="lead d-none d-sm-block">The accumulation of all Head-To-Head regular season matchups from the year 2018 and beyond.</p>                  
                 </div>
             </section>
-        <div class="container mb-4">
-            <div class="row m-2">
-                <div class="col-md-6 p-3">
-                    <div class="card text-white bg-dark shadow">
-                        <div class="card-body">
-                            <h2 id="leftTeamName" class="display-4 card-title text-primary text-center">TEAM 1</h2>
-                            <div class="dropdown text-center">
-                                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    TEAM
-                                </button>
-                                <div id="left" class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                    <button id="1" class="dropdown-item" type="button">Kevin</button>
-                                    <button id="2" class="dropdown-item" type="button">Duncan</button>
-                                    <button id="3" class="dropdown-item" type="button">Matt</button>
-                                    <button id="4" class="dropdown-item" type="button">Nick</button>
-                                    <button id="5" class="dropdown-item" type="button">Conner</button>
-                                    <button id="6" class="dropdown-item" type="button">Morgan</button>
-                                    <button id="7" class="dropdown-item" type="button">Seth</button>
-                                    <button id="8" class="dropdown-item" type="button">Erik</button>
+            <main class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="team team__1">
+                                        <div class="team__totals team__totals-1">
+                                            <div class="team__image team__image-1"></div>
+                                            <select class="form-control team__selector team__selector--1" name="team-1" id="left">
+                                                <option class="team__selector-option" value="true">Select a team</option>
+                                                <option class="team__selector-option" value="1">Kevin</option>
+                                                <option class="team__selector-option" value="2">Duncan</option>
+                                                <option class="team__selector-option" value="3">Matt</option>
+                                                <option class="team__selector-option" value="4">Nick</option>
+                                                <option class="team__selector-option" value="5">Conner</option>
+                                                <option class="team__selector-option" value="6">Morgan</option>
+                                                <option class="team__selector-option" value="7">Seth</option>
+                                                <option class="team__selector-option" value="8">Erik</option>
+                                            </select>
+                                            <h2 id="left__wins" class="team__record team__record-1">-</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="team team__2">
+                                        <div class="team__totals team__totals-2">
+                                            <div class="team__image team__image-1"></div>
+                                            <select name="team-2" id="right" class="form-control team__selector team__selector--2">
+                                                <option class="team__selector-option" value="true">Select a team</option>
+                                                <option class="team__selector-option" value="1">Kevin</option>
+                                                <option class="team__selector-option" value="2">Duncan</option>
+                                                <option class="team__selector-option" value="3">Matt</option>
+                                                <option class="team__selector-option" value="4">Nick</option>
+                                                <option class="team__selector-option" value="5">Conner</option>
+                                                <option class="team__selector-option" value="6">Morgan</option>
+                                                <option class="team__selector-option" value="7">Seth</option>
+                                                <option class="team__selector-option" value="8">Erik</option>
+                                            </select>
+                                            <h2 id="right__wins" class="team__record team__record-2">-</h2>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="container-fluid mb-4">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row team__stats hidden">
+                                            <div class="col-6">
+                                                <div class="div">
+                                                    <div class="team__numbers team__numbers-1">
+                                                        <p id="left_points">
+                                                            <strong>Total Points</strong>
+                                                            <span></span>
+                                                            
+                                                        </p>
+                                                         <p id="left_mvp">
+                                                            <strong>Starting MVP</strong>
+                                                            <span>N/A</span>
+                                                        </p>
+                                                         <p id="left_bmvp">
+                                                            <strong>Bench MVP</strong>
+                                                            <span>N/A</span>
+                                                        </p>
+                                                         <p id="left_low">
+                                                            <strong>Lowest Margin</strong>
+                                                            <span>N/A</span>
+                                                        </p>
+                                                         <p id="left_high">
+                                                            <strong>Highest Margin</strong>
+                                                            <span>N/A</span>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="div">
+                                                    <div class="team__numbers team__numbers-2">
+                                                        <p id="right_points"></p>
+                                                        <p id="right_mvp">N/A</p>
+                                                        <p id="right_bmvp">N/A</p>
+                                                        <p id="right_low">N/A</p>
+                                                        <p id="right_high">N/A</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="card mb-3">
+                            <div class="card-header">Gamelogs</div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="gameLogs">
+                                        <thead>
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Game</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <h1 id="leftWins" class="display-1 text-center">0</h1>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 p-3">
-                    <div class="card text-white bg-dark shadow">
-                        <div class="card-body">
-                            <h2 id="rightTeamName" class="display-4 card-title text-primary text-center">TEAM 2</h2>
-                            <div class="dropdown text-center">
-                                <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    TEAM
-                                </button>
-                                <div id="right" class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                                    <button id="1" class="dropdown-item" type="button">Kevin</button>
-                                    <button id="2" class="dropdown-item" type="button">Duncan</button>
-                                    <button id="3" class="dropdown-item" type="button">Matt</button>
-                                    <button id="4" class="dropdown-item" type="button">Nick</button>
-                                    <button id="5" class="dropdown-item" type="button">Conner</button>
-                                    <button id="6" class="dropdown-item" type="button">Morgan</button>
-                                    <button id="7" class="dropdown-item" type="button">Seth</button>
-                                    <button id="8" class="dropdown-item" type="button">Erik</button>
+
+            </main>
+            {{!-- <div class="container mb-4">
+                <div class="row m-2">
+                    <div class="col-md-6 p-3">
+                        <div class="card text-white bg-dark shadow">
+                            <div class="card-body">
+                                <h2 id="leftTeamName" class="display-4 card-title text-primary text-center">TEAM 1</h2>
+                                <div class="dropdown text-center">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        TEAM
+                                    </button>
+                                    <div id="left" class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <button id="1" class="dropdown-item" type="button">Kevin</button>
+                                        <button id="2" class="dropdown-item" type="button">Duncan</button>
+                                        <button id="3" class="dropdown-item" type="button">Matt</button>
+                                        <button id="4" class="dropdown-item" type="button">Nick</button>
+                                        <button id="5" class="dropdown-item" type="button">Conner</button>
+                                        <button id="6" class="dropdown-item" type="button">Morgan</button>
+                                        <button id="7" class="dropdown-item" type="button">Seth</button>
+                                        <button id="8" class="dropdown-item" type="button">Erik</button>
+                                    </div>
                                 </div>
+                                <h1 id="leftWins" class="display-1 text-center">0</h1>
                             </div>
-                            <h1 id="rightWins" class="display-1 text-center">0</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 p-3">
+                        <div class="card text-white bg-dark shadow">
+                            <div class="card-body">
+                                <h2 id="rightTeamName" class="display-4 card-title text-primary text-center">TEAM 2</h2>
+                                <div class="dropdown text-center">
+                                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        TEAM
+                                    </button>
+                                    <div id="right" class="dropdown-menu" aria-labelledby="dropdownMenu3">
+                                        <button id="1" class="dropdown-item" type="button">Kevin</button>
+                                        <button id="2" class="dropdown-item" type="button">Duncan</button>
+                                        <button id="3" class="dropdown-item" type="button">Matt</button>
+                                        <button id="4" class="dropdown-item" type="button">Nick</button>
+                                        <button id="5" class="dropdown-item" type="button">Conner</button>
+                                        <button id="6" class="dropdown-item" type="button">Morgan</button>
+                                        <button id="7" class="dropdown-item" type="button">Seth</button>
+                                        <button id="8" class="dropdown-item" type="button">Erik</button>
+                                    </div>
+                                </div>
+                                <h1 id="rightWins" class="display-1 text-center">0</h1>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <table id="tbl_h2h" class="table table-striped table-dark text-center shadow">
-                    <thead>
-                        <tr>
-                        <td style="width: 30%;" id="leftHostScore" scope="col"></td>
-                        <th style="width: 40%;" scope="col">Total Points</th>
-                        <td style="width: 30%;" id="rightHostScore" scope="col"></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="width: 30%;" id="leftMVP"></td>
-                            <th style="width: 40%;" scope="col">Starting MVP</th>
-                            <td style="width: 30%;" id="rightMVP"></td>
-                        </tr>
-                        <tr>
-                            <td style="width: 30%;" id="leftBenchMVP"></td>
-                            <th style="width: 40%;" scope="col">Bench MVP</th>
-                            <td style="width: 30%;" id="rightBenchMVP"></td>
-                        </tr>
-                        <tr>
-                            <td style="width: 30%;" id="leftLowestWinMargin"></td>
-                            <th style="width: 40%;" scope="col">Lowest Margin</th>
-                            <td style="width: 30%;" id="rightLowestWinMargin"></td>
-                        </tr>
-                        <tr>
-                            <td style="width: 30%;" id="leftHighestWinMargin"></td>
-                            <th style="width: 40%;" scope="col">Highest Margin</th>
-                            <td style="width: 30%;" id="rightHighestWinMargin"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                <div id="test" class="test collapse">
+                <div class="row">
+                    <table id="tbl_h2h" class="table table-striped table-dark text-center shadow">
+                        <thead>
+                            <tr>
+                            <td style="width: 30%;" id="leftHostScore" scope="col"></td>
+                            <th style="width: 40%;" scope="col">Total Points</th>
+                            <td style="width: 30%;" id="rightHostScore" scope="col"></td>
+                            </tr>
+                        </thead>
+                        <tbody class="mb-4 pb-4">
+                            <tr>
+                                <td style="width: 30%;" id="leftMVP"></td>
+                                <th style="width: 40%;" scope="col">Starting MVP</th>
+                                <td style="width: 30%;" id="rightMVP"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%;" id="leftBenchMVP"></td>
+                                <th style="width: 40%;" scope="col">Bench MVP</th>
+                                <td style="width: 30%;" id="rightBenchMVP"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%;" id="leftLowestWinMargin"></td>
+                                <th style="width: 40%;" scope="col">Lowest Margin</th>
+                                <td style="width: 30%;" id="rightLowestWinMargin"></td>
+                            </tr>
+                            <tr>
+                                <td style="width: 30%;" id="leftHighestWinMargin"></td>
+                                <th style="width: 40%;" scope="col">Highest Margin</th>
+                                <td style="width: 30%;" id="rightHighestWinMargin"></td>
+                            </tr>                        <tr>
+                                <td style="width: 30%;"></td>
+                                <th style="width: 40%;" scope="col"></th>
+                                <td style="width: 30%;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div> --}}
     </div>
+
+        {{!-- <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#test" aria-expanded="false" aria-controls="test">
+            Button with data-target
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </div>
+        </div> --}}
 
 </div>
 
@@ -124,45 +259,61 @@
             var left = 0;
             var right = 0;
 
-            $('#left').find('button').click(function(){
-                left = this.id;
-              console.log(left);
+
+            $('#left').change(function() {
+                left = $(this).children('option:selected').val();
+                console.log(left);
             })
 
-            $('#right').find('button').click(function(){
-                right = this.id;
+            $('#right').change(function() {
+                right = $(this).children('option:selected').val();
                 console.log(right);
             })
 
-            $('button').click(function() {
+            function insertDate(year, week) {
+                var markup = '<tr><td>'+ year +' Season,' + 'Week ' + week + '</td></tr>';
+                $('#gameLogs tbody').append(markup);
+            }
+
+            function insertGame(teamA,teamAScore,teamB,teamBScore) {
+                
+            }
+
+
+            $('select').change(function() {
                 if (left >= 1 && right >= 1){
                     console.log('we are in here')
+
+                    $('.team__stats').removeClass('hidden');
+                    $('.team__stats').addClass('visible');
 
 
                 const hostId = this.id
                 console.log(hostId);
                 $.post('/headTohead', {leftId: left, rightId: right}, function(data) {
-                    {{!-- console.log(data[0].h2h);
-                    const result = data[0].h2h.find(({oppName}) => oppName === 'Erik')
-                    console.log(result) --}}
 
-                    console.log(data);
+                    console.log(data.games);
 
-                    $('#leftHostScore').text(data.left.hostScore)
-                    $('#leftTeamName').text(data.right.oppName)
-                    $('#leftWins').text(data.left.wins)
-                    $('#leftMVP').text(`${data.left.hostStartingMVP}  (${data.left.hostStartingMVPScore})`)
-                    $('#leftBenchMVP').text(`${data.left.hostBenchMVP}  (${data.left.hostBenchMVPScore})`)
-                    $('#leftLowestWinMargin').text(data.left.lowestMargin)
-                    $('#leftHighestWinMargin').text(data.left.largestMargin)
+                    $('#test').slideToggle(500, function() {
+                        console.log('in the toggle')
+                         
+                    })
+
+                    $('#left_points').children('span').text(data.left.hostScore)
+                    $('#leftTeamName').children('span').text(data.right.oppName)
+                    $('#left__wins').text(data.left.wins)
+                    $('#left_mvp').children('span').text(`${data.left.hostStartingMVP}  (${data.left.hostStartingMVPScore})`)
+                    $('#left_bmvp').children('span').text(`${data.left.hostBenchMVP}  (${data.left.hostBenchMVPScore})`)
+                    $('#left_low').children('span').text(data.left.lowestMargin)
+                    $('#left_high').children('span').text(data.left.largestMargin)
                     
-                    $('#rightHostScore').text(data.right.hostScore)
+                    $('#right_points').text(data.right.hostScore)
                     $('#rightTeamName').text(data.left.oppName)
-                    $('#rightWins').text(data.right.wins)
-                    $('#rightMVP').text(`${data.right.hostStartingMVP}  (${data.right.hostStartingMVPScore})`)
-                    $('#rightBenchMVP').text(`${data.right.hostBenchMVP}  (${data.right.hostBenchMVPScore})`)
-                    $('#rightLowestWinMargin').text(data.right.lowestMargin)
-                    $('#rightHighestWinMargin').text(data.right.largestMargin)
+                    $('#right__wins').text(data.right.wins)
+                    $('#right_mvp').text(`${data.right.hostStartingMVP}  (${data.right.hostStartingMVPScore})`)
+                    $('#right_bmvp').text(`${data.right.hostBenchMVP}  (${data.right.hostBenchMVPScore})`)
+                    $('#right_low').text(data.right.lowestMargin)
+                    $('#right_high').text(data.right.largestMargin)
 
                 });
                 }

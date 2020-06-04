@@ -1,101 +1,99 @@
 
-        <!-- Sidebar  -->
-        <nav id="sidebar" >
-            <div class="sidebar-header">
+
+
+
+
+    <!-- Sidebar  -->
+        <nav class="sidebar" >
+            <div class="sidebar__header">
                 <h3>POCKET <span>JOBS</span></h3>
                 <strong>P <span> J</span></strong>
             </div>
-
-            <ul class="list-unstyled components">
-                {{!-- <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+            <ul class="sidebar__list">
+                <li class="sidebar__item">
+                    <a class="sidebar__link" href="/">
                         <i class="fas fa-home"></i>
                         Home
                     </a>
-                </li> --}}
-                <li>
-                    <a href="/">
-                        <i class="fas fa-home"></i>
-                        Home
-                    </a>
-                    <a href="/about">
+                    <a class="sidebar__link" href="/about">
                         <i class="fas fa-briefcase"></i>
                         About
                     </a>
-                    <a href="#memberSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <a href="#memberSubmenu" data-toggle="collapse" aria-expanded="false" class="sidebar__link">
                         <i class="fas fa-user-alt"></i>
                         Members
                     </a>
-                    <ul class="collapse list-unstyled" id="memberSubmenu">
-                        <li>
-                            <a id="1" href="/member/kevin">Kevin</a>
+                    <ul class="list-unstyled submenu__list collapse" id="memberSubmenu">
+                        <li class="submenu__list-item">
+                            <a class="submenu__list-link" id="1" href="/member/kevin">Kevin</a>
                         </li>
-                        <li>
-                            <a id="8" href="/member/erik">Erik <i class="trophy fas fa-trophy"></i></a>                           
+                        <li class="submenu__list-item">
+                            <a class="submenu__list-link" id="8" href="/member/erik">Erik <i class="trophy fas fa-trophy"></i></a>                           
                         </li>
-                        <li>
-                            <a id="5" href="/member/conner">Conner</a>
+                        <li class="submenu__list-item">
+                            <a class="submenu__list-link" id="5" href="/member/conner">Conner</a>
                         </li>
-                        <li>
-                            <a id="7" href="/member/seth">Seth</a>
+                        <li class="submenu__list-item">
+                            <a class="submenu__list-link" id="7" href="/member/seth">Seth</a>
                         </li>
-                        <li>
-                            <a id="2" href="/member/duncan">Duncan</a>
+                        <li class="submenu__list-item">
+                            <a class="submenu__list-link" id="2" href="/member/duncan">Duncan</a>
                         </li>
-                        <li>
-                            <a id="4" href="/member/nick">Nick <i class="poop fas fa-poo"></i></a>
+                        <li class="submenu__list-item">
+                            <a class="submenu__list-link" id="4" href="/member/nick">Nick <i class="poop fas fa-poo"></i></a>
                         </li>
-                        <li>
-                            <a id="6" href="/member/morgan">Morgan</a>
+                        <li class="submenu__list-item">
+                            <a class="submenu__list-link" id="6" href="/member/morgan">Morgan</a>
                         </li>
-                        <li>
-                            <a id="3" href="/member/matt">Matt</a>
+                        <li class="submenu__list-item">
+                            <a class="submenu__list-link" id="3" href="/member/matt">Matt</a>
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="/history">
+                <li class="sidebar__item">
+                    <a class="sidebar__link" href="/history">
                         <i class="fas fa-book"></i>
                         History
                     </a>
                 </li>
-                <li class="d-none d-sm-block">
-                    <a href="/headTohead">
+                <li class="sidebar__item d-none d-sm-block">
+                    <a class="sidebar__link" href="/headTohead">
                         <i class="fas fa-football-ball"></i>
                         Head-to-Head
                     </a>
                 </li>
-                <li class="d-block d-sm-none">
-                    <a href="#">
+                <li class="sidebar__item d-block d-sm-none">
+                    <a class="sidebar__link" href="#">
                         <i class="fas fa-football-ball"></i>
                         H2H
                     </a>
                 </li>
-                <li>
-                    <a href="/standings">
+                <li lass="sidebar__item">
+                    <a class="sidebar__link" href="/standings">
                         <i class="far fa-chart-bar"></i>
                         Standings
                     </a>
                 </li>
-                <li>
-                    <a href="/hotTakes">
+                <li lass="sidebar__item">
+                    <a class="sidebar__link" href="/hotTakes">
                         <i class="fas fa-fire"></i>
                         Hot Takes
                     </a>
                 </li>
-                <li>
-                    <a href="/contact">
+                <li lass="sidebar__item">
+                    <a class="sidebar__link" href="/contact">
                         <i class="fas fa-paper-plane"></i>
                         Contact
                     </a>
                 </li>
             </ul>
 
-            <ul class="list-unstyled CTAs">
+            <ul class="list-unstyled sidebar__cta">
                 <li>
                     <a type="button" href="https://fantasy.espn.com/football/league?leagueId=606204" class="btn btn-outline-primary text-center">LEAGUE HOME</a>
                 </li>
             </ul>
+            
             {{!-- <ul class="list-unstyled components twitter p-1">
                 <li>
                     <a class="twitter-timeline" data-width="250" data-theme="dark" href="https://twitter.com/jobs_pocket?ref_src=twsrc%5Etfw">Tweets by jobs_pocket</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

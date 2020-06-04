@@ -1,31 +1,3 @@
-@keyframes swinging {
-  0% {
-    transform: rotate(0deg); }
-  25% {
-    transform: rotate(10deg); }
-  75% {
-    transform: rotate(-10deg); }
-  100% {
-    transform: rotate(0deg); } }
-body {
-  background-color: #f7f7f7; }
-
-.wrapper {
-  display: flex;
-  align-items: stretch; }
-
-/* ---------------------------------------------------
-  CONTENT STYLE
------------------------------------------------------ */
-#content {
-  width: 100%;
-  min-height: 100vh;
-  transition: all 0.3s; }
-  #content .container-fluid, #content .container-sm, #content .container-md, #content .container-lg, #content .container-xl {
-    background-color: white; }
-  #content #tbl_h2h {
-    font-size: 1.5rem; }
-
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -7804,178 +7776,170 @@ a.text-dark:hover, a.text-dark:focus {
 /* ---------------------------------------------------
   MEDIAQUERIES
 ----------------------------------------------------- */
-#sidebar {
+@keyframes swinging {
+  0% {
+    transform: rotate(0deg); }
+  25% {
+    transform: rotate(10deg); }
+  75% {
+    transform: rotate(-10deg); }
+  100% {
+    transform: rotate(0deg); } }
+body {
+  background-color: #e4e2e2; }
+
+.wrapper {
+  display: flex;
+  align-items: stretch; }
+
+/* ---------------------------------------------------
+  CONTENT STYLE
+----------------------------------------------------- */
+#content {
+  width: 100%;
+  min-height: 100vh;
+  transition: all 0.3s; }
+  #content section .container-fluid, #content section .container-sm, #content section .container-md, #content section .container-lg, #content section .container-xl {
+    background-color: #fff; }
+  #content #tbl_h2h {
+    font-size: 1.5rem; }
+
+.sidebar {
   min-width: 250px;
   max-width: 250px;
   background-color: #333;
-  color: #eee;
+  color: #e4e2e2;
   transition: all 0.3s; }
-
-#sidebar ul li a {
-  text-align: left; }
-
-#sidebar.active .dropdown-toggle::after {
-  top: auto;
-  bottom: 10px;
-  right: 50%;
-  -webkit-transform: translateX(50%);
-  -ms-transform: translateX(50%);
-  transform: translateX(50%); }
-
-#sidebar .sidebar-header {
-  padding: 20px;
-  background-color: #333;
-  font-family: 'Luckiest Guy', cursive; }
-  #sidebar .sidebar-header h3 {
-    color: #16c7ff;
-    text-shadow: 1px 1px 2px #000; }
-    #sidebar .sidebar-header h3 span {
-      color: #fbff09;
+  .sidebar__header {
+    padding: 20px;
+    background-color: #333;
+    font-family: 'Luckiest Guy', cursive; }
+    .sidebar__header h3 {
+      color: #16c7ff;
       text-shadow: 1px 1px 2px #000; }
-
-#sidebar .sidebar-header strong {
-  display: none;
-  font-size: 1.8em; }
-
-#sidebar ul.components {
-  padding: 20px 0;
-  border-bottom: 1px solid #16c7ff; }
-
-#sidebar ul li a {
-  font-family: 'Baloo Chettan 2', cursive;
-  padding: 10px;
-  font-size: 1.1rem;
-  color: #f7f7f7;
-  text-shadow: 1px 1px 0.5px #000;
-  display: block; }
-
-#sidebar ul li a:hover {
-  color: #fff; }
-  #sidebar ul li a:hover i {
-    -webkit-transform-origin: 50% 0;
-    transform-origin: 50% 0;
-    -webkit-animation: swinging 2s linear forwards infinite;
-    animation: swinging 2s linear forwards infinite; }
-
-#sidebar ul li a i {
-  margin-right: 10px;
-  color: #16c7ff;
-  text-shadow: 1px 1px 2px #000; }
-
-#sidebar ul li a i.trophy {
-  margin-left: 50px;
-  color: gold;
-  text-shadow: 1px 1px 2px #000; }
-
-#sidebar ul li a i.poop {
-  margin-left: 50px;
-  color: #411414;
-  text-shadow: 1px 1px 2px #000; }
-
-a[data-toggle="collapse"] {
-  position: relative; }
-
-#sidebar .dropdown-toggle::after {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 20px;
-  transform: translateY(-50%); }
-
-ul ul a {
-  font-size: 0.9em !important;
-  padding-left: 30px !important;
-  background-color: #333; }
-
-ul.CTAs {
-  padding: 20px; }
-
-ul.CTAs a {
-  text-align: center;
-  font-size: 0.9em !important;
-  display: block;
-  border-radius: 5px;
-  margin-bottom: 5px; }
-
-ul.CTAs li a {
-  font-size: 0.9em !important;
-  border-radius: 2rem; }
-
-a.download {
-  border-radius: 1.5rem;
-  border-color: #16c7ff; }
-
-a.article,
-a.article:hover {
-  color: #525965 !important; }
-
-  /* ---------------------------------------------------
-  MEDIAQUERIES
------------------------------------------------------ */
-@media (max-width: 768px) {
-  #sidebar {
-    min-width: 80px;
-    max-width: 80px;
-    text-align: center; }
-
-  #tbl_h2h {
-    font-size: 1rem;
-    margin-left: 5rem; }
-
-  .dropdown-toggle::after {
+      .sidebar__header h3 span {
+        color: #fbff09;
+        text-shadow: 1px 1px 2px #000; }
+    .sidebar__header strong {
+      display: none;
+      font-size: 1.8em; }
+  .sidebar__list {
+    padding: 20px 0;
+    border-bottom: 1px solid #16c7ff; }
+  .sidebar__link {
+    font-family: 'Baloo Chettan 2', cursive;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #f7f7f7;
+    text-shadow: 1px 1px 0.5px #000;
+    display: block;
+    text-align: left; }
+    .sidebar__link:hover {
+      color: #fff; }
+      .sidebar__link:hover i {
+        -webkit-transform-origin: 50% 0;
+        transform-origin: 50% 0;
+        -webkit-animation: swinging 2s linear forwards infinite;
+        animation: swinging 2s linear forwards infinite; }
+    .sidebar__link i {
+      margin-right: 10px;
+      color: #16c7ff;
+      text-shadow: 1px 1px 2px #000; }
+    .sidebar__link__test {
+      background-color: orangered; }
+  .sidebar.active__link-submenu::after {
     top: auto;
     bottom: 10px;
     right: 50%;
     -webkit-transform: translateX(50%);
     -ms-transform: translateX(50%);
     transform: translateX(50%); }
+  .sidebar__cta {
+    padding: 20px; }
+    .sidebar__cta a {
+      text-align: center;
+      font-size: 0.9em !important;
+      display: block;
+      border-radius: 2rem;
+      margin-bottom: 5px; }
 
-  #sidebar {
-    margin-left: 0 !important; }
-
-  #sidebar .sidebar-header h3,
-  #sidebar .CTAs {
-    display: none; }
-
-  #sidebar .sidebar-header strong {
-    display: block;
-    color: #16c7ff;
+.submenu__list-link {
+  font-family: 'Baloo Chettan 2', cursive;
+  color: #f7f7f7;
+  text-shadow: 1px 1px 0.5px #000;
+  display: block;
+  text-align: left;
+  font-size: 1.1em !important;
+  padding-left: 50px !important;
+  background-color: #333; }
+  .submenu__list-link:hover {
+    color: #fff; }
+    .submenu__list-link:hover i {
+      -webkit-transform-origin: 50% 0;
+      transform-origin: 50% 0;
+      -webkit-animation: swinging 2s linear forwards infinite;
+      animation: swinging 2s linear forwards infinite; }
+  .submenu__list-link .trophy {
+    margin-left: 50px;
+    color: gold;
     text-shadow: 1px 1px 2px #000; }
-    #sidebar .sidebar-header strong span {
-      color: #fbff09;
-      text-shadow: 1px 1px 2px #000; }
+  .submenu__list-link .poop {
+    margin-left: 50px;
+    color: #411414;
+    text-shadow: 1px 1px 2px #000; }
 
-  #sidebar ul li a {
-    padding: 20px 10px;
+/* ---------------------------------------------------
+MEDIAQUERIES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .sidebar {
+    min-width: 80px;
+    max-width: 80px;
     text-align: center;
-    font-size: 0.85em; }
+    margin-left: 0 !important; }
+    .sidebar__link-submenu::after {
+      top: auto;
+      bottom: 10px;
+      right: 50%;
+      -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+      transform: translateX(50%); }
+    .sidebar__link {
+      padding: 20px 10px;
+      text-align: center;
+      font-size: 0.85em; }
+      .sidebar__link span {
+        font-size: 0.85em; }
+      .sidebar__link i {
+        margin-right: 0;
+        display: block;
+        font-size: 1.8em;
+        margin-bottom: 5px; }
+    .sidebar__header h3 {
+      display: none; }
+    .sidebar__header strong {
+      display: block;
+      color: #16c7ff;
+      text-shadow: 1px 1px 2px #000; }
+      .sidebar__header strong span {
+        color: #fbff09;
+        text-shadow: 1px 1px 2px #000; }
+    .sidebar__cta {
+      display: none; }
 
-  #sidebar ul li a span {
-    font-size: 0.85em; }
+  .submenu__list-link {
+    padding: 10px !important;
+    font-size: .9em !important; }
+    .submenu__list-link i {
+      font-size: 1.3em; }
+    .submenu__list-link .trophy {
+      margin-left: 5px; }
+    .submenu__list-link .poop {
+      margin-left: 5px; }
 
-  #sidebar ul li a i {
-    margin-right: 0;
-    display: block;
-    font-size: 1.8em;
-    margin-bottom: 5px; }
-
-  #sidebar ul ul a {
-    padding: 10px !important; }
-
-  #sidebar ul li a i {
-    font-size: 1.3em; }
-
-  #sidebar {
-    margin-left: 0; }
-
-  #sidebarCollapse span {
-    display: none; }
-
-  #sidebar ul li a i.trophy {
-    margin-left: 5px; }
-
-  #sidebar ul li a i.poop {
-    margin-left: 5px; } }
+  #tbl_h2h {
+    font-size: 1rem;
+    margin-left: 5rem; } }
 #member #memberCard {
   background: url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
   font-family: 'Pangolin', cursive; }
@@ -8028,5 +7992,115 @@ a.article:hover {
       font-weight: bold;
       background-color: #607D8B;
       text-shadow: .5px .5px 2px #000000; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+.team {
+  overflow: hidden; }
+  .team__1 {
+    border-radius: 6px 0 0 0; }
+  .team__2 {
+    border-radius: 0 6px 0 0; }
+  .team__totals {
+    background-color: #eee; }
+    .team__totals-1 {
+      -webkit-clip-path: polygon(0 0, 65% 0, 100% 16%, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 65% 0, 100% 16%, 100% 100%, 0 100%); }
+    .team__totals-2 {
+      -webkit-clip-path: polygon(0 16%, 35% 0, 100% 0, 100% 100%, 0 100%);
+      clip-path: polygon(0 16%, 35% 0, 100% 0, 100% 100%, 0 100%); }
+  .team__record {
+    text-align: center;
+    font-size: 7rem;
+    font-weight: 200;
+    padding: 14px 7px 24px;
+    margin-bottom: 0;
+    text-shadow: 1px 2px 12px rgba(0, 0, 0, 0.44); }
+    .team__record-1 {
+      box-shadow: inset 0 4px 14px #fbff09; }
+    .team__record-2 {
+      box-shadow: inset 0 4px 14px #16c7ff; }
+  .team__selector {
+    height: 50px;
+    border: 0;
+    color: #333;
+    margin: 0;
+    padding: 6px 24px 6px 6px;
+    font-size: .75rem;
+    font-weight: 700;
+    background-color: #bbb;
+    border-radius: 0 !important;
+    border-top: 1px solid #cfcfcf;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 0 #d4d4d4;
+    -webkit-appearance: none; }
+    .team__selector-option {
+      background-color: #bbb; }
+    .team__selector:focus {
+      background-color: #bbb; }
+  .team__stats {
+    padding: 64px 0 24px;
+    background-color: #343a40;
+    color: #fff;
+    margin-bottom: 34px;
+    position: relative;
+    -webkit-box-shadow: inset 1px 1px 24px rgba(0, 0, 0, 0.541176);
+    box-shadow: inset 1px 1px 24px rgba(0, 0, 0, 0.541176);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 15% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 15% 100%, 0 85%);
+    max-height: 1132px;
+    -webkit-transition: all .6s ease-in-out;
+    transition: all .6s ease-in-out; }
+    .team__stats::before {
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      display: block;
+      border: 16px solid transparent;
+      border-top: 8px solid #fff;
+      top: 0;
+      left: 50%;
+      margin-left: -16px; }
+  .team__numbers p {
+    position: relative;
+    text-align: center;
+    margin-bottom: 42px;
+    font-size: 2em;
+    border-bottom: 1px solid #333;
+    -webkit-box-shadow: 0 1px 0 0 #ffffff0f;
+    box-shadow: 0 1px 0 0 #ffffff0f;
+    text-shadow: 1px 1px 1px #000; }
+    .team__numbers p strong {
+      position: absolute;
+      width: 200%;
+      top: -28px;
+      left: 50%;
+      margin-left: -42%;
+      text-align: center;
+      font-size: .75rem;
+      font-weight: 100;
+      letter-spacing: 3px;
+      text-shadow: 1px 1px 0 #000;
+      color: #ffffff7a; }
+  .team__image {
+    height: 70px;
+    background-position: 50%;
+    background-size: 90px;
+    -webkit-box-shadow: inset 0 1px 13px #16c7ff;
+    box-shadow: inset 0 1px 13px #16c7ff;
+    background-image: url("../images/logo_4.jpg"); }
+
+.hidden {
+  padding: 0;
+  max-height: 16px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 85% 100%, 15% 100%, 0 0);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 85% 100%, 15% 100%, 0 0); }
+
+.visible {
+  visibility: visible !important; }
 
 /*# sourceMappingURL=app.css.map */

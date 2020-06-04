@@ -30,10 +30,31 @@ router.post('/headTohead', (req, res) => {
      total.push(right)
 
 
+        const record = TeamRecords.find({'team_id': req.body.rightId}).then((data) => {
+        let matchups = _.filter(data, function(o) {return o.year !== 'Total' && o.year !== '2017'})
+        let games = [];
+
+        for(var i = 0; i < matchups.length; i++) {
+            _.forEach(matchups[i].h2h, (game) => {
+                //console.log(game);
+                if(game.oppId === parseInt(req.body.leftId)){
+                    games.push(game);
+                }
+            })
+        }
+        return games
+     })
+     total.push(record);
+
+
+
+
+
      return Promise.all(total).then((results) => {
          const data = {
              left: results[0],
              right: results[1],
+             games: results[2]
          };
          res.send(data);
      }).catch((e) => {

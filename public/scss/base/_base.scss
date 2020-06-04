@@ -1,6 +1,6 @@
-body{
+body {
     //background-color: #e7e7e7;
-    background-color: $color-grey-light-1;
+    background-color: $color-grey-light-2;
   }
   
   .wrapper {
@@ -20,11 +20,16 @@ body{
     //padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
-  
-    .container-fluid{
-      background-color: white;
-  
+
+    section {
+
+        .container-fluid{
+          background-color: $color-white;
+      
+        }
     }
+  
+
   
     #tbl_h2h{
       font-size: 1.5rem;
