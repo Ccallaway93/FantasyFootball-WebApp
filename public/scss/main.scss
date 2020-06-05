@@ -9,13 +9,17 @@
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
+@import "base/utilities";
 
+@import "components/table";
+@import "components/panel";
 
 
 @import"layout/sidebar";
+@import"layout/header";
 
 
-
+@import "pages/home";
 @import "pages/member";
 @import "pages/headTohead";
 

@@ -62,7 +62,7 @@
         color: #333;
         margin: 0;
         padding: 6px 24px 6px 6px;
-        font-size: .75rem;
+        font-size: 1rem;
         font-weight: 700;
         background-color: #bbb;
         border-radius: 0 !important;
@@ -103,7 +103,7 @@
             position: absolute;
             display: block;
             border: 16px solid transparent;
-            border-top: 8px solid #fff;
+            border-top: 8px solid $color-grey-light-2;
             top: 0;
             left: 50%;
             margin-left: -16px;

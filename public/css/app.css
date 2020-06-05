@@ -7785,6 +7785,31 @@ a.text-dark:hover, a.text-dark:focus {
     transform: rotate(-10deg); }
   100% {
     transform: rotate(0deg); } }
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 body {
   background-color: #e4e2e2; }
 
@@ -7803,6 +7828,263 @@ body {
     background-color: #fff; }
   #content #tbl_h2h {
     font-size: 1.5rem; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Luckiest Guy', cursive;
+  color: #fbff09;
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main-1 {
+    display: inline-block;
+    font-size: 7rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    color: #16c7ff;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--main-2 {
+    display: inline-block;
+    font-size: 7rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, #16c7ff, #1884a5);
+  display: inline-block;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem !important; }
+
+.table__wrapper {
+  margin: 10px;
+  box-shadow: 0px 35px 50px rgba(0, 0, 0, 0.2); }
+.table__gameLogs {
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  border: none;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 100%;
+  white-space: nowrap;
+  background-color: #fff; }
+  .table__gameLogs tr:hover {
+    background-color: #e4e2e2; }
+    .table__gameLogs tr:hover td {
+      border: none; }
+  .table__gameLogs td, .table__gameLogs th {
+    text-align: center;
+    padding: 8px; }
+  .table__gameLogs td {
+    font-size: 12px;
+    border-right: 1px solid #f8f8f8;
+    font-size: 18px; }
+  .table__gameLogs thead th {
+    color: #ffffff;
+    background-color: #4fc3a1; }
+  .table__gameLogs thead th:nth-child(odd) {
+    color: #ffffff;
+    background-color: #324960; }
+  .table__gameLogs tbody tr td {
+    padding: 30px 0 30px; }
+
+@media (max-width: 767px) {
+  .table__gameLogs {
+    display: block;
+    width: 100%; }
+    .table__gameLogs thead, .table__gameLogs tbody, .table__gameLogs thead th {
+      display: block; }
+    .table__gameLogs thead th:last-child {
+      border-bottom: none; }
+    .table__gameLogs thead {
+      float: left; }
+    .table__gameLogs tbody {
+      width: auto;
+      position: relative;
+      overflow-x: auto; }
+    .table__gameLogs td, .table__gameLogs th {
+      padding: 20px .625em .625em .625em;
+      height: 60px;
+      vertical-align: middle;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      overflow-y: auto;
+      width: 120px;
+      font-size: 13px;
+      text-overflow: ellipsis; }
+    .table__gameLogs thead th {
+      text-align: left;
+      border-bottom: 1px solid #f7f7f9; }
+    .table__gameLogs tbody tr {
+      padding: 5px;
+      display: table-cell; }
+    .table__gameLogs tbody tr:nth-child(odd) {
+      background: none; }
+    .table__gameLogs tr:nth-child(even) {
+      background: transparent; }
+    .table__gameLogs tr td:nth-child(odd) {
+      background: #F8F8F8;
+      border-right: 1px solid #e6e4e4; }
+    .table__gameLogs tr td:nth-child(even) {
+      border-right: 1px solid #e6e4e4; }
+    .table__gameLogs tbody td {
+      padding: 5px;
+      display: block;
+      text-align: center; }
+  .table__wrapper {
+    content: "Scroll horizontally >";
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    padding: 0 0 10px; } }
+.panel {
+  perspective: 150rem;
+  position: relative;
+  height: 32rem; }
+  .panel__side {
+    height: 30rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 75%;
+    margin: 0px 20px;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .panel__side--front {
+      background-color: #fff; }
+    .panel__side--back {
+      transform: rotateY(180deg); }
+      .panel__side--back-1 {
+        background-image: linear-gradient(to right bottom, #16c7ff, #1884a5); }
+      .panel__side--back-2 {
+        background-image: linear-gradient(to right bottom, #16c7ff, #1884a5); }
+      .panel__side--back-3 {
+        background-image: linear-gradient(to right bottom, #16c7ff, #1884a5); }
+      .panel__side--back-4 {
+        background-image: linear-gradient(to right bottom, #16c7ff, #1884a5); }
+      .panel__side--back-5 {
+        background-image: linear-gradient(to right bottom, #16c7ff, #1884a5); }
+      .panel__side--back-6 {
+        background-image: linear-gradient(to right bottom, #16c7ff, #1884a5); }
+      .panel__side--back-7 {
+        background-image: linear-gradient(to right bottom, #16c7ff, #1884a5); }
+      .panel__side--back-8 {
+        background-image: linear-gradient(to right bottom, #16c7ff, #1884a5); }
+  .panel:hover .panel__side--front {
+    transform: rotateY(-180deg); }
+  .panel:hover .panel__side--back {
+    transform: rotateY(0); }
+  .panel__picture {
+    background-size: cover;
+    height: 15rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+    .panel__picture--1 {
+      background-image: url(../images/Kevin.jpg); }
+    .panel__picture--2 {
+      background-image: url(../images/Duncan.jpg); }
+    .panel__picture--3 {
+      background-image: url(../images/Matt.jpg); }
+    .panel__picture--4 {
+      background-image: url(../images/Nick.jpg); }
+    .panel__picture--5 {
+      background-image: url(../images/Conner.jpg); }
+    .panel__picture--6 {
+      background-image: url(../images/Morgan.jpg); }
+    .panel__picture--7 {
+      background-image: url(../images/Seth.jpg); }
+    .panel__picture--8 {
+      background-image: url(../images/Erik.jpg); }
+  .panel__heading {
+    font-size: 1.2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: .35rem;
+    text-align: right;
+    color: #fff;
+    position: absolute;
+    top: 13rem;
+    right: 0rem;
+    width: 75%; }
+  .panel__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .panel__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.85), rgba(24, 132, 165, 0.85)); }
+    .panel__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.85), rgba(24, 132, 165, 0.85)); }
+    .panel__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.85), rgba(24, 132, 165, 0.85)); }
+    .panel__heading-span--4 {
+      background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.85), rgba(24, 132, 165, 0.85)); }
+    .panel__heading-span--5 {
+      background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.85), rgba(24, 132, 165, 0.85)); }
+    .panel__heading-span--6 {
+      background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.85), rgba(24, 132, 165, 0.85)); }
+    .panel__heading-span--7 {
+      background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.85), rgba(24, 132, 165, 0.85)); }
+    .panel__heading-span--8 {
+      background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.85), rgba(24, 132, 165, 0.85)); }
+  .panel__details {
+    padding: 1rem; }
+    .panel__details ul {
+      list-style: none;
+      width: 100%;
+      margin: 0 auto; }
+      .panel__details ul li {
+        text-align: center;
+        font-size: 1.2rem;
+        padding: 1rem; }
+        .panel__details ul li:not(:last-child) {
+          border-bottom: 1px solid #e4e2e2; }
+  .panel__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .panel__price-box {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 8rem; }
+  .panel__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .panel__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .sidebar {
   min-width: 250px;
@@ -7940,6 +8222,31 @@ MEDIAQUERIES
   #tbl_h2h {
     font-size: 1rem;
     margin-left: 5rem; } }
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(22, 199, 255, 0.5), rgba(24, 132, 165, 0.5)), url("../images/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.section-members {
+  padding: 25rem 0 15rem 0;
+  margin: 6rem; }
+
 #member #memberCard {
   background: url(https://raw.github.com/mmoustafa/Chalkboard/master/img/bg.png);
   font-family: 'Pangolin', cursive; }
@@ -8029,7 +8336,7 @@ MEDIAQUERIES
     color: #333;
     margin: 0;
     padding: 6px 24px 6px 6px;
-    font-size: .75rem;
+    font-size: 1rem;
     font-weight: 700;
     background-color: #bbb;
     border-radius: 0 !important;
@@ -8061,7 +8368,7 @@ MEDIAQUERIES
       position: absolute;
       display: block;
       border: 16px solid transparent;
-      border-top: 8px solid #fff;
+      border-top: 8px solid #e4e2e2;
       top: 0;
       left: 50%;
       margin-left: -16px; }

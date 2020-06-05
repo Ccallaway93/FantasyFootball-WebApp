@@ -13,9 +13,259 @@
 <body>
 <div class="wrapper">
         {{>sidebar}}
-        <div class="shadow" id="content">
-                <h1>HOME</h1>
-        </div>
+        <div id="content">
+            {{!-- <section class="home">
+                <div id="header" class="header py-2 px-5 mb-4 container-fluid">
+                    <h1 class="display-4">Home</h1>
+                    <p class="lead d-none d-sm-block">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique distinctio quo dignissimos voluptates tenetur soluta!</p>                  
+                </div>
+            </section> --}}
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="img/logo-white.png" alt="Logo" class="header__logo">
+            </div>
+            <div class="header__text-box">
+                <h1 class="heading-primary">
+                    <span class="heading-primary--main-1">Pocket </span>
+                    <span class="heading-primary--main-2">Jobs</span>
+                    {{!-- <span class="heading-primary--sub">home of the best fantasy football league</span> --}}
+                </h1>
+                <a href="#" class="btn btn--white btn--animated">Apply Now</a>
+            </div>
+        </header> 
+            <main>
+                <section class="section-members">
+                <div class="text-center">
+                    <h2 class="heading-secondary u-margin-bottom-big">
+                        Meet the Owners
+                    </h2>
+                </div>
+                    <div class="row">
+                            <div class="col-lg-3">                        
+                                <div class="panel mb-1">
+                                    <div class="panel__side panel__side--front panel__side--front-1">
+                                        <div class="panel__picture panel__picture--1">
+                                            &nbsp;
+                                        </div>
+                                        <h4 class="panel__heading">
+                                            <span class="panel__heading-span panel__heading-span--1">Commisioner</span>
+                                        </h4>
+                                        <div class="panel__details">
+                                            <ul>
+                                                <li>2017: Champion</li>
+                                                <li>2018: 6th</li>
+                                                <li>2019: 2nd</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel__side panel__side--back panel__side--back-1">
+                                        <div class="panel__cta">
+                                            <div class="panel__price-box">
+                                                <p class="panel__price-only">Will name his first child Eli if Giants win the super Bowl.</p>
+                                                <p class="panel__price-value"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="panel mb-1">
+                                    <div class="panel__side panel__side--front panel__side--front-2">
+                                        <div class="panel__picture panel__picture--2">
+                                            &nbsp;
+                                        </div>
+                                        <h4 class="panel__heading">
+                                            <span class="panel__heading-span panel__heading-span--2">Engineer</span>
+                                        </h4>
+                                        <div class="panel__details">
+                                            <ul>
+                                                <li>2017: 5th</li>
+                                                <li>2018: 2nd</li>
+                                                <li>2019: 7th</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel__side panel__side--back panel__side--back-2">
+                                        <div class="panel__cta">
+                                            <div class="panel__price-box">
+                                                <p class="panel__price-only">Knows more about whiskey than you</p>
+                                                <p class="panel__price-value"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="panel mb-1">
+                                    <div class="panel__side panel__side--front panel__side--front-3">
+                                        <div class="panel__picture panel__picture--3">
+                                            &nbsp;
+                                        </div>
+                                        <h4 class="panel__heading">
+                                            <span class="panel__heading-span panel__heading-span--3">Historian</span>
+                                        </h4>
+                                        <div class="panel__details">
+                                            <ul>
+                                                <li>2017: 4th</li>
+                                                <li>2018: 4th</li>
+                                                <li>2019: 4th</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel__side panel__side--back panel__side--back-3">
+                                        <div class="panel__cta">
+                                            <div class="panel__price-box">
+                                                <p class="panel__price-only">Has never won a playoff game</p>
+                                                <p class="panel__price-value"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="panel mb-1">
+                                    <div class="panel__side panel__side--front panel__side--front-4">
+                                        <div class="panel__picture panel__picture--4">
+                                            &nbsp;
+                                        </div>
+                                        <h4 class="panel__heading">
+                                            <span class="panel__heading-span panel__heading-span--4">Loser</span>
+                                        </h4>
+                                        <div class="panel__details">
+                                            <ul>
+                                                <li>2017: 2nd</li>
+                                                <li>2018: 3rd</li>
+                                                <li>2019: Loser</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel__side panel__side--back panel__side--back-4">
+                                        <div class="panel__cta">
+                                            <div class="panel__price-box">
+                                                <p class="panel__price-only">Current loser who has yet to do his punishment</p>
+                                                <p class="panel__price-value"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    <div class="row">
+                            <div class="col-lg-3">                        
+                                <div class="panel mb-1">
+                                    <div class="panel__side panel__side--front panel__side--front-5">
+                                        <div class="panel__picture panel__picture--5">
+                                            &nbsp;
+                                        </div>
+                                        <h4 class="panel__heading">
+                                            <span class="panel__heading-span panel__heading-span--5">CIO</span>
+                                        </h4>
+                                        <div class="panel__details">
+                                            <ul>
+                                                <li>2017: 3rd</li>
+                                                <li>2018: 7th</li>
+                                                <li>2019: 6th</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel__side panel__side--back panel__side--back-5">
+                                        <div class="panel__cta">
+                                            <div class="panel__price-box">
+                                                <p class="panel__price-only">Sometimes cares too much</p>
+                                                <p class="panel__price-value"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="panel mb-1">
+                                    <div class="panel__side panel__side--front panel__side--front-6">
+                                        <div class="panel__picture panel__picture--6">
+                                            &nbsp;
+                                        </div>
+                                        <h4 class="panel__heading">
+                                            <span class="panel__heading-span panel__heading-span--6">Taco</span>
+                                        </h4>
+                                        <div class="panel__details">
+                                            <ul>
+                                                <li>2017: 6th</li>
+                                                <li>2018: Loser</li>
+                                                <li>2019: 5th</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel__side panel__side--back panel__side--back-6">
+                                        <div class="panel__cta">
+                                            <div class="panel__price-box">
+                                                <p class="panel__price-only">Ate a head of lettuce</p>
+                                                <p class="panel__price-value"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="panel mb-1">
+                                    <div class="panel__side panel__side--front panel__side--front-7">
+                                        <div class="panel__picture panel__picture--7">
+                                            &nbsp;
+                                        </div>
+                                        <h4 class="panel__heading">
+                                            <span class="panel__heading-span panel__heading-span--7">Doctor</span>
+                                        </h4>
+                                        <div class="panel__details">
+                                            <ul>
+                                                <li>2017: Loser</li>
+                                                <li>2018: 5th</li>
+                                                <li>2019: 3rd</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel__side panel__side--back panel__side--back-7">
+                                        <div class="panel__cta">
+                                            <div class="panel__price-box">
+                                                <p class="panel__price-only">Is a situational comedian</p>
+                                                <p class="panel__price-value"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="panel mb-1">
+                                    <div class="panel__side panel__side--front panel__side--front-8">
+                                        <div class="panel__picture panel__picture--8">
+                                            &nbsp;
+                                        </div>
+                                        <h4 class="panel__heading">
+                                            <span class="panel__heading-span panel__heading-span--8">Champion</span>
+                                        </h4>
+                                        <div class="panel__details">
+                                            <ul>
+                                                <li>2017: 7th</li>
+                                                <li>2018: Champion</li>
+                                                <li>2019: Champion</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="panel__side panel__side--back panel__side--back-8">
+                                        <div class="panel__cta">
+                                            <div class="panel__price-box">
+                                                <p class="panel__price-only">Has never lost a playoff game</p>
+                                                <p class="panel__price-value"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
             
 </div>
 

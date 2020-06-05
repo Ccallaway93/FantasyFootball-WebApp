@@ -14,8 +14,8 @@
 <div class="wrapper">
         {{>sidebar}}
         <div id="content">
-            <section>
-                <div id="header" class="header py-2 px-5 mb-4 container-fluid">
+            <section class="headTohead">
+                <div id="header" class="headTohead__header py-2 px-5 mb-4 container-fluid">
                     <h1 class="display-4">Head To Head</h1>
                     <p class="lead d-none d-sm-block">The accumulation of all Head-To-Head regular season matchups from the year 2018 and beyond.</p>                  
                 </div>
@@ -116,130 +116,28 @@
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <div class="card mb-3">
-                            <div class="card-header">Gamelogs</div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="gameLogs">
-                                        <thead>
-                                            <tr>
-                                                <th>Date</th>
-                                                <th>Game</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                        <div class="table__wrapper">
+                            <table class="table__gameLogs" id="gameLogs">
+                                <thead>
+                                    <tr>
+                                        <th>Season</th>
+                                        <th>Week</th>
+                                        <th>Team 1</th>
+                                        <th>Team 2</th>
+                                        <th>Winner</th>
+                                        <th>MVP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
 
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-
             </main>
-            {{!-- <div class="container mb-4">
-                <div class="row m-2">
-                    <div class="col-md-6 p-3">
-                        <div class="card text-white bg-dark shadow">
-                            <div class="card-body">
-                                <h2 id="leftTeamName" class="display-4 card-title text-primary text-center">TEAM 1</h2>
-                                <div class="dropdown text-center">
-                                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        TEAM
-                                    </button>
-                                    <div id="left" class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <button id="1" class="dropdown-item" type="button">Kevin</button>
-                                        <button id="2" class="dropdown-item" type="button">Duncan</button>
-                                        <button id="3" class="dropdown-item" type="button">Matt</button>
-                                        <button id="4" class="dropdown-item" type="button">Nick</button>
-                                        <button id="5" class="dropdown-item" type="button">Conner</button>
-                                        <button id="6" class="dropdown-item" type="button">Morgan</button>
-                                        <button id="7" class="dropdown-item" type="button">Seth</button>
-                                        <button id="8" class="dropdown-item" type="button">Erik</button>
-                                    </div>
-                                </div>
-                                <h1 id="leftWins" class="display-1 text-center">0</h1>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 p-3">
-                        <div class="card text-white bg-dark shadow">
-                            <div class="card-body">
-                                <h2 id="rightTeamName" class="display-4 card-title text-primary text-center">TEAM 2</h2>
-                                <div class="dropdown text-center">
-                                    <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        TEAM
-                                    </button>
-                                    <div id="right" class="dropdown-menu" aria-labelledby="dropdownMenu3">
-                                        <button id="1" class="dropdown-item" type="button">Kevin</button>
-                                        <button id="2" class="dropdown-item" type="button">Duncan</button>
-                                        <button id="3" class="dropdown-item" type="button">Matt</button>
-                                        <button id="4" class="dropdown-item" type="button">Nick</button>
-                                        <button id="5" class="dropdown-item" type="button">Conner</button>
-                                        <button id="6" class="dropdown-item" type="button">Morgan</button>
-                                        <button id="7" class="dropdown-item" type="button">Seth</button>
-                                        <button id="8" class="dropdown-item" type="button">Erik</button>
-                                    </div>
-                                </div>
-                                <h1 id="rightWins" class="display-1 text-center">0</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="test" class="test collapse">
-                <div class="row">
-                    <table id="tbl_h2h" class="table table-striped table-dark text-center shadow">
-                        <thead>
-                            <tr>
-                            <td style="width: 30%;" id="leftHostScore" scope="col"></td>
-                            <th style="width: 40%;" scope="col">Total Points</th>
-                            <td style="width: 30%;" id="rightHostScore" scope="col"></td>
-                            </tr>
-                        </thead>
-                        <tbody class="mb-4 pb-4">
-                            <tr>
-                                <td style="width: 30%;" id="leftMVP"></td>
-                                <th style="width: 40%;" scope="col">Starting MVP</th>
-                                <td style="width: 30%;" id="rightMVP"></td>
-                            </tr>
-                            <tr>
-                                <td style="width: 30%;" id="leftBenchMVP"></td>
-                                <th style="width: 40%;" scope="col">Bench MVP</th>
-                                <td style="width: 30%;" id="rightBenchMVP"></td>
-                            </tr>
-                            <tr>
-                                <td style="width: 30%;" id="leftLowestWinMargin"></td>
-                                <th style="width: 40%;" scope="col">Lowest Margin</th>
-                                <td style="width: 30%;" id="rightLowestWinMargin"></td>
-                            </tr>
-                            <tr>
-                                <td style="width: 30%;" id="leftHighestWinMargin"></td>
-                                <th style="width: 40%;" scope="col">Highest Margin</th>
-                                <td style="width: 30%;" id="rightHighestWinMargin"></td>
-                            </tr>                        <tr>
-                                <td style="width: 30%;"></td>
-                                <th style="width: 40%;" scope="col"></th>
-                                <td style="width: 30%;"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                </div>
-            </div> --}}
+
     </div>
-
-        {{!-- <p>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#test" aria-expanded="false" aria-controls="test">
-            Button with data-target
-            </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-            </div>
-        </div> --}}
-
 </div>
 
 
@@ -262,27 +160,26 @@
 
             $('#left').change(function() {
                 left = $(this).children('option:selected').val();
-                console.log(left);
             })
 
             $('#right').change(function() {
                 right = $(this).children('option:selected').val();
-                console.log(right);
             })
 
             function insertDate(year, week) {
-                var markup = '<tr><td>'+ year +' Season,' + 'Week ' + week + '</td></tr>';
-                $('#gameLogs tbody').append(markup);
+                var markup = '<td>'+ year +' Season,' + 'Week ' + week + '</td>';
+                return markup;
             }
 
             function insertGame(teamA,teamAScore,teamB,teamBScore) {
-                
+                var markup = '<td> ' + teamA + ' ' + teamAScore + ', ' + teamB + ' ' + teamBScore;
+                    return markup;
             }
+
 
 
             $('select').change(function() {
                 if (left >= 1 && right >= 1){
-                    console.log('we are in here')
 
                     $('.team__stats').removeClass('hidden');
                     $('.team__stats').addClass('visible');
@@ -292,12 +189,8 @@
                 console.log(hostId);
                 $.post('/headTohead', {leftId: left, rightId: right}, function(data) {
 
-                    console.log(data.games);
+                    console.log(data);
 
-                    $('#test').slideToggle(500, function() {
-                        console.log('in the toggle')
-                         
-                    })
 
                     $('#left_points').children('span').text(data.left.hostScore)
                     $('#leftTeamName').children('span').text(data.right.oppName)
@@ -315,10 +208,45 @@
                     $('#right_low').text(data.right.lowestMargin)
                     $('#right_high').text(data.right.largestMargin)
 
+                    $('#gameLogs tbody').empty();
+
+                    for(var i = 0; i <data.games.length; i++) {
+                        var mvp;
+                        var mvpScore;
+                        var winner;
+                        if(data.games[i].win === true){
+                            mvp = data.games[i].hostStartingMVP;
+                            mvpScore = data.games[i].hostStartingMVPScore;
+                            winner = data.right.oppName;
+                        }
+                        else{
+                            mvp = data.games[i].oppStartingMVP;
+                            mvpScore = data.games[i].oppStartingMVPScore;
+                            winner = data.games[i].oppName;
+                        }
+
+                        var seasonMarkup = '<td>'+ data.games[i].seasonId + '</td>';
+                        var weekMarkup = '<td>'+ data.games[i].scoringPeriodId + '</td>';
+                        var teamLeftMarkup = '<td>'+ data.right.oppName + ' ' + data.games[i].hostScore + '</td>';
+                        var teamRightMarkup = '<td>'+ data.games[i].oppName + ' ' + data.games[i].oppScore + '</td>';
+                        var winnerMarkup = '<td>'+ winner + '</td>';
+                        var mvpMarkup = `<td> ${mvp}  (${mvpScore.toFixed(1)}) </td>`;
+
+                        console.log(winner)
+                        console.log(mvpScore)
+
+                        //var game = '<td> ' + data.right.oppName + ' ' + data.games[i].hostScore + ', ' + data.games[i].oppName + ' ' + data.games[i].oppScore + '</td>';
+                        //console.log(date)
+                        //console.log(game)
+
+                        $('#gameLogs tbody').append('<tr>' + seasonMarkup + weekMarkup + teamLeftMarkup + teamRightMarkup + winnerMarkup + mvpMarkup + '</tr>')
+
+                    }
+
+
                 });
                 }
                 else{
-                    console.log('we are not')
                 }
             })
 
