@@ -15,6 +15,7 @@
         font-weight: 400;
         letter-spacing: 1rem;
         color:$color-primary;
+        text-shadow: 1px 2px $color-white;
     
         animation-name: moveInLeft;
         animation-duration: 1s;
@@ -27,6 +28,7 @@
         font-size: 7rem;
         font-weight: 400;
         letter-spacing: 1rem;
+        text-shadow: 1px 2px $color-white;
     
         animation-name: moveInRight;
         animation-duration: 1s;
@@ -37,10 +39,12 @@
     &--sub {
         display: block;
         font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: 1.75rem;
+        font-weight: 100;
+        letter-spacing: .25rem;
+        color: $color-white;
+        text-shadow: 2px 3px $color-black;
     
-        animation-name: moveInRight;
+        animation-name: moveInBottom;
         animation-duration: 1s;
         animation-timing-function: ease-out;
 
@@ -65,4 +69,14 @@
         transform: skewY(2deg) skewX(15deg) scale(1.1);
         text-shadow: .5rem 1rem 2rem rgba($color-black, .2) 
     }
+}
+
+.secondary {
+    background-image: linear-gradient(to right, $color-secondary, $color-secondary-dark);
+}
+
+.heading-tertiary {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }

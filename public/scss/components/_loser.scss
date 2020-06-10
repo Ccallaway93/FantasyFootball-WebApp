@@ -1,0 +1,37 @@
+.shame-box {
+    background-color: rgba($color-white, .4);
+    font-size: 1.5rem;
+    margin: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    transition: transform .3s;
+
+
+    &__icon {
+        font-size: 6rem;
+        margin-bottom: .5rem;
+        display: inline-block;
+        //background-image: linear-gradient(to right, $color-primary, $color-primary-dark);
+        background-color: #7A5901;
+        -webkit-background-clip: text;
+        color: transparent;
+
+    }
+
+    &__text {
+        padding-bottom: 2rem;
+    }
+
+    &__year {
+        position: relative;
+        top:50%;
+        left:50%;
+
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}

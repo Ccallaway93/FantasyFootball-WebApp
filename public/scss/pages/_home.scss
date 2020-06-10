@@ -1,4 +1,94 @@
 .section-members {
-    padding: 25rem 0 15rem 0;
+    padding: 5rem 0 15rem 0;
     margin: 6rem;
 }
+
+
+.section-champions {
+    padding: 10rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary, $color-primary-dark);
+    transform: skewY(-7deg);
+    margin-top: -13rem;
+    margin-bottom: -7rem;
+
+     & > * {
+         transform: skewY(7deg);
+     }
+
+}
+
+.section-losers {
+    position: relative;
+    padding: 14rem 0 15rem 0;
+}
+
+
+.feature {
+        background-image: linear-gradient(105deg, 
+                                        rgba($color-white, .9) 0%,
+                                        rgba($color-white, .9) 50%,
+                                        transparent 50%) ,
+                                        url(../images/Hero_trophy.jpg);
+        background-size: cover;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+                                        
+}
+
+.champions {
+    width:50%;
+    padding: 6rem;
+}
+
+.plaque {
+    background: linear-gradient(to top, #8f6B29, #FDE08D, #DF9F28);
+    margin: 1rem .375rem 8rem .375rem;
+    font-size: 1.5rem;
+    padding: 3.5rem;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: -.5rem 1rem 1rem $color-black;
+    position: relative;
+    transition: transform .3s;
+
+    &__heading {
+        padding: 5px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: underline;
+        position: absolute;
+        top: 0;
+        left:0;
+        right:0;
+    }
+
+    &__paragraph {
+        padding: 1px;
+        font-size: 1.3rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        position: absolute;
+        top: 40%;
+        left: 25%;
+    }
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+}
+
+.jumbotron {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.hoverable {
+    transition: all .55s ease-in-out;
+    &:hover {
+        box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        
+    }
+}
+
+
+
