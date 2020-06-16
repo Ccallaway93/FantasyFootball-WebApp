@@ -19,6 +19,7 @@ router.get('/member/kevin', (req,res) => {
                 person.general = general;
                 person.keepers = keepers;
                 person.records = records;
+                console.log(person)
                 res.render('member', person)
             })
         })
@@ -51,6 +52,7 @@ router.get('/member/matt', (req,res) => {
                 person.general = general;
                 person.keepers = keepers;
                 person.records = records;
+                console.log(person);
                 res.render('member', person)
             })
         })

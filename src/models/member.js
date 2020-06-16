@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const memberSchema = new mongoose.Schema({
     team_id: Number,
     name: String,
+    thumbnail: String,
     role: String,
     currentStanding: Number,
     active: Boolean,

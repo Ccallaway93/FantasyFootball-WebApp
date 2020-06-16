@@ -4,6 +4,11 @@ const express       = require('express')
 const hbs           = require('hbs')
 const bodyParser    = require('body-parser');
 const moment        = require('moment');
+const multer        = require('multer');
+const GridFsStorage = require('multer-gridfs-storage');
+const Grid      = require('gridfs-stream');
+const mongoose = require('mongoose');
+
 //const seedDB      = require('./seeds')
                       require('./db/mongoose')
 const HistoryRouter = require('./routes/history')
@@ -12,6 +17,9 @@ const SeedRouter = require('./routes/seed')
 const HeadToHeadRouter = require('./routes/headTohead')
 const MemberRouter = require('./routes/member')
 const HotTakeRouter = require('./routes/hotTakes')
+
+const {mongo} = require('./db/mongoose');
+
 
 const app = express()
 
@@ -48,6 +56,14 @@ hbs.registerHelper('equal', function(lvalue, rvalue, options) {
     }
   });
 
+hbs.registerHelper("img", function(source) {
+    var src = hbs.escapeExpression(source);
+    console.log(src)
+        //<img src="" alt="">
+        
+   return new hbs.SafeString("<img src='" + src + "'>");
+});
+
 hbs.registerHelper("debug", function(optionalValue) {
     console.log("Current Context");
     console.log("====================");
@@ -72,6 +88,18 @@ app.use(HotTakeRouter)
 app.get('', (req,res) => {
     res.render('index')
 })
+
+
+
+
+// @route GET /image/:filename
+// @desc Display Image
+app.get('/image', (req, res) => {
+    
+    let test = mongo.getTeamImage(1);
+ 
+
+  });
 
 
 

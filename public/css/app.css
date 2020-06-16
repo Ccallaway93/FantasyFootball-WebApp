@@ -8222,6 +8222,20 @@ body {
     width: 100%;
     object-fit: cover; }
 
+.user {
+  margin-right: 1rem; }
+  .user-md {
+    height: 4rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px #fff; }
+  .user-sm {
+    height: 2rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px #000;
+    transition: all .3s; }
+    .user-sm:hover {
+      transform: scale(2.5) translateY(-2px); }
+
 .sidebar {
   min-width: 250px;
   max-width: 250px;
