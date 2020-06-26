@@ -14,32 +14,45 @@
 <body>
 
 <div class="wrapper">
-        {{>sidebar}}
-        <div id="content">
-            <section>
-                <div id="header" class="py-2 px-5 container-fluid">
-                    <h1 class="display-4">HISTORY</h1>
-                    <p class="lead d-none d-sm-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos temporibus nostrum consequatur corrupti eveniet?</p>                  
-                </div>
-            </section>
-            <section id="top">
-            <div class="p-3">
-                <div id="card_records" class="shadow card">
-                    <div class="card-header">
-                    <h3>League Records</h3>
+    {{>sidebar}}
+    <div id="content">
+        <section>
+            <div id="header" class="py-2 px-5 container-fluid">
+                <h1 class="display-4">HISTORY</h1>
+                <p class="lead d-none d-sm-block">The complete historical scoreboard of all teams for every season.</p>                  
+            </div>
+        </section>
+        <section id="top">
+
+            <div class="text-center">
+                <h2 class="heading-secondary m-4">
+                    League Records
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shadow card bg-dark card__history">
+                        <div class="card-header">
+                            <h3>Records</h3>
+                        </div>
+                        {{>records}}
                     </div>
-                    {{>records}}
                 </div>
             </div>
-            <div class="p-3 row text-center">
-                <div class="p-2 col-md-6">
-                    <div id="card_points" class="shadow card">
+            <div class="text-center">
+                <h2 class="heading-secondary m-4">
+                    Season Totals
+                </h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="card_points" class="shadow card bg-dark card__history">
                         <div class="card-header">
                             <div class="row text-center">
                             <h3>Regular Season Points</h3>
                                 <div class="pl-5 btn-group">
-                                    <button id="btn_points" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2017</button>
-                                    <div class="dropdown-menu">
+                                    <button id="btn_points" type="button" class="btn btn-points dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2017</button>
+                                    <div class="dropdown-menu btn-dropdown bg-dark">
                                         <a id="2017" class="dropdown-item" href="#">2017</a>
                                         <a id="2018" class="dropdown-item" href="#">2018</a>
                                         <a id="2019" class="dropdown-item" href="#">2019</a>
@@ -47,90 +60,41 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card-body">
-                            {{>total_2017}}
-                            {{>total_2018}}
-                            {{>total_2019}}
-                        </div>
+                        {{>total_2017}}
+                        {{>total_2018}}
+                        {{>total_2019}}
                     </div>
                 </div>
-                <div class="p-2 col-md-6">
-                    <div id="card_playoffs" class="shadow card">
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div id="card_playoffs" class="shadow card bg-dark card__history">
                         <div class="card-header">
-                        <h3>Trips to the Playoffs</h3>
+                            <h3>Trips to the Playoffs</h3>
                         </div>
                         {{>playoffs}}
                     </div>
                 </div>
-            </div>
-            <div class="p-3 row text-center">
-                <div class="p-2 col-md-6">
-                    <div id="card_losses10" class="shadow card">
+                <div class="col-lg-4">
+                    <div id="card_losses10" class="shadow card bg-dark card__history">
                         <div class="card-header">
-                        <h3>Losses Within 10 points</h3>
+                            <h3>Losses Within 10 points</h3>
                         </div>
                         {{>lossesWithin10}}
                     </div>
                 </div>
-                <div class="p-2 col-md-6">
-                    <div id="card_losses5" class="shadow card">
+                <div class="col-lg-4">
+                    <div id="card_losses5" class="shadow card bg-dark card__history">
                         <div class="card-header">
-                        <h3>Losses Within 5 Points</h3>
+                            <h3>Losses Within 5 Points</h3>
                         </div>
                         {{>lossesWithin5}}
                     </div>
                 </div>
             </div>
-                {{!-- <div class="container text-center">
-                    <div class="row">
-                        <div class="col-md-6 p-3">
-                            <div id="card_points" class="shadow card">
-                                <div class="card-header">
-                                    <h3 class="pl-3">Losses within 10 points</h3>
-                                </div>
-                                <div class="card-body">
-                                    {{>lossesWithin10}}
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 p-3">
-                            <div id="card_points" class="shadow card">
-                                <div class="card-header">
-                                    <h3 class="pl-3">Losses within 5 points</h3>
-                                </div>
-                                <div class="card-body">
-                                    {{>lossesWithin5}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
         </section>
-
-
-            {{!-- <div class="row">
-                <div id="card_points" class="col-6 shadow card">
-                    <div class="card-header">
-                    <h3>REGULAR SEASON POINTS</h3>
-                    <div class="p-1">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button id="2017" type="button" class="btn btn-primary active">2017</button>
-                            <button id="2018" type="button" class="btn btn-secondary">2018</button>
-                            <button id="2019" type="button" class="btn btn-secondary">2019</button>
-                        </div>
-                    </div>
-                    </div>
-                        {{>total_2017}}
-                        {{>total_2018}}
-                        {{>total_2019}}
-                </div>
-                {{>playoffs}}
-            </div> --}}
-
-
-            
-            
-        </div>
+        
+    </div>
 </div>
 
 

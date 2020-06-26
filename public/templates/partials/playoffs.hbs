@@ -1,5 +1,5 @@
-<table id="tbl_playoffs" class="card-table table table-striped display compact">
-        <thead class="thead-light">
+<table id="tbl_playoffs" class="table table-dark table__points">
+        <thead>
         <tr>
             <th scope="col">Name</th>
             <th scope="col">Years</th>
@@ -9,7 +9,7 @@
         <tbody>
         {{#each playoffs}}
             <tr>
-                <td>{{name}}</td>
+                <td><img class="user user-sm" src="/images/{{name}}_thumb.png" alt="{{name}}"> {{name}}</td>
                 <td>{{years}}</td>
                 <td>{{total}}</td>
             </tr>

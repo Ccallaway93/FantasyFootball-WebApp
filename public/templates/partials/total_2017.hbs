@@ -1,5 +1,5 @@
-<table id="tbl_2017" class="card-table table table-striped display compact">
-      <thead class="thead-light">
+<table id="tbl_2017" class="table table-dark table__points">
+      <thead>
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Points For</th>
@@ -11,7 +11,7 @@
       {{#each points}}
           {{#equal year 2017}}
               <tr>
-                  <td>{{name}}</td>
+                  <td><img class="user user-sm" src="/images/{{name}}_thumb.png" alt="{{name}}"> {{name}}</td>
                   <td>{{pointsFor}}</td>
                   <td>{{pointsAgainst}}</td>
                   <td>{{difference}}</td>

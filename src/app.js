@@ -89,17 +89,9 @@ app.get('', (req,res) => {
     res.render('index')
 })
 
-
-
-
-// @route GET /image/:filename
-// @desc Display Image
-app.get('/image', (req, res) => {
-    
-    let test = mongo.getTeamImage(1);
- 
-
-  });
+app.get('/about', (req,res) => {
+    res.render('about')
+})
 
 
 

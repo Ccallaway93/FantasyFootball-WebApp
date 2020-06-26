@@ -1,5 +1,8 @@
+
+
 .table {
 
+    // Table for the Head to Head section
     &__wrapper {
         margin: 10px;
         box-shadow: 0px 35px 50px rgba( 0, 0, 0, 0.2 );
@@ -61,6 +64,87 @@
         // }
     }
 
+    &__records {
+        border-radius: 1rem;
+
+        thead th {
+            color: $color-white;
+            background-color: $color-primary;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+    }
+
+    &__points {
+        border-radius: 1rem;
+
+        thead th {
+            color: $color-black;
+            background-color: $color-secondary;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+    }
+
+    &__standing {
+        border-radius: 1rem;
+
+        thead th {
+            color: $color-black;
+            background-color: $color-ternary;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+    }
+
+    &__hot {
+        border-radius: 1rem;
+
+        thead th {
+            color: $color-white;
+            background-color: $color-hot;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+    }
+    
+
+}
+
+.card {
+
+    &__history {
+        color: $color-white;
+        border-radius: 1rem;
+        margin: 1rem 0;
+    }
+
+}
+
+.btn {
+
+    &-points {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+
+    &-dropdown {
+        a {
+            color: $color-white;
+        }
+
+    }
+
+    // &-standings {
+
+    //     button {
+    //         color: $color-black;
+    //         background-color: $color-grey-dark;
+    //         border-color: $color-secondary;
+
+    //     }
+
+    // }
 }
 
 @media (max-width: 767px) {

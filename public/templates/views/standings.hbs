@@ -22,23 +22,25 @@
                     <p class="lead d-none d-sm-block">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis quos temporibus nostrum consequatur corrupti eveniet?</p>                  
                 </div>
             </section>
-            <div class="p-3">
-                <div id="card_standings" class="shadow card card-dark">
-                    <div class="card-header">
-                    <h3>REGULAR SEASON STANDINGS</h3>
-                    <div class="p-1">
-                        <div class="btn-group" role="group" aria-label="Basic example">
-                            <button id="2017" type="button" class="btn btn-secondary">2017</button>
-                            <button id="2018" type="button" class="btn btn-secondary">2018</button>
-                            <button id="2019" type="button" class="btn btn-secondary">2019</button>
-                            <button id="Total" type="button" class="btn btn-primary active">Total</button>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="card_standings" class="shadow card bg-dark card__history">
+                        <div class="card-header">
+                        <h3>REGULAR SEASON STANDINGS</h3>
+                        <div class="p-1">
+                            <div class="btn-group btn-standings" role="group" aria-label="Basic example">
+                                <button id="2017" type="button" class="btn btn-info">2017</button>
+                                <button id="2018" type="button" class="btn btn-info">2018</button>
+                                <button id="2019" type="button" class="btn btn-info">2019</button>
+                                <button id="Total" type="button" class="btn btn-primary active">Total</button>
+                            </div>
                         </div>
+                        </div>
+                        {{>total_standings}}
+                        {{>2017_standings}}
+                        {{>2018_standings}}
+                        {{>2019_standings}}
                     </div>
-                    </div>
-                    {{>total_standings}}
-                    {{>2017_standings}}
-                    {{>2018_standings}}
-                    {{>2019_standings}}
                 </div>
             </div>
         </div>
@@ -163,8 +165,8 @@
 
                  var button = this.id;
                  
-                 $('button').addClass('btn-secondary')
-                 $('#'+button).removeClass('btn-secondary active')
+                 $('button').addClass('btn-info')
+                 $('#'+button).removeClass('btn-info active')
                  $('#'+button).addClass('btn-primary active')
                  //$('#'+button).addClass('.active')
 
