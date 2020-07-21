@@ -7776,6 +7776,22 @@ a.text-dark:hover, a.text-dark:focus {
 /* ---------------------------------------------------
   MEDIAQUERIES
 ----------------------------------------------------- */
+/*
+
+0-600px:    Phone
+600-900px:  Tablet portrait
+900-1200px: Tablet Landscape
+[1200-1800] this is normal styles applyed
+1800px+:    Big desktop
+
+*/
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+*/
 @keyframes swinging {
   0% {
     transform: rotate(0deg); }
@@ -7818,6 +7834,10 @@ a.text-dark:hover, a.text-dark:focus {
     opacity: 0; }
   100% {
     opacity: 1; } }
+@media (max-width: 600px) {
+  html {
+    font-size: 50%; } }
+
 body {
   background-color: #e4e2e2; }
 
@@ -7835,6 +7855,9 @@ body {
   transition: all 0.3s; }
   #content section .container-fluid, #content section .container-sm, #content section .container-md, #content section .container-lg, #content section .container-xl {
     background-color: #fff; }
+  @media (max-width: 600px) {
+    #content {
+      padding: 0; } }
   #content #tbl_h2h {
     font-size: 1.5rem; }
 
@@ -7855,6 +7878,12 @@ body {
     animation-name: moveInLeft;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
+    @media (max-width: 1200px) {
+      .heading-primary--main-1 {
+        font-size: 3rem; } }
+    @media (max-width: 600px) {
+      .heading-primary--main-1 {
+        font-size: 10rem; } }
   .heading-primary--main-2 {
     display: inline-block;
     font-size: 7rem;
@@ -7864,6 +7893,12 @@ body {
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
+    @media (max-width: 1200px) {
+      .heading-primary--main-2 {
+        font-size: 3rem; } }
+    @media (max-width: 600px) {
+      .heading-primary--main-2 {
+        font-size: 10rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -7874,6 +7909,12 @@ body {
     animation-name: moveInBottom;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
+    @media (max-width: 1200px) {
+      .heading-primary--sub {
+        font-size: 1rem; } }
+    @media (max-width: 600px) {
+      .heading-primary--sub {
+        font-size: 2.8rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -8204,6 +8245,12 @@ body {
 .button--animated {
   animation: fadeIn 1s ease-out .75s;
   animation-fill-mode: backwards; }
+@media (max-width: 1200px) {
+  .button, .button:link, .button:visited {
+    padding: .5rem 1.5rem; } }
+@media (max-width: 600px) {
+  .button, .button:link, .button:visited {
+    padding: 1.5rem 2.5rem; } }
 
 .btn-text:link, .btn-text:visited {
   font-size: 16px;
@@ -8362,7 +8409,7 @@ body {
 /* ---------------------------------------------------
 MEDIAQUERIES
 ----------------------------------------------------- */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .sidebar {
     min-width: 80px;
     max-width: 80px;
@@ -8378,20 +8425,21 @@ MEDIAQUERIES
     .sidebar__link {
       padding: 20px 10px;
       text-align: center;
-      font-size: 0.85em; }
+      font-size: 1.5rem; }
       .sidebar__link span {
-        font-size: 0.85em; }
+        font-size: 2.5rem; }
       .sidebar__link i {
         margin-right: 0;
         display: block;
-        font-size: 1.8em;
+        font-size: 2.5rem;
         margin-bottom: 5px; }
     .sidebar__header h3 {
       display: none; }
     .sidebar__header strong {
       display: block;
       color: #16c7ff;
-      text-shadow: 1px 1px 2px #000; }
+      text-shadow: 1px 1px 2px #000;
+      font-size: 2.5rem; }
       .sidebar__header strong span {
         color: #fbff09;
         text-shadow: 1px 1px 2px #000; }
@@ -8402,7 +8450,7 @@ MEDIAQUERIES
     padding: 10px !important;
     font-size: .9em !important; }
     .submenu__list-link i {
-      font-size: 1.3em; }
+      font-size: 2.5rem; }
     .submenu__list-link .trophy {
       margin-left: 5px; }
     .submenu__list-link .poop {
@@ -8425,12 +8473,21 @@ MEDIAQUERIES
     left: 4rem; }
   .header__logo {
     height: 10.5rem; }
+    @media (max-width: 1200px) {
+      .header__logo {
+        height: 6.5rem; } }
+    @media (max-width: 600px) {
+      .header__logo {
+        visibility: hidden; } }
   .header__text-box {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center; }
+  @media (max-width: 1200px) {
+    .header {
+      font-size: 50%; } }
 
 .footer {
   width: 100%;
@@ -8497,6 +8554,10 @@ MEDIAQUERIES
 .champions {
   width: 50%;
   padding: 6rem; }
+  @media (max-width: 600px) {
+    .champions {
+      width: auto;
+      padding: 5rem; } }
 
 .plaque {
   background: linear-gradient(to top, #8f6B29, #FDE08D, #DF9F28);

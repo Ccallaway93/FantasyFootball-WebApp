@@ -1,3 +1,12 @@
+html {
+  @include respond(phone) {
+    font-size:50%;
+  }
+}
+
+
+
+
 body {
     //background-color: #e7e7e7;
     background-color: $color-grey-light-2;
@@ -27,6 +36,10 @@ body {
           background-color: $color-white;
       
         }
+    }
+
+    @include respond(phone) {
+      padding: 0;
     }
   
 
