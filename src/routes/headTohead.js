@@ -6,12 +6,12 @@ const TotalPoints = require('../models/totalPoints')
 const TeamRecords = require('../models/teamRecords')
 
 
-router.get('/headTohead', (req, res) => {
+router.get('/headToHead', (req, res) => {
 
 
     TeamRecords.find({'year': 'Total', 'name': 'Erik'}).then((data) => {
         console.log(data);
-        res.render('headTohead',data);
+        res.render('headToHead',data);
     })
 
 })
