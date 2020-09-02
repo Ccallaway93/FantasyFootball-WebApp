@@ -178,3 +178,28 @@ module.exports.Historical = Historical
 // Historical.getPointsForYear({seasonId: 2018, scoringPeriodId:12}).then((results) => {
 //     console.log(results);
 // })
+
+console.log('im here')
+
+// function fizzBuzz () {
+//     var num = 100;
+//     var test = 6 % 3;
+//     console.log(test)
+
+//     for (i = 1; i < num; i++){
+//         if( i % 3 === 0 && i % 5 != 0) {
+//             console.log('Fizz')
+//         }
+//         else if ( i % 5 === 0 && i % 3 != 0) {
+//             console.log('Buzz')
+//         }
+//         else if (i % 5 === 0 && i % 3 === 0 ) {
+//             console.log('Fizz Buzz')
+//         }
+//         else {
+//             console.log(i)
+//         }
+//     }
+// }
+
+// fizzBuzz();

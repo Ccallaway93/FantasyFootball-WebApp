@@ -33,7 +33,7 @@ conn.once('open',  () => {
 
 router.get('/history', (req, res) => {
     Historical.getAllHistoricalData().then((data) => {
-        console.log(data);        
+        console.log(data);
         res.render('history', data);
     }).catch((error) => {
         console.log(error)
