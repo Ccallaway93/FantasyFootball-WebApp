@@ -10,7 +10,7 @@ const crypto = require('crypto');
 const {Historical} = require('../historical')
 const {Seed} = require('../seed')
 const {mongo} = require('../db/mongoose');
-const {HeadToHead} = require('../headTohead')
+//const {HeadToHead} = require('../test')
 const TotalPoints = require('../models/totalPoints')
 const TeamRecords = require('../models/teamRecords')
 
