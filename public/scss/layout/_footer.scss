@@ -1,15 +1,25 @@
 .footer {
     width: 100%;
-    padding: 0 16rem;
     background-color: $color-grey-dark-3;
     font-size: 1.4rem;
     color: $color-grey-light-1;
+    
+    display: grid;
+    grid-template-rows: repeat(2, max-content) 5vh;
+    grid-template-columns: 20vw repeat(2, 1fr);
+
+    @include respond(desktop) {
+        font-size: 1.2rem;
+    }
 
 
     &__logo-box {
+        grid-row: 1 / 2;
+        grid-column: 2 / 4;
+        align-self: center;
+        justify-self: center;
         text-align: center;
         margin-bottom: 1rem;
-
     }
 
     &__logo {
@@ -18,18 +28,36 @@
     }
 
     &__navigation {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        align-self: center;
+
         border-top: 1px solid $color-grey-dark;
         padding-top: 2rem;
-        display: inline-block;
+
+    }
+
+    &__promotion{
+        grid-row: 2 / 3;
+        grid-column: 3 / 4;
+        align-self: center;
+        justify-self: center;
+
+        border-top: 1px solid $color-grey-dark;
+        padding-top: 2rem;
 
     }
 
     &__list {
         list-style: none;
+
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(4, max-content);
+
     }
 
     &__item {
-        display: inline-block;
 
         &:not(:last-child) {
             margin-right: 1.5rem;
@@ -56,10 +84,7 @@
     }
 
     &__copyright {
-        border-top: 1px solid $color-grey-dark;
-        padding-top: 2rem;
-        width: 80%;
-        float: right;
+        width: 100%;
 
     }
 }

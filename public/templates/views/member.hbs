@@ -21,9 +21,9 @@
                                 <p class="lead d-none d-sm-block">All relevant stats and information for each specific member.</p>                  
                         </div>
                 </section>
-                <div id="member" class="row m-2">
-                        <div class="col-xl-6 col-lg-12">
-                                <div id="memberCard" class="m-1 chalk card text-white">
+                <div id="member" class="row">
+                        <div class="col-xl-7 col-lg-12 mt-1">
+                                <div id="memberCard" class="chalk card text-white">
                                         <div class="card-header text-center">
                                         <h3 id="memberName"><img class="user user-md" src="{{general/thumbnail}}" alt="{{general/name}}"> {{general/name}} <span></span> </h3>
                                         </div>
@@ -89,20 +89,20 @@
                                         </div>
                                 </div>
                         </div>
-                        <div class="col-xl-6 col-lg-12">
-                                <div class="row m-1">
-                                        <div class="col-xl-6 col-lg-12">
+                        <div class="col-xl-5 col-lg-12 mt-1">
+                                <div class="row">
+                                        <div class="col-xl-12">
                                                 <div id="MVP" class="mb-1 card border-dark text-white">
                                                         <div class="card-header text-center">
                                                                 <h3>MVP</h3>
                                                         </div>
                                                         <div class="py-4 card-body text-center">
-                                                        <h4>{{general/MVP/fullName}} ({{general/MVP/points}}pts)</h4>
-                                                        <p>{{general/MVP/season}} Week {{general/MVP/week}} vs {{general/MVP/oppName}}</p>
+                                                                <h4>{{general/MVP/fullName}} ({{general/MVP/points}}pts)</h4>
+                                                                <p>{{general/MVP/season}} Week {{general/MVP/week}} vs {{general/MVP/oppName}}</p>
                                                         </div>
                                                 </div>
                                         </div>
-                                        <div class="col-xl-6 col-lg-12">
+                                        <div class="col-xl-12">
                                                 <div id="keeper" class="mb-1 card text-white border-dark">
                                                         <div class="card-header text-center">
                                                                 <h3>KEEPERS</h3>
@@ -122,157 +122,153 @@
                                                 </div>
                                         </div>
                                 </div>
-                                <div class="row m-1">
-                                        <div class="col-xl-12">
-                                                <div id="regularSeason" class="m-1 card">
-                                                        <div class="card-header">
-                                                                <h4>Regular Season</h4>
-                                                        </div>
-                                                        <div class="card-body">
-                                                                <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                                <div class="pb-4 row">
-                                                                                        <div class=" col-md-4">
-                                                                                                <canvas id="doughnut-regular" width="800" height="450" data-centerval="{{general/winPercentage}}"></canvas>
-                                                                                        </div>
-                                                                                        <div id="stats" class="col-md-8">
-                                                                                                <div class="row text-center">
-                                                                                                        <div class="col-md-4">
-                                                                                                                <div class="m-2 border-bottom">Win</div>
-                                                                                                                <p><strong>{{general/wins}}</strong></p>
-                                                                                                        </div>
-                                                                                                        <div class="col-md-4">
-                                                                                                                <div class="m-2 border-bottom">Loss</div>
-                                                                                                                <p><strong>{{general/losses}}</strong></p>
-                                                                                                        </div>
-                                                                                                        <div class="col-md-4">
-                                                                                                                <div class="m-2 border-bottom">Moves</div>
-                                                                                                                <p><strong>{{general/moves}}</strong></p>
-                                                                                                        </div>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                </div>
-
-                                                                        </div>
-                                                                        
-
-                                                                </div>
-                                                                <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                                <div class="row text-center">
-                                                                                        <div class="col-md-4">
-                                                                                                <div class="card">
-                                                                                                        <div class="card-header">
-                                                                                                        Seasons
-                                                                                                        </div>
-                                                                                                        <div class="card-body">
-                                                                                                                <p><strong>{{general/years}}</strong></p>
-                                                                                                        </div>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                        <div class="col-md-4">
-                                                                                                <div class="card">
-                                                                                                        <div class="card-header">
-                                                                                                        Average Finish
-                                                                                                        </div>
-                                                                                                        <div class="card-body">
-                                                                                                                <p><strong>{{general/averageFinish}}</strong></p>
-                                                                                                        </div>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                        <div class="col-md-4">
-                                                                                                <div class="card">
-                                                                                                        <div class="card-header">
-                                                                                                        Last Place Finishes
-                                                                                                        </div>
-                                                                                                        <div class="card-body">
-                                                                                                                <p><strong>{{general/lastPlaceFinishes}}</strong></p>
-                                                                                                        </div>
-                                                                                                </div>
-                                                                                        </div>
-                                                                                </div>
-                                                                        </div>
-
-
-                                                                </div>
-                                                        </div>
+                        </div>
+                </div>
+                        <div class="row">
+                                <div class="col-xl-12 mt-2">
+                                        <div id="regularSeason" class="m-1 card">
+                                                <div class="card-header">
+                                                        <h4>Regular Season</h4>
                                                 </div>
-                                        </div>
-                                </div>
-                                <div class="row m-1">
-                                        <div class="col-xl-12">
-                                                <div id="regularSeason" class="m-1 card">
-                                                        <div class="card-header">
-                                                                <h4>Playoff Season</h4>
-                                                        </div>
-                                                        <div class="card-body">
-                                                                <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                                <div class="pb-4 row">
-                                                                                        <div class=" col-md-4">
-                                                                                                <canvas id="doughnut-playoff" width="800" height="450" data-centerval=""></canvas>
-                                                                                        </div>
-                                                                                        <div id="stats" class="col-md-8">
-                                                                                                <div class="row text-center">
-                                                                                                        <div class="col-md-6">
-                                                                                                                <div class="m-2 border-bottom">Win</div>
-                                                                                                                <p><strong>{{general/playoffWins}}</strong></p>
-                                                                                                        </div>
-                                                                                                        <div class="col-md-6">
-                                                                                                                <div class="m-2 border-bottom">Loss</div>
-                                                                                                                <p><strong>{{general/playoffLosses}}</strong></p>
-                                                                                                        </div>
+                                                <div class="card-body">
+                                                        <div class="row">
+                                                                <div class="col-lg-12">
+                                                                        <div class="pb-4 row">
+                                                                                <div class=" col-md-4">
+                                                                                        <canvas id="doughnut-regular" width="800" height="450" data-centerval="{{general/winPercentage}}"></canvas>
+                                                                                </div>
+                                                                                <div id="stats" class="col-md-8">
+                                                                                        <div class="row text-center">
+                                                                                                <div class="col-md-4">
+                                                                                                        <div class="m-2 border-bottom">Win</div>
+                                                                                                        <p><strong>{{general/wins}}</strong></p>
+                                                                                                </div>
+                                                                                                <div class="col-md-4">
+                                                                                                        <div class="m-2 border-bottom">Loss</div>
+                                                                                                        <p><strong>{{general/losses}}</strong></p>
+                                                                                                </div>
+                                                                                                <div class="col-md-4">
+                                                                                                        <div class="m-2 border-bottom">Moves</div>
+                                                                                                        <p><strong>{{general/moves}}</strong></p>
                                                                                                 </div>
                                                                                         </div>
                                                                                 </div>
-
                                                                         </div>
+
                                                                 </div>
-                                                                <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                                <div class="row text-center">
-                                                                                        <div class="col-md-4">
-                                                                                                <div class="card">
-                                                                                                        <div class="card-header">
-                                                                                                        Playoff Appearances
-                                                                                                        </div>
-                                                                                                        <div class="card-body">
-                                                                                                                <p><strong>{{general/playoffAppearances}}</strong></p>
-                                                                                                        </div>
+                                                        </div>
+                                                        <div class="row">
+                                                                <div class="col-lg-12">
+                                                                        <div class="row text-center">
+                                                                                <div class="col-md-4">
+                                                                                        <div class="card">
+                                                                                                <div class="card-header">
+                                                                                                Seasons
+                                                                                                </div>
+                                                                                                <div class="card-body">
+                                                                                                        <p><strong>{{general/years}}</strong></p>
                                                                                                 </div>
                                                                                         </div>
-                                                                                        <div class="col-md-4">
-                                                                                                <div class="card">
-                                                                                                        <div class="card-header">
-                                                                                                        Championship Appearances
-                                                                                                        </div>
-                                                                                                        <div class="card-body">
-                                                                                                                <p><strong>{{general/championshipAppearances}}</strong></p>
-                                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                        <div class="card">
+                                                                                                <div class="card-header">
+                                                                                                Average Finish
+                                                                                                </div>
+                                                                                                <div class="card-body">
+                                                                                                        <p><strong>{{general/averageFinish}}</strong></p>
                                                                                                 </div>
                                                                                         </div>
-                                                                                        <div class="col-md-4">
-                                                                                                <div class="card">
-                                                                                                        <div class="card-header">
-                                                                                                        Championships
-                                                                                                        </div>
-                                                                                                        <div class="card-body">
-                                                                                                                <p><strong>{{general/championships}}</strong></p>
-                                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                        <div class="card">
+                                                                                                <div class="card-header">
+                                                                                                Last Place Finishes
+                                                                                                </div>
+                                                                                                <div class="card-body">
+                                                                                                        <p><strong>{{general/lastPlaceFinishes}}</strong></p>
                                                                                                 </div>
                                                                                         </div>
                                                                                 </div>
                                                                         </div>
-
-
                                                                 </div>
                                                         </div>
                                                 </div>
                                         </div>
                                 </div>
                         </div>
-                </div>
-                <div id="accordion" class="row m-2">
+                        <div class="row">
+                                <div class="col-xl-12 mt-2">
+                                        <div id="regularSeason" class="m-1 card">
+                                                <div class="card-header">
+                                                        <h4>Playoff Season</h4>
+                                                </div>
+                                                <div class="card-body">
+                                                        <div class="row">
+                                                                <div class="col-lg-12">
+                                                                        <div class="pb-4 row">
+                                                                                <div class=" col-md-4">
+                                                                                        <canvas id="doughnut-playoff" width="800" height="450" data-centerval=""></canvas>
+                                                                                </div>
+                                                                                <div id="stats" class="col-md-8">
+                                                                                        <div class="row text-center">
+                                                                                                <div class="col-md-6">
+                                                                                                        <div class="m-2 border-bottom">Win</div>
+                                                                                                        <p><strong>{{general/playoffWins}}</strong></p>
+                                                                                                </div>
+                                                                                                <div class="col-md-6">
+                                                                                                        <div class="m-2 border-bottom">Loss</div>
+                                                                                                        <p><strong>{{general/playoffLosses}}</strong></p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+
+                                                                </div>
+                                                        </div>
+                                                        <div class="row">
+                                                                <div class="col-lg-12">
+                                                                        <div class="row text-center">
+                                                                                <div class="col-md-4">
+                                                                                        <div class="card">
+                                                                                                <div class="card-header">
+                                                                                                Playoff Appearances
+                                                                                                </div>
+                                                                                                <div class="card-body">
+                                                                                                        <p><strong>{{general/playoffAppearances}}</strong></p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                        <div class="card">
+                                                                                                <div class="card-header">
+                                                                                                Championship Appearances
+                                                                                                </div>
+                                                                                                <div class="card-body">
+                                                                                                        <p><strong>{{general/championshipAppearances}}</strong></p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="col-md-4">
+                                                                                        <div class="card">
+                                                                                                <div class="card-header">
+                                                                                                Championships
+                                                                                                </div>
+                                                                                                <div class="card-body">
+                                                                                                        <p><strong>{{general/championships}}</strong></p>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                </div>
+
+
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                <div id="accordion" class="row">
                         <div class="col-xl-6 col-lg-12">
                                 <div class="m-1 card border-secondary">
                                         <div class="card-header">
@@ -476,8 +472,9 @@
                                 </div>
                         </div>
                 </div>
-                <div class="row m-2">
-                        <div class="col-lg-12">
+                <div class="row">
+                        <div class="col-xl-1"></div>
+                        <div class="col-lg-12 col-xl-10">
                                 <div class="card">
                                         <div class="card-header">
                                                 <h4 class="card-title">Yearly Performance</h3>
@@ -487,10 +484,8 @@
                                         </div>
                                 </div>
                         </div>
-
+                        <div class="col-xl-1"></div>
                 </div>
-
-                
         </div>
 </div>
 

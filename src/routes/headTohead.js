@@ -16,7 +16,7 @@ router.get('/headToHead', (req, res) => {
 
 })
 
-router.post('/headTohead', (req, res) => {
+router.post('/headToHead', (req, res) => {
      let total = []
 
     const left = TeamRecords.find({'year': 'Total', 'team_id': req.body.leftId}).then((data) => {

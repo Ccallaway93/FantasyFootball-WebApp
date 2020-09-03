@@ -85,6 +85,13 @@
     }
 
     // Responsive
+    @include respond(desktop) {
+        &,
+        &:link,
+        &:visited {
+            padding: 1rem 3rem;
+        }
+    }
     @include respond(tab-land) {
         &,
         &:link,

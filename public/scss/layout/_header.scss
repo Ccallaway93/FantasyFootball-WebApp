@@ -20,7 +20,10 @@
 
     &__logo {
         height: 10.5rem;
-
+        
+        @include respond(desktop) {
+            height: 8rem;
+          }
         @include respond(tab-land) {
             height: 6.5rem;
           }

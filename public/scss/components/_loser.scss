@@ -8,6 +8,10 @@
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
     transition: transform .3s;
 
+    @include respond(desktop) {
+        font-size: 1.2rem;
+    }
+
 
     &__icon {
         font-size: 6rem;
@@ -17,6 +21,10 @@
         background-color: #7A5901;
         -webkit-background-clip: text;
         color: transparent;
+
+        @include respond(desktop) {
+            font-size: 5rem;
+        }
 
     }
 
