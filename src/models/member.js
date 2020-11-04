@@ -23,6 +23,9 @@ const memberSchema = new mongoose.Schema({
     championshipAppearances: Number,
     playoffAppearances: Number,
     averageFinish:Number,
+    lossesWithinTen:Number,
+    lossesWithinFive:Number,
+    lastUpdated: Date,
     years: Number,
     highestScore: {
         score: Number,

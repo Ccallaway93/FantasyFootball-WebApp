@@ -8,11 +8,13 @@ const path          = require('path')
 const crypto = require('crypto');
 
 const {Historical} = require('../historical')
+const {updateWeeklyRecords} = require('../updateWeeklyRecords');
 const {Seed} = require('../seed')
 const {mongo} = require('../db/mongoose');
 //const {HeadToHead} = require('../test')
 const TotalPoints = require('../models/totalPoints')
-const TeamRecords = require('../models/teamRecords')
+const TeamRecords = require('../models/teamRecords');
+const { updateYearlyRecords } = require('../updateYearlyRecords');
 
 const storage = new GridFsStorage({
     url: process.env.MONGODB_URL,
@@ -36,6 +38,10 @@ const storage = new GridFsStorage({
 const upload = multer({storage});
 
 router.get('/seed', (req, res) => {
+
+    
+    //updateWeeklyRecords.update(2020,5,5);
+    updateYearlyRecords.runForStartOfSeason(2020, 1, 1);
 
         res.render('seed');
 

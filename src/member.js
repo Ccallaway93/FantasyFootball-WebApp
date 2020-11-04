@@ -82,17 +82,6 @@ class Member {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     static allAPIData(teamId, year) {
 
         Standings.addTeamTotalsObject(teamId).then((data) => {
@@ -304,14 +293,7 @@ class Member {
     }
 
 
-
-
-
-
-
-
 }
-
 
 
 module.exports.Member = Member

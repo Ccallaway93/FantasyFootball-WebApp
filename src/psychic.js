@@ -11,6 +11,12 @@ myClient.setCookies({SWID,espnS2})
 
 class Psychic { 
 
+  static test() {
+    myClient.getLeagueInfo(2020).then((data) => {
+      console.log(data);
+    })
+  }
+
   static filterPosition(boxscorePlayer, position) {
     return (
       boxscorePlayer.position === position ||
@@ -110,10 +116,11 @@ class Psychic {
 
 module.exports.Psychic = Psychic
 
-Psychic.runForWeek({ seasonId: 2019, matchupPeriodId: 8, scoringPeriodId: 8 }).then((result) => {
-  console.log(result);
-  return result;
-});
+// Psychic.runForWeek({ seasonId: 2020, matchupPeriodId: 1, scoringPeriodId: 1 }).then((result) => {
+//   console.log(result);
+//   return result;
+// });
+
 
 
 

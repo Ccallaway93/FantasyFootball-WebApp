@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js"
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js",
+    "prod": "env-cmd -f ./config/prod.env nodemon src/app.js"
   },
   "author": "Conner Callaway",
   "license": "ISC",

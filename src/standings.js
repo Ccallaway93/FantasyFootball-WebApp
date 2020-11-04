@@ -131,6 +131,4 @@ class Standings {
 
 
 
-
-
 module.exports.Standings = Standings
